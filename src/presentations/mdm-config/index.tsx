@@ -5,7 +5,7 @@ import { Slide3 } from './slides/Slide3';
 import { Slide4 } from './slides/Slide4';
 import { Slide5 } from './slides/Slide5';
 import { Slide6 } from './slides/Slide6';
-import { Slide7Updated as Slide7 } from './slides/Slide7Updated';
+import { Slide7Final as Slide7 } from './slides/Slide7Final';
 
 export const mdmPresentation: Presentation = {
   id: 'mdm-config',
