@@ -7,11 +7,6 @@ interface CardProps {
   interactive?: boolean;
 }
 
-const cardVariants = {
-  default: css``,
-  elevated: css``,
-  outlined: css``,
-};
 
 export const Card = styled.div<CardProps>`
   background-color: ${({ theme }) => theme.colors.surface};

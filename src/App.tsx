@@ -1,28 +1,23 @@
-import { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './contexts/ThemeContext';
-import { PresentationProvider, usePresentation } from './contexts/PresentationContext';
+import { PresentationProvider } from './contexts/PresentationContext';
 import { GlobalStyles } from './styles/GlobalStyles';
-import { PresentationLayout } from './components/layouts/PresentationLayout';
-import { samplePresentation } from './presentations/samplePresentation';
-
-function PresentationApp() {
-  const { setPresentation } = usePresentation();
-
-  useEffect(() => {
-    setPresentation(samplePresentation);
-  }, [setPresentation]);
-
-  return <PresentationLayout />;
-}
+import { Home } from './pages/Home';
+import { PresentationView } from './pages/PresentationView';
 
 function App() {
   return (
-    <ThemeProvider>
-      <GlobalStyles />
-      <PresentationProvider>
-        <PresentationApp />
-      </PresentationProvider>
-    </ThemeProvider>
+    <Router>
+      <ThemeProvider>
+        <GlobalStyles />
+        <PresentationProvider>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/presentation/:id" element={<PresentationView />} />
+          </Routes>
+        </PresentationProvider>
+      </ThemeProvider>
+    </Router>
   );
 }
 
