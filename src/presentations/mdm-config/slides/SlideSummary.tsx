@@ -93,35 +93,51 @@ export const SlideSummary = () => {
           })}
         </div>
 
-        {/* Process Timeline */}
+        {/* Process Timeline - Simplified */}
         <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-8 mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-            <Zap className="text-orange-500" />
+          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
             7-Step Automated Workflow
           </h2>
           
-          <div className="flex items-center justify-between overflow-x-auto">
-            {[
-              { step: "1", label: "Input Use Case" },
-              { step: "2", label: "Model Discovery" },
-              { step: "3", label: "DQ Profiling" },
-              { step: "4", label: "Match Logic" },
-              { step: "5", label: "UI Generation" },
-              { step: "6", label: "Test Data" },
-              { step: "7", label: "Package Ready" }
-            ].map((item, index) => (
-              <div key={index} className="flex items-center">
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold shadow-md">
-                    {item.step}
-                  </div>
-                  <p className="text-sm text-gray-600 mt-2 w-24">{item.label}</p>
-                </div>
-                {index < 6 && (
-                  <div className="w-8 lg:w-16 h-0.5 bg-orange-300 mx-1" />
-                )}
-              </div>
-            ))}
+          <div className="flex items-center justify-between gap-2">
+            <div className="flex items-center gap-2 text-sm text-gray-700">
+              <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-xs">1</div>
+              <span>Input</span>
+            </div>
+            <div className="flex-1 h-1 bg-gradient-to-r from-orange-400 to-orange-500"></div>
+            <div className="flex items-center gap-2 text-sm text-gray-700">
+              <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-xs">2</div>
+              <span>Discover</span>
+            </div>
+            <div className="flex-1 h-1 bg-gradient-to-r from-orange-500 to-purple-500"></div>
+            <div className="flex items-center gap-2 text-sm text-gray-700">
+              <div className="w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center font-bold text-xs">3</div>
+              <span>Profile</span>
+            </div>
+            <div className="flex-1 h-1 bg-gradient-to-r from-purple-500 to-green-500"></div>
+            <div className="flex items-center gap-2 text-sm text-gray-700">
+              <div className="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-xs">4</div>
+              <span>Rules</span>
+            </div>
+            <div className="flex-1 h-1 bg-gradient-to-r from-green-500 to-blue-500"></div>
+            <div className="flex items-center gap-2 text-sm text-gray-700">
+              <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-xs">5</div>
+              <span>UI</span>
+            </div>
+            <div className="flex-1 h-1 bg-gradient-to-r from-blue-500 to-teal-500"></div>
+            <div className="flex items-center gap-2 text-sm text-gray-700">
+              <div className="w-8 h-8 bg-teal-500 text-white rounded-full flex items-center justify-center font-bold text-xs">6</div>
+              <span>Data</span>
+            </div>
+            <div className="flex-1 h-1 bg-gradient-to-r from-teal-500 to-red-500"></div>
+            <div className="flex items-center gap-2 text-sm text-gray-700">
+              <div className="w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center font-bold text-xs">7</div>
+              <span>Output</span>
+            </div>
+          </div>
+          
+          <div className="mt-4 text-center">
+            <p className="text-sm text-gray-600">Complete configuration in under 1 hour</p>
           </div>
         </div>
 
