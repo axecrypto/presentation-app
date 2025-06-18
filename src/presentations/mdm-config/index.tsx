@@ -6,6 +6,8 @@ import { Slide4 } from './slides/Slide4';
 import { Slide5 } from './slides/Slide5';
 import { Slide6 } from './slides/Slide6';
 import { Slide7Final as Slide7 } from './slides/Slide7Final';
+import { SlideSummary } from './slides/SlideSummary';
+import { SlideUIPrototype } from './slides/SlideUIPrototype';
 
 export const mdmPresentation: Presentation = {
   id: 'mdm-config',
@@ -51,6 +53,18 @@ export const mdmPresentation: Presentation = {
           </div>
         </div>
       ),
+    },
+    {
+      id: 'slide-summary',
+      layout: 'full',
+      transition: { type: 'slide' },
+      content: <SlideSummary />,
+    },
+    {
+      id: 'slide-ui-prototype',
+      layout: 'full',
+      transition: { type: 'slide' },
+      content: <SlideUIPrototype />,
     },
     {
       id: 'slide-2',
