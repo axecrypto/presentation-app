@@ -32,5 +32,7 @@ export interface Presentation {
     loop?: boolean;
     autoPlay?: boolean;
     autoPlayInterval?: number;
+    availableThemes?: ('light' | 'dark')[];
+    defaultTheme?: 'light' | 'dark';
   };
 }

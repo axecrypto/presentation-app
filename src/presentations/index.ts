@@ -1,6 +1,8 @@
 import { Presentation } from '../types/presentation';
 import { samplePresentation } from './samplePresentation';
 import { mdmPresentation } from './mdm-config';
+import { processFrameworkPresentation } from './process-framework';
+import { meteringUpdatePresentation } from './metering-update';
 
 export interface PresentationMetadata {
   id: string;
@@ -41,6 +43,28 @@ export const presentations: Record<string, PresentationEntry> = {
       duration: '8 slides',
     },
     presentation: mdmPresentation,
+  },
+  'process-framework': {
+    metadata: {
+      id: 'process-framework',
+      title: 'Validated Process Framework',
+      description: 'A 5-Week Plan to Fix What\'s Broken (Without Boiling the Ocean)',
+      author: 'Process Team',
+      tags: ['process', 'framework', 'agile', 'improvement'],
+      duration: '9 slides',
+    },
+    presentation: processFrameworkPresentation,
+  },
+  'metering-update': {
+    metadata: {
+      id: 'metering-update',
+      title: 'Metering Platform Update',
+      description: 'Executive Overview - Discovery & Alignment Phase',
+      author: 'Platform Team',
+      tags: ['metering', 'platform', 'monetization', 'analytics'],
+      duration: '8 slides',
+    },
+    presentation: meteringUpdatePresentation,
   },
 };
 

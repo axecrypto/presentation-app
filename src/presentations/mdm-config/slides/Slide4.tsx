@@ -20,7 +20,7 @@ export const Slide4 = () => {
       title: "Catalog Matching",
       description: "Search existing model catalogs & templates",
       icon: Search,
-      color: "from-purple-500 to-purple-600",
+      color: "from-blue-500 to-blue-600",
       details: ["Industry templates", "Domain models", "Entity libraries", "Best practices"]
     },
     {
@@ -28,7 +28,7 @@ export const Slide4 = () => {
       title: "Entity Suggestion",
       description: "Auto-suggest entities & relationships",
       icon: Layers,
-      color: "from-green-500 to-green-600",
+      color: "from-orange-500 to-orange-600",
       details: ["Customer entities", "Product hierarchies", "Reference data", "Relationships"]
     },
     {
@@ -76,14 +76,14 @@ export const Slide4 = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white p-8 overflow-hidden relative">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-orange-500 to-purple-600 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-500 to-green-500 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-orange-500 to-blue-600 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-500 to-orange-500 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-orange-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
+          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-orange-400 via-blue-400 to-orange-400 bg-clip-text text-transparent">
             AI-Powered Model Discovery
           </h1>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
@@ -97,7 +97,7 @@ export const Slide4 = () => {
           {/* Left Side - Process Steps */}
           <div className="space-y-6">
             <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-              <Brain className="mr-3 text-purple-400" size={28} />
+              <Brain className="mr-3 text-blue-400" size={28} />
               Discovery Process
             </h2>
             
@@ -115,7 +115,7 @@ export const Slide4 = () => {
                     ${isActive ? 
                       'bg-slate-700/50 border-blue-500 scale-105 shadow-xl shadow-blue-500/20' : 
                       isCompleted ?
-                        'bg-green-900/20 border-green-500/50' :
+                        'bg-blue-900/20 border-blue-500/50' :
                         'bg-slate-800/50 border-slate-600 hover:border-slate-500'
                     }
                     ${isProcessing && isActive ? 'animate-pulse' : ''}
@@ -127,7 +127,7 @@ export const Slide4 = () => {
                       ${isActive ? 
                         `bg-gradient-to-r ${step.color} text-white shadow-lg` : 
                         isCompleted ?
-                          'bg-green-500 text-white' :
+                          'bg-blue-500 text-white' :
                           'bg-slate-600 text-slate-300'
                       }
                     `}>
@@ -137,7 +137,7 @@ export const Slide4 = () => {
                     <div className="flex-1">
                       <h3 className={`
                         text-lg font-bold mb-2 transition-colors duration-300
-                        ${isActive ? 'text-blue-300' : isCompleted ? 'text-green-300' : 'text-white'}
+                        ${isActive ? 'text-blue-300' : isCompleted ? 'text-blue-300' : 'text-white'}
                       `}>
                         {step.title}
                       </h3>
@@ -158,7 +158,7 @@ export const Slide4 = () => {
                               ${isActive ? 
                                 'bg-blue-100 text-blue-800' : 
                                 isCompleted ?
-                                  'bg-green-100 text-green-800' :
+                                  'bg-blue-100 text-blue-800' :
                                   'bg-slate-700 text-slate-300'
                               }
                             `}
@@ -190,14 +190,14 @@ export const Slide4 = () => {
           {/* Right Side - Discovery Results */}
           <div className="space-y-6">
             <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-              <Target className="mr-3 text-green-400" size={28} />
+              <Target className="mr-3 text-orange-400" size={28} />
               Discovery Results
             </h2>
 
             {/* Discovered Entities */}
             <div className="bg-slate-800/50 backdrop-blur-lg rounded-2xl border border-slate-700 p-6">
               <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
-                <Database className="mr-2 text-purple-400" size={20} />
+                <Database className="mr-2 text-blue-400" size={20} />
                 Suggested Entities
               </h3>
               
@@ -211,8 +211,8 @@ export const Slide4 = () => {
                     <div className="flex items-center space-x-3">
                       <div className={`
                         w-3 h-3 rounded-full
-                        ${entity.confidence >= 95 ? 'bg-green-400' : 
-                          entity.confidence >= 90 ? 'bg-yellow-400' : 'bg-orange-400'}
+                        ${entity.confidence >= 95 ? 'bg-blue-400' : 
+                          entity.confidence >= 90 ? 'bg-orange-400' : 'bg-orange-400'}
                       `}></div>
                       <div>
                         <div className="font-medium text-white">{entity.name}</div>
@@ -221,7 +221,7 @@ export const Slide4 = () => {
                     </div>
                     
                     <div className="text-right">
-                      <div className="text-sm font-medium text-green-400">{entity.confidence}%</div>
+                      <div className="text-sm font-medium text-blue-400">{entity.confidence}%</div>
                       <div className="text-xs text-slate-400">{entity.fields} fields</div>
                     </div>
                   </div>
@@ -253,8 +253,8 @@ export const Slide4 = () => {
                         <div className={`
                           px-2 py-1 rounded text-xs font-medium
                           ${mapping.status === 'mapped' ? 
-                            'bg-green-100 text-green-800' : 
-                            'bg-yellow-100 text-yellow-800'}
+                            'bg-blue-100 text-blue-800' : 
+                            'bg-orange-100 text-orange-800'}
                         `}>
                           {mapping.status}
                         </div>
@@ -277,18 +277,18 @@ export const Slide4 = () => {
             <p className="text-blue-200 text-sm">Faster model discovery</p>
           </div>
 
-          <div className="bg-purple-900/30 backdrop-blur-lg rounded-2xl p-6 border border-purple-700/50 text-center">
-            <Target className="mx-auto mb-3 text-purple-400" size={32} />
-            <h3 className="text-lg font-semibold text-purple-300 mb-2">Accuracy</h3>
+          <div className="bg-blue-900/30 backdrop-blur-lg rounded-2xl p-6 border border-blue-700/50 text-center">
+            <Target className="mx-auto mb-3 text-blue-400" size={32} />
+            <h3 className="text-lg font-semibold text-blue-300 mb-2">Accuracy</h3>
             <p className="text-2xl font-bold text-white">95%</p>
-            <p className="text-purple-200 text-sm">Mapping confidence</p>
+            <p className="text-blue-200 text-sm">Mapping confidence</p>
           </div>
 
-          <div className="bg-green-900/30 backdrop-blur-lg rounded-2xl p-6 border border-green-700/50 text-center">
-            <Database className="mx-auto mb-3 text-green-400" size={32} />
-            <h3 className="text-lg font-semibold text-green-300 mb-2">Reuse</h3>
+          <div className="bg-orange-900/30 backdrop-blur-lg rounded-2xl p-6 border border-orange-700/50 text-center">
+            <Database className="mx-auto mb-3 text-orange-400" size={32} />
+            <h3 className="text-lg font-semibold text-orange-300 mb-2">Reuse</h3>
             <p className="text-2xl font-bold text-white">80%</p>
-            <p className="text-green-200 text-sm">Template reusability</p>
+            <p className="text-orange-200 text-sm">Template reusability</p>
           </div>
 
           <div className="bg-orange-900/30 backdrop-blur-lg rounded-2xl p-6 border border-orange-700/50 text-center">
@@ -309,7 +309,7 @@ export const Slide4 = () => {
                 className={`
                   w-3 h-3 rounded-full transition-all duration-300
                   ${activeStep === index ? 'bg-blue-400 scale-125' : 
-                    index < activeStep ? 'bg-green-400' : 'bg-slate-600'}
+                    index < activeStep ? 'bg-blue-400' : 'bg-slate-600'}
                 `}
               />
             ))}

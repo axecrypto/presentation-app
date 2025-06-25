@@ -71,7 +71,7 @@ export const SlideUIPrototype = () => {
                   step.status === 'active' 
                     ? 'bg-orange-500 text-white' 
                     : step.status === 'completed'
-                    ? 'bg-green-500 text-white'
+                    ? 'bg-blue-500 text-white'
                     : 'bg-gray-300 text-gray-600'
                 }`}>
                   <step.icon size={20} />
@@ -84,7 +84,7 @@ export const SlideUIPrototype = () => {
                   </p>
                 </div>
                 {step.status === 'completed' && (
-                  <CheckCircle className="text-green-500" size={20} />
+                  <CheckCircle className="text-blue-500" size={20} />
                 )}
                 {step.status === 'active' && (
                   <div className="w-5 h-5 border-2 border-orange-500 rounded-full border-t-transparent animate-spin" />
@@ -149,12 +149,12 @@ export const SlideUIPrototype = () => {
                     key={index}
                     className={`bg-white rounded-xl p-6 border-2 transition-all hover:shadow-lg cursor-pointer ${
                       model.status === 'recommended'
-                        ? 'border-green-500 bg-green-50/50'
+                        ? 'border-blue-500 bg-blue-50/50'
                         : 'border-gray-200'
                     }`}
                   >
                     {model.status === 'recommended' && (
-                      <div className="mb-3 inline-flex items-center gap-1 text-xs font-semibold text-green-700 bg-green-100 px-3 py-1 rounded-full">
+                      <div className="mb-3 inline-flex items-center gap-1 text-xs font-semibold text-blue-700 bg-blue-100 px-3 py-1 rounded-full">
                         <Sparkles size={12} />
                         AI Recommended
                       </div>
@@ -164,7 +164,7 @@ export const SlideUIPrototype = () => {
                       <div className="flex justify-between items-center">
                         <span className="text-sm text-gray-600">Match Score</span>
                         <span className={`font-bold ${
-                          parseInt(model.match) > 80 ? 'text-green-600' : 
+                          parseInt(model.match) > 80 ? 'text-blue-600' : 
                           parseInt(model.match) > 60 ? 'text-orange-600' : 'text-red-600'
                         }`}>{model.match}</span>
                       </div>
@@ -175,7 +175,7 @@ export const SlideUIPrototype = () => {
                       <div className="w-full bg-gray-200 rounded-full h-2">
                         <div 
                           className={`h-2 rounded-full ${
-                            parseInt(model.match) > 80 ? 'bg-green-500' : 
+                            parseInt(model.match) > 80 ? 'bg-blue-500' : 
                             parseInt(model.match) > 60 ? 'bg-orange-500' : 'bg-red-500'
                           }`}
                           style={{ width: model.match }}
@@ -191,7 +191,7 @@ export const SlideUIPrototype = () => {
               </div>
 
               {/* AI Insights */}
-              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-200">
+              <div className="bg-gradient-to-r from-blue-50 to-orange-50 rounded-xl p-6 border border-blue-200">
                 <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center gap-2">
                   <Sparkles className="text-blue-600" size={20} />
                   AI Insights

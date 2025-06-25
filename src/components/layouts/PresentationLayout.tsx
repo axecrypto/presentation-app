@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import { usePresentation } from '../../contexts/PresentationContext';
 import { SlideContainer } from '../slides/SlideContainer';
 import { Button } from '../common';
+import { ThemeWrapper } from '../ThemeWrapper';
 
 const LayoutContainer = styled.div`
   position: relative;
@@ -63,11 +64,13 @@ export const PresentationLayout: React.FC = () => {
   const {
     presentation,
     currentSlideIndex,
+    currentTheme,
     nextSlide,
     previousSlide,
     isPlaying,
     togglePlay,
     toggleFullscreen,
+    toggleTheme,
   } = usePresentation();
 
   if (!presentation) {
@@ -84,24 +87,25 @@ export const PresentationLayout: React.FC = () => {
   const currentSlide = presentation.slides[currentSlideIndex];
 
   return (
-    <LayoutContainer>
-      {presentation.settings?.showProgress && (
-        <ProgressBar>
-          <ProgressFill progress={progress} />
-        </ProgressBar>
-      )}
+    <ThemeWrapper>
+      <LayoutContainer>
+        {presentation.settings?.showProgress && (
+          <ProgressBar>
+            <ProgressFill progress={progress} />
+          </ProgressBar>
+        )}
 
-      {presentation.settings?.showSlideNumbers && (
-        <SlideNumber>
-          {currentSlideIndex + 1} / {presentation.slides.length}
-        </SlideNumber>
-      )}
+        {presentation.settings?.showSlideNumbers && (
+          <SlideNumber>
+            {currentSlideIndex + 1} / {presentation.slides.length}
+          </SlideNumber>
+        )}
 
-      <SlideWrapper>
-        <SlideContainer slide={currentSlide} isActive={true} />
-      </SlideWrapper>
+        <SlideWrapper>
+          <SlideContainer slide={currentSlide} isActive={true} />
+        </SlideWrapper>
 
-      <Controls>
+        <Controls>
         <Button size="sm" variant="ghost" onClick={previousSlide}>
           ←
         </Button>
@@ -114,7 +118,13 @@ export const PresentationLayout: React.FC = () => {
         <Button size="sm" variant="ghost" onClick={toggleFullscreen}>
           ⛶
         </Button>
+        {presentation.settings?.availableThemes && presentation.settings.availableThemes.length > 1 && (
+          <Button size="sm" variant="ghost" onClick={toggleTheme}>
+            {currentTheme === 'dark' ? '☀️' : '🌙'}
+          </Button>
+        )}
       </Controls>
-    </LayoutContainer>
+      </LayoutContainer>
+    </ThemeWrapper>
   );
 };

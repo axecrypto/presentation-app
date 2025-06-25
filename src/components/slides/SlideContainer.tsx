@@ -39,9 +39,17 @@ const Container = styled(motion.div)<{ background?: string }>`
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: ${({ background, theme }) => background || theme.colors.background};
+  background: ${({ background, theme }) => background && background !== 'gradient-dark' ? background : theme.colors.background};
   padding: ${({ theme }) => theme.spacing.xxl};
   overflow: auto;
+  
+  &.gradient-dark {
+    background: linear-gradient(to bottom right, #0f172a, #1e293b, #0f172a);
+  }
+  
+  .light-theme &.gradient-dark {
+    background: linear-gradient(to bottom right, #f8fafc, #f1f5f9, #f8fafc);
+  }
 `;
 
 const ContentWrapper = styled.div<{ layout?: string }>`
@@ -85,6 +93,7 @@ export const SlideContainer: React.FC<SlideContainerProps> = ({ slide, isActive 
         <Container
           key={slide.id}
           background={slide.background}
+          className={slide.background === 'gradient-dark' ? 'gradient-dark' : ''}
           variants={slideVariants[transitionType]}
           initial="initial"
           animate="animate"

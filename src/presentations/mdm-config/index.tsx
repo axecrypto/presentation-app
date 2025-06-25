@@ -1,4 +1,3 @@
-import React from 'react';
 import { Presentation } from '../../types/presentation';
 import { Slide2 } from './slides/Slide2';
 import { Slide3 } from './slides/Slide3';
@@ -21,6 +20,8 @@ export const mdmPresentation: Presentation = {
     loop: false,
     autoPlay: false,
     autoPlayInterval: 5000,
+    availableThemes: ['light', 'dark'],
+    defaultTheme: 'dark',
   },
   slides: [
     {
@@ -28,7 +29,7 @@ export const mdmPresentation: Presentation = {
       title: 'AI-Powered MDM Configuration',
       layout: 'centered',
       transition: { type: 'zoom' },
-      background: 'linear-gradient(to bottom right, #0A0A0A, #1A1A1A, #0A0A0A)',
+      background: 'gradient-dark',
       content: (
         <div className="text-center">
           <h1 className="text-6xl font-bold mb-8 text-white">
@@ -107,7 +108,7 @@ export const mdmPresentation: Presentation = {
       title: 'Thank You',
       layout: 'centered',
       transition: { type: 'zoom' },
-      background: 'linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 50%, #2D2D2D 100%)',
+      background: 'gradient-dark',
       content: (
         <div className="text-center">
           <h1 className="text-6xl font-bold mb-8 text-white">

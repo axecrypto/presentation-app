@@ -33,8 +33,8 @@ export const Slide6 = () => {
       title: "Sample Data Loaded",
       description: "Realistic test data for immediate demos",
       icon: Database,
-      color: "from-green-500 to-green-600",
-      bgColor: "bg-green-50",
+      color: "from-blue-500 to-blue-600",
+      bgColor: "bg-blue-50",
       deliverables: [
         "10K+ synthetic customer records",
         "Product catalog data",
@@ -48,8 +48,8 @@ export const Slide6 = () => {
       title: "UI Screens for Stewards",
       description: "Ready-to-use data steward interfaces",
       icon: Monitor,
-      color: "from-purple-500 to-purple-600",
-      bgColor: "bg-purple-50",
+      color: "from-orange-500 to-orange-600",
+      bgColor: "bg-orange-50",
       deliverables: [
         "Search & browse interfaces",
         "Record update forms",
@@ -123,14 +123,14 @@ export const Slide6 = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white p-8 overflow-hidden relative">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-orange-500 to-purple-600 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-500 to-green-500 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-orange-500 to-blue-600 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-500 to-orange-500 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-orange-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
+          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-orange-400 via-blue-400 to-orange-400 bg-clip-text text-transparent">
             Deliverables Within the Hour
           </h1>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
@@ -140,10 +140,10 @@ export const Slide6 = () => {
 
         {/* Time Indicator */}
         <div className="flex justify-center mb-8">
-          <div className="bg-gradient-to-r from-green-500 to-blue-500 rounded-full px-8 py-3 flex items-center space-x-3">
+          <div className="bg-gradient-to-r from-blue-500 to-orange-500 rounded-full px-8 py-3 flex items-center space-x-3">
             <Clock size={24} className="text-white" />
             <span className="text-white font-bold text-lg">Setup Time: {configStats.setupTime}</span>
-            <Zap size={20} className="text-yellow-300" />
+            <Zap size={20} className="text-orange-300" />
           </div>
         </div>
 
@@ -195,7 +195,7 @@ export const Slide6 = () => {
                 <div className={`
                   absolute -top-3 -right-3 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300
                   ${isActive ? 
-                    'bg-green-500 text-white shadow-lg scale-110' : 
+                    'bg-blue-500 text-white shadow-lg scale-110' : 
                     'bg-slate-600 text-slate-300'
                   }
                 `}>
@@ -223,7 +223,7 @@ export const Slide6 = () => {
                   className="p-4 bg-slate-800/50 rounded-xl border border-slate-600 hover:border-slate-500 transition-all duration-300"
                 >
                   <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                    <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
                       <CheckCircle2 size={16} className="text-white" />
                     </div>
                     <span className="text-white font-medium">{deliverable}</span>
@@ -236,7 +236,7 @@ export const Slide6 = () => {
             {activeOutput === 2 && (
               <div className="mt-8">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center">
-                  <Play className="mr-2 text-green-400" size={24} />
+                  <Play className="mr-2 text-blue-400" size={24} />
                   Available Demo Scenarios
                 </h3>
                 
@@ -255,7 +255,7 @@ export const Slide6 = () => {
                     >
                       <div className="flex items-start justify-between mb-2">
                         <h4 className="font-semibold text-white">{demo.name}</h4>
-                        <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">
+                        <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
                           {demo.duration}
                         </span>
                       </div>
@@ -277,7 +277,7 @@ export const Slide6 = () => {
             {activeOutput === 3 && (
               <div className="mt-8">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center">
-                  <Code2 className="mr-2 text-purple-400" size={24} />
+                  <Code2 className="mr-2 text-orange-400" size={24} />
                   Package Contents
                 </h3>
                 
@@ -288,11 +288,11 @@ export const Slide6 = () => {
                       <div className="text-sm text-slate-400">Config Files</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-green-400">{configStats.codeLines.toLocaleString()}</div>
+                      <div className="text-2xl font-bold text-blue-400">{configStats.codeLines.toLocaleString()}</div>
                       <div className="text-sm text-slate-400">Lines of Code</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-purple-400">{configStats.configurations}</div>
+                      <div className="text-2xl font-bold text-orange-400">{configStats.configurations}</div>
                       <div className="text-sm text-slate-400">Configurations</div>
                     </div>
                     <div>
@@ -327,7 +327,7 @@ export const Slide6 = () => {
                   
                   <div>
                     <label className="text-sm text-slate-400 block mb-1">Duration</label>
-                    <div className="text-green-400 font-medium">{selectedDemo.duration}</div>
+                    <div className="text-blue-400 font-medium">{selectedDemo.duration}</div>
                   </div>
                   
                   <div>
@@ -342,7 +342,7 @@ export const Slide6 = () => {
                     </div>
                   </div>
                   
-                  <button className="w-full mt-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white py-2 px-4 rounded-lg hover:from-blue-600 hover:to-purple-600 transition-all duration-300 flex items-center justify-center">
+                  <button className="w-full mt-4 bg-gradient-to-r from-blue-500 to-orange-500 text-white py-2 px-4 rounded-lg hover:from-blue-600 hover:to-orange-600 transition-all duration-300 flex items-center justify-center">
                     <Play size={16} className="mr-2" />
                     Launch Demo
                   </button>
@@ -351,17 +351,17 @@ export const Slide6 = () => {
             ) : (
               <div className="bg-slate-800/50 backdrop-blur-lg rounded-2xl border border-slate-700 p-6">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center">
-                  <Download className="mr-2 text-green-400" size={24} />
+                  <Download className="mr-2 text-blue-400" size={24} />
                   Quick Actions
                 </h3>
                 
                 <div className="space-y-3">
-                  <button className="w-full bg-gradient-to-r from-green-500 to-blue-500 text-white py-3 px-4 rounded-lg hover:from-green-600 hover:to-blue-600 transition-all duration-300 flex items-center justify-center">
+                  <button className="w-full bg-gradient-to-r from-blue-500 to-orange-500 text-white py-3 px-4 rounded-lg hover:from-blue-600 hover:to-orange-600 transition-all duration-300 flex items-center justify-center">
                     <Download size={16} className="mr-2" />
                     Download Package
                   </button>
                   
-                  <button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 px-4 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 flex items-center justify-center">
+                  <button className="w-full bg-gradient-to-r from-orange-500 to-blue-500 text-white py-3 px-4 rounded-lg hover:from-orange-600 hover:to-blue-600 transition-all duration-300 flex items-center justify-center">
                     <Eye size={16} className="mr-2" />
                     Preview Environment
                   </button>
@@ -377,7 +377,7 @@ export const Slide6 = () => {
             {/* Summary Stats */}
             <div className="bg-slate-800/50 backdrop-blur-lg rounded-2xl border border-slate-700 p-6">
               <h3 className="text-lg font-bold text-white mb-4 flex items-center">
-                <Zap className="mr-2 text-yellow-400" size={20} />
+                <Zap className="mr-2 text-orange-400" size={20} />
                 Delivery Summary
               </h3>
               
@@ -388,7 +388,7 @@ export const Slide6 = () => {
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-slate-400 text-sm">Setup Time</span>
-                  <span className="text-green-400 font-bold">{configStats.setupTime}</span>
+                  <span className="text-blue-400 font-bold">{configStats.setupTime}</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-slate-400 text-sm">Demo Ready</span>
@@ -396,7 +396,7 @@ export const Slide6 = () => {
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-slate-400 text-sm">Production Ready</span>
-                  <span className="text-purple-400 font-bold">✓ Yes</span>
+                  <span className="text-orange-400 font-bold">✓ Yes</span>
                 </div>
               </div>
             </div>

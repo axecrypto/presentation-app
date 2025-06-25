@@ -1,0 +1,152 @@
+/* Informatica Official Brand Theme */
+
+:root {
+  /* Informatica Brand Colors */
+  --informatica-dark-orange: #FF4D00;
+  --informatica-orange: #FF7D00;
+  --informatica-red: #E23400;
+  --informatica-blue: #001AFF;
+  --informatica-gray: #373737;
+}
+
+/* Override our generic colors with Informatica brand colors */
+
+/* Orange overrides */
+.bg-orange-500 { background-color: #FF7D00 !important; }
+.bg-orange-600 { background-color: #FF4D00 !important; }
+.bg-orange-400 { background-color: #FFB366 !important; }
+.text-orange-400 { color: #FF7D00 !important; }
+.text-orange-500 { color: #FF4D00 !important; }
+.text-orange-600 { color: #E23400 !important; }
+.border-orange-500 { border-color: #FF7D00 !important; }
+
+/* Blue overrides - adjusted for better visibility */
+.bg-blue-500 { background-color: #0066FF !important; } /* Lightened from #001AFF */
+.bg-blue-600 { background-color: #0052CC !important; } /* Lightened from #0015CC */
+.bg-blue-400 { background-color: #4D94FF !important; } /* Lightened */
+.text-blue-400 { color: #4D94FF !important; } /* Lightened for dark backgrounds */
+.text-blue-500 { color: #0066FF !important; } /* Lightened */
+.text-blue-600 { color: #0052CC !important; } /* Lightened */
+.border-blue-500 { border-color: #0066FF !important; }
+
+/* Dark theme specific adjustments for better contrast */
+.dark-theme .text-blue-400 { color: #668AFF !important; }
+.dark-theme .text-blue-500 { color: #4D94FF !important; }
+
+/* Red overrides */
+.bg-red-500 { background-color: #E23400 !important; }
+.bg-red-600 { background-color: #B82A00 !important; }
+.text-red-400 { color: #FF5722 !important; }
+.text-red-500 { color: #E23400 !important; }
+
+/* Gray overrides */
+.bg-gray-600 { background-color: #373737 !important; }
+.bg-gray-700 { background-color: #2A2A2A !important; }
+.bg-gray-800 { background-color: #1F1F1F !important; }
+
+/* Informatica gradient backgrounds */
+.bg-gradient-informatica-orange {
+  background: linear-gradient(135deg, #FF4D00 0%, #FF7D00 100%) !important;
+}
+
+.bg-gradient-informatica-dark {
+  background: linear-gradient(135deg, #1A1A1A 0%, #0A0A0A 100%) !important;
+}
+
+.bg-gradient-informatica-hero {
+  background: linear-gradient(135deg, #0A0A0A 0%, #373737 50%, #0A0A0A 100%) !important;
+}
+
+/* Header gradients */
+.bg-gradient-to-r.from-orange-500.to-orange-600 {
+  background: linear-gradient(to right, #FF7D00, #FF4D00) !important;
+}
+
+.bg-gradient-to-r.from-blue-600.to-blue-700 {
+  background: linear-gradient(to right, #001AFF, #0015CC) !important;
+}
+
+/* Ensure white text on Informatica brand colors */
+.bg-orange-500 *,
+.bg-orange-600 *,
+.bg-blue-500 *,
+.bg-blue-600 *,
+.bg-red-500 * {
+  color: #FFFFFF !important;
+}
+
+/* Light theme adjustments for Informatica colors */
+.light-theme {
+  /* Use lighter variations of brand colors */
+  --informatica-orange-light: #FFB366;
+  --informatica-blue-light: #668AFF;
+  --informatica-gray-light: #8B8B8B;
+}
+
+.light-theme .bg-orange-50 { background-color: #FFF0E6 !important; }
+.light-theme .bg-blue-50 { background-color: #E6E8FF !important; }
+.light-theme .bg-orange-100 { background-color: #FFE0CC !important; }
+.light-theme .bg-blue-100 { background-color: #CCD1FF !important; }
+
+/* Dark theme adjustments */
+.dark-theme .bg-orange-50 { background-color: #4D1F00 !important; }
+.dark-theme .bg-blue-50 { background-color: #00084D !important; }
+
+/* Informatica-specific component styles */
+.informatica-card {
+  background: rgba(55, 55, 55, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 125, 0, 0.2);
+}
+
+.informatica-glow-orange {
+  box-shadow: 0 0 30px rgba(255, 77, 0, 0.3);
+}
+
+.informatica-glow-blue {
+  box-shadow: 0 0 30px rgba(0, 26, 255, 0.3);
+}
+
+/* Opacity backgrounds with Informatica colors */
+.bg-orange-900\/20 { background-color: rgba(255, 77, 0, 0.2) !important; }
+.bg-blue-900\/20 { background-color: rgba(0, 26, 255, 0.2) !important; }
+.bg-red-900\/20 { background-color: rgba(226, 52, 0, 0.2) !important; }
+
+/* Informatica brand gradients for presentations */
+.informatica-gradient-title {
+  background: linear-gradient(135deg, #0A0A0A 0%, #373737 100%);
+}
+
+.informatica-gradient-orange-subtle {
+  background: linear-gradient(135deg, rgba(255, 77, 0, 0.1) 0%, transparent 100%);
+}
+
+.informatica-gradient-blue-subtle {
+  background: linear-gradient(135deg, rgba(0, 26, 255, 0.1) 0%, transparent 100%);
+}
+
+/* Fix contrast issues in light theme */
+.light-theme .text-orange-500,
+.light-theme .text-orange-600 {
+  color: #CC3D00 !important; /* Darker orange for light backgrounds */
+}
+
+.light-theme .text-blue-500,
+.light-theme .text-blue-600 {
+  color: #0052CC !important; /* Darker blue for light backgrounds */
+}
+
+/* Ensure proper contrast for active/inactive states */
+.light-theme .bg-slate-700 .text-orange-400,
+.light-theme .bg-slate-700 .text-blue-400 {
+  color: #FFFFFF !important;
+}
+
+/* Fix gray visibility in dark theme */
+.dark-theme .bg-gray-600 {
+  background-color: #5C5C5C !important; /* Lighter gray for better contrast */
+}
+
+.dark-theme .text-gray-600 {
+  color: #8B8B8B !important; /* Lighter gray text */
+}

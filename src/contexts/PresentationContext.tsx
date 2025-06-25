@@ -6,11 +6,13 @@ interface PresentationContextType {
   currentSlideIndex: number;
   isPlaying: boolean;
   isFullscreen: boolean;
+  currentTheme: 'light' | 'dark';
   goToSlide: (index: number) => void;
   nextSlide: () => void;
   previousSlide: () => void;
   togglePlay: () => void;
   toggleFullscreen: () => void;
+  toggleTheme: () => void;
   setPresentation: (presentation: Presentation) => void;
 }
 
@@ -33,6 +35,7 @@ export const PresentationProvider: React.FC<PresentationProviderProps> = ({ chil
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [currentTheme, setCurrentTheme] = useState<'light' | 'dark'>('dark');
 
   const goToSlide = useCallback((index: number) => {
     if (presentation && index >= 0 && index < presentation.slides.length) {
@@ -76,6 +79,17 @@ export const PresentationProvider: React.FC<PresentationProviderProps> = ({ chil
     }
   }, []);
 
+  const toggleTheme = useCallback(() => {
+    setCurrentTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  }, []);
+
+  // Set initial theme when presentation changes
+  useEffect(() => {
+    if (presentation?.settings?.defaultTheme) {
+      setCurrentTheme(presentation.settings.defaultTheme);
+    }
+  }, [presentation]);
+
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       switch (e.key) {
@@ -92,6 +106,9 @@ export const PresentationProvider: React.FC<PresentationProviderProps> = ({ chil
         case 'p':
           togglePlay();
           break;
+        case 't':
+          toggleTheme();
+          break;
         case 'Escape':
           if (isFullscreen) {
             toggleFullscreen();
@@ -102,7 +119,7 @@ export const PresentationProvider: React.FC<PresentationProviderProps> = ({ chil
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [nextSlide, previousSlide, toggleFullscreen, togglePlay, isFullscreen]);
+  }, [nextSlide, previousSlide, toggleFullscreen, togglePlay, toggleTheme, isFullscreen]);
 
   useEffect(() => {
     if (isPlaying && presentation?.settings?.autoPlay) {
@@ -120,11 +137,13 @@ export const PresentationProvider: React.FC<PresentationProviderProps> = ({ chil
         currentSlideIndex,
         isPlaying,
         isFullscreen,
+        currentTheme,
         goToSlide,
         nextSlide,
         previousSlide,
         togglePlay,
         toggleFullscreen,
+        toggleTheme,
         setPresentation,
       }}
     >

@@ -45,7 +45,7 @@ export const SlideSummary = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-50">
       {/* Orange Header Bar */}
       <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white py-4 px-8">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -57,7 +57,7 @@ export const SlideSummary = () => {
       <div className="max-w-7xl mx-auto px-8 py-12">
         {/* Main Title */}
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-5xl font-bold text-gray-800 mb-4">
             What We Deliver in Under 1 Hour
           </h1>
           <p className="text-2xl text-gray-600 max-w-3xl mx-auto">
@@ -80,7 +80,7 @@ export const SlideSummary = () => {
                     <ItemIcon size={24} className="text-orange-500" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
+                    <h3 className="text-lg font-bold text-gray-800 mb-2">{item.title}</h3>
                     <p className="text-base text-gray-600 mb-2">{item.description}</p>
                     <div className="inline-flex items-center gap-1 text-sm font-semibold text-orange-600 bg-orange-50 px-3 py-1 rounded-full">
                       <CheckCircle size={12} />
@@ -95,7 +95,7 @@ export const SlideSummary = () => {
 
         {/* Process Timeline - Simplified */}
         <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-8 mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+          <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
             7-Step Automated Workflow
           </h2>
           
@@ -109,27 +109,27 @@ export const SlideSummary = () => {
               <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-xs">2</div>
               <span>Discover</span>
             </div>
-            <div className="flex-1 h-1 bg-gradient-to-r from-orange-500 to-purple-500"></div>
+            <div className="flex-1 h-1 bg-gradient-to-r from-orange-500 to-blue-500"></div>
             <div className="flex items-center gap-2 text-sm text-gray-700">
-              <div className="w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center font-bold text-xs">3</div>
+              <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-xs">3</div>
               <span>Profile</span>
             </div>
-            <div className="flex-1 h-1 bg-gradient-to-r from-purple-500 to-green-500"></div>
+            <div className="flex-1 h-1 bg-gradient-to-r from-blue-500 to-orange-500"></div>
             <div className="flex items-center gap-2 text-sm text-gray-700">
-              <div className="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-xs">4</div>
+              <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-xs">4</div>
               <span>Rules</span>
             </div>
-            <div className="flex-1 h-1 bg-gradient-to-r from-green-500 to-blue-500"></div>
+            <div className="flex-1 h-1 bg-gradient-to-r from-orange-500 to-blue-500"></div>
             <div className="flex items-center gap-2 text-sm text-gray-700">
               <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-xs">5</div>
               <span>UI</span>
             </div>
-            <div className="flex-1 h-1 bg-gradient-to-r from-blue-500 to-teal-500"></div>
+            <div className="flex-1 h-1 bg-gradient-to-r from-blue-500 to-orange-500"></div>
             <div className="flex items-center gap-2 text-sm text-gray-700">
-              <div className="w-8 h-8 bg-teal-500 text-white rounded-full flex items-center justify-center font-bold text-xs">6</div>
+              <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-xs">6</div>
               <span>Data</span>
             </div>
-            <div className="flex-1 h-1 bg-gradient-to-r from-teal-500 to-red-500"></div>
+            <div className="flex-1 h-1 bg-gradient-to-r from-orange-500 to-red-500"></div>
             <div className="flex items-center gap-2 text-sm text-gray-700">
               <div className="w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center font-bold text-xs">7</div>
               <span>Output</span>
@@ -145,7 +145,7 @@ export const SlideSummary = () => {
         <div className="bg-orange-50 rounded-2xl p-8 text-center border border-orange-200">
           <div className="flex items-center justify-center gap-8 flex-wrap">
             <div className="text-left">
-              <h3 className="text-3xl font-bold text-gray-900 mb-2">
+              <h3 className="text-3xl font-bold text-gray-800 mb-2">
                 From Requirements to Demo-Ready MDM
               </h3>
               <p className="text-lg text-gray-600">

@@ -24,9 +24,9 @@ export const Slide3 = () => {
       icon: Search,
       notes: "Suggest model structure & reusable config",
       description: "AI-powered matching against existing catalogs and templates",
-      color: "from-purple-500 to-purple-600", 
-      bgColor: "bg-purple-50",
-      actorColor: "text-purple-700"
+      color: "from-blue-500 to-blue-600", 
+      bgColor: "bg-blue-50",
+      actorColor: "text-blue-700"
     },
     {
       step: "Data Quality Profiling",
@@ -35,9 +35,9 @@ export const Slide3 = () => {
       icon: Shield,
       notes: "Ingestion checks + ongoing validations",
       description: "Automated data quality rule suggestions and profiling",
-      color: "from-green-500 to-green-600",
-      bgColor: "bg-green-50", 
-      actorColor: "text-green-700"
+      color: "from-blue-500 to-blue-600",
+      bgColor: "bg-blue-50", 
+      actorColor: "text-blue-700"
     },
     {
       step: "Match/Survivorship Logic",
@@ -190,7 +190,7 @@ export const Slide3 = () => {
                         p-2 rounded-lg transition-all duration-300
                         ${item.actorType === 'human' ? 
                           'bg-blue-100 text-blue-600' : 
-                          'bg-purple-100 text-purple-600'
+                          'bg-orange-100 text-orange-600'
                         }
                         ${isActive ? 'scale-110 shadow-lg' : ''}
                       `}>
@@ -207,7 +207,7 @@ export const Slide3 = () => {
                           text-xs px-2 py-1 rounded-full inline-block mt-1
                           ${item.actorType === 'human' ? 
                             'bg-blue-100 text-blue-700' : 
-                            'bg-purple-100 text-purple-700'
+                            'bg-orange-100 text-orange-700'
                           }
                         `}>
                           {item.actorType === 'human' ? 'Human' : 'AI Agent'}

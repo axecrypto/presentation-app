@@ -22,9 +22,9 @@ export const Slide2 = () => {
       subtitle: "Match Against Catalog",
       description: "AI-powered mapping to existing models",
       icon: Search,
-      color: "from-purple-500 to-purple-600",
-      bgColor: "bg-purple-50",
-      borderColor: "border-purple-200"
+      color: "from-blue-500 to-blue-600",
+      bgColor: "bg-blue-50",
+      borderColor: "border-blue-200"
     },
     {
       id: 3,
@@ -32,9 +32,9 @@ export const Slide2 = () => {
       subtitle: "External Agents",
       description: "Automated data quality rule suggestions",
       icon: Shield,
-      color: "from-green-500 to-green-600",
-      bgColor: "bg-green-50",
-      borderColor: "border-green-200"
+      color: "from-blue-500 to-blue-600",
+      bgColor: "bg-blue-50",
+      borderColor: "border-blue-200"
     },
     {
       id: 4,
@@ -52,9 +52,9 @@ export const Slide2 = () => {
       subtitle: "Screens & Workflows",
       description: "Data steward interfaces auto-generated",
       icon: Monitor,
-      color: "from-indigo-500 to-indigo-600",
-      bgColor: "bg-indigo-50",
-      borderColor: "border-indigo-200"
+      color: "from-orange-500 to-orange-600",
+      bgColor: "bg-orange-50",
+      borderColor: "border-orange-200"
     },
     {
       id: 6,
@@ -62,9 +62,9 @@ export const Slide2 = () => {
       subtitle: "Realistic Test Data",
       description: "Generated sample data for demos",
       icon: Database,
-      color: "from-teal-500 to-teal-600",
-      bgColor: "bg-teal-50",
-      borderColor: "border-teal-200"
+      color: "from-blue-500 to-blue-600",
+      bgColor: "bg-blue-50",
+      borderColor: "border-blue-200"
     },
     {
       id: 7,

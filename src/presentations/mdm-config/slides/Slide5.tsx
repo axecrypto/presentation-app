@@ -28,16 +28,16 @@ export const Slide5 = () => {
       title: "Daily Validation",
       description: "Ongoing checks for anomalies and data drift",
       icon: TrendingUp,
-      color: "from-green-500 to-green-600",
-      bgColor: "bg-green-50"
+      color: "from-blue-500 to-blue-600",
+      bgColor: "bg-blue-50"
     },
     {
       id: 3,
       title: "Match Rules",
       description: "Entity matching based on patterns and semantics",
       icon: Users,
-      color: "from-purple-500 to-purple-600",
-      bgColor: "bg-purple-50"
+      color: "from-orange-500 to-orange-600",
+      bgColor: "bg-orange-50"
     },
     {
       id: 4,
@@ -204,7 +204,7 @@ export const Slide5 = () => {
         return 'bg-red-100 text-red-800 border-red-200';
       case 'Warning':
       case 'Medium':
-        return 'bg-yellow-100 text-yellow-800 border-yellow-200';
+        return 'bg-orange-100 text-orange-800 border-orange-200';
       case 'Info':
       case 'Low':
         return 'bg-blue-100 text-blue-800 border-blue-200';
@@ -214,8 +214,8 @@ export const Slide5 = () => {
   };
 
   const getConfidenceColor = (confidence: number) => {
-    if (confidence >= 95) return 'text-green-400';
-    if (confidence >= 85) return 'text-yellow-400';
+    if (confidence >= 95) return 'text-blue-400';
+    if (confidence >= 85) return 'text-orange-400';
     return 'text-orange-400';
   };
 
@@ -223,14 +223,14 @@ export const Slide5 = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white p-8 overflow-hidden relative">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-orange-500 to-purple-600 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-500 to-green-500 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-orange-500 to-blue-600 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-500 to-orange-500 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-orange-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
+          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-orange-400 via-blue-400 to-orange-400 bg-clip-text text-transparent">
             Automated Suggestion of Critical MDM Rules
           </h1>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
@@ -303,7 +303,7 @@ export const Slide5 = () => {
           {/* Rules List */}
           <div className="lg:col-span-2 space-y-4">
             <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-              <Brain className="mr-3 text-purple-400" size={28} />
+              <Brain className="mr-3 text-blue-400" size={28} />
               {sections[activeSection].title} - AI Suggestions
             </h2>
             
@@ -342,12 +342,12 @@ export const Slide5 = () => {
                     </div>
                     <div>
                       <span className="text-slate-400">Field:</span>
-                      <span className="ml-2 text-green-300 font-medium">{rule.field}</span>
+                      <span className="ml-2 text-orange-300 font-medium">{rule.field}</span>
                     </div>
                   </div>
                   
                   <div className="mt-3 p-3 bg-slate-900/50 rounded-lg border border-slate-700">
-                    <code className="text-xs text-green-400 font-mono">{rule.pattern}</code>
+                    <code className="text-xs text-blue-400 font-mono">{rule.pattern}</code>
                   </div>
                 </div>
               ))}
@@ -376,7 +376,7 @@ export const Slide5 = () => {
                   
                   <div>
                     <label className="text-sm text-slate-400 block mb-1">Target Field</label>
-                    <div className="text-green-300 font-medium">{selectedRule.field}</div>
+                    <div className="text-orange-300 font-medium">{selectedRule.field}</div>
                   </div>
                   
                   <div>
@@ -416,7 +416,7 @@ export const Slide5 = () => {
             {/* Rule Statistics */}
             <div className="bg-slate-800/50 backdrop-blur-lg rounded-2xl border border-slate-700 p-6">
               <h3 className="text-lg font-bold text-white mb-4 flex items-center">
-                <Zap className="mr-2 text-yellow-400" size={20} />
+                <Zap className="mr-2 text-orange-400" size={20} />
                 Rule Statistics
               </h3>
               
@@ -427,7 +427,7 @@ export const Slide5 = () => {
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-slate-400 text-sm">Avg Confidence</span>
-                  <span className="text-green-400 font-bold">
+                  <span className="text-blue-400 font-bold">
                     {dqRules[activeSection] ? 
                       Math.round(dqRules[activeSection].reduce((acc, rule) => acc + rule.confidence, 0) / dqRules[activeSection].length) : 0}%
                   </span>
