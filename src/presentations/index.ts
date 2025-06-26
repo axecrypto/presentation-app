@@ -3,6 +3,7 @@ import { samplePresentation } from './samplePresentation';
 import { mdmPresentation } from './mdm-config';
 import { processFrameworkPresentation } from './process-framework';
 import { meteringUpdatePresentation } from './metering-update';
+import { dataMatchingPresentation } from './data-matching';
 
 export interface PresentationMetadata {
   id: string;
@@ -62,9 +63,20 @@ export const presentations: Record<string, PresentationEntry> = {
       description: 'Executive Overview - Discovery & Alignment Phase',
       author: 'Platform Team',
       tags: ['metering', 'platform', 'monetization', 'analytics'],
-      duration: '8 slides',
+      duration: '9 slides',
     },
     presentation: meteringUpdatePresentation,
+  },
+  'data-matching': {
+    metadata: {
+      id: 'data-matching',
+      title: 'Data Matching',
+      description: 'The Hidden Cost of Duplicate Data',
+      author: 'MDM Team',
+      tags: ['data-matching', 'MDM', 'data-quality', 'sales-enablement'],
+      duration: '3 slides',
+    },
+    presentation: dataMatchingPresentation,
   },
 };
 

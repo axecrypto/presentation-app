@@ -12,9 +12,9 @@ export const Slide2 = () => {
       subtitle: "Use Case Document",
       description: "Business domains, entities, processes, sources",
       icon: FileText,
-      color: "from-blue-500 to-blue-600",
-      bgColor: "bg-blue-50",
-      borderColor: "border-blue-200"
+      color: "bg-accent-blue",
+      bgColor: "bg-surface",
+      borderColor: "border-accent-blue border-opacity-30"
     },
     {
       id: 2,
@@ -22,9 +22,9 @@ export const Slide2 = () => {
       subtitle: "Match Against Catalog",
       description: "AI-powered mapping to existing models",
       icon: Search,
-      color: "from-blue-500 to-blue-600",
-      bgColor: "bg-blue-50",
-      borderColor: "border-blue-200"
+      color: "bg-accent-blue",
+      bgColor: "bg-surface",
+      borderColor: "border-accent-blue border-opacity-30"
     },
     {
       id: 3,
@@ -32,9 +32,9 @@ export const Slide2 = () => {
       subtitle: "External Agents",
       description: "Automated data quality rule suggestions",
       icon: Shield,
-      color: "from-blue-500 to-blue-600",
-      bgColor: "bg-blue-50",
-      borderColor: "border-blue-200"
+      color: "bg-accent-blue",
+      bgColor: "bg-surface",
+      borderColor: "border-accent-blue border-opacity-30"
     },
     {
       id: 4,
@@ -42,9 +42,9 @@ export const Slide2 = () => {
       subtitle: "Pattern-Based Auto-Gen",
       description: "Intelligent rule generation from patterns",
       icon: GitMerge,
-      color: "from-orange-500 to-orange-600",
-      bgColor: "bg-orange-50",
-      borderColor: "border-orange-200"
+      color: "bg-accent-orange",
+      bgColor: "bg-surface",
+      borderColor: "border-accent-orange border-opacity-30"
     },
     {
       id: 5,
@@ -52,9 +52,9 @@ export const Slide2 = () => {
       subtitle: "Screens & Workflows",
       description: "Data steward interfaces auto-generated",
       icon: Monitor,
-      color: "from-orange-500 to-orange-600",
-      bgColor: "bg-orange-50",
-      borderColor: "border-orange-200"
+      color: "bg-accent-orange",
+      bgColor: "bg-surface",
+      borderColor: "border-accent-orange border-opacity-30"
     },
     {
       id: 6,
@@ -62,9 +62,9 @@ export const Slide2 = () => {
       subtitle: "Realistic Test Data",
       description: "Generated sample data for demos",
       icon: Database,
-      color: "from-blue-500 to-blue-600",
-      bgColor: "bg-blue-50",
-      borderColor: "border-blue-200"
+      color: "bg-accent-blue",
+      bgColor: "bg-surface",
+      borderColor: "border-accent-blue border-opacity-30"
     },
     {
       id: 7,
