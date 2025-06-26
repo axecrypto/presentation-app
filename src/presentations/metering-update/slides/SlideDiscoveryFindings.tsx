@@ -95,14 +95,14 @@ export const SlideDiscoveryFindings = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-900 text-white p-8">
+    <div className="min-h-screen bg-primary text-primary p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-10">
           <h1 className="text-5xl font-bold mb-4">
-            Discovery <span className="text-blue-400">Findings</span>
+            Discovery <span className="text-accent-blue">Findings</span>
           </h1>
-          <p className="text-xl text-slate-300">
+          <p className="text-xl text-secondary">
             Key insights from architecture review and stakeholder interviews
           </p>
         </div>
@@ -118,8 +118,8 @@ export const SlideDiscoveryFindings = () => {
                 className={`
                   flex items-center gap-2 px-6 py-3 rounded-lg font-bold transition-all duration-300
                   ${activeTab === index ? 
-                    'bg-blue-600 text-white shadow-lg scale-105' : 
-                    'bg-slate-800 text-slate-300 hover:bg-slate-700'
+                    'bg-accent-blue text-white shadow-lg scale-105' : 
+                    'bg-surface text-secondary hover:bg-elevated'
                   }
                 `}
               >
@@ -133,28 +133,28 @@ export const SlideDiscoveryFindings = () => {
         {/* Active Category Findings */}
         <div className="grid grid-cols-1 gap-6 mb-8">
           {findings[activeTab].discoveries.map((discovery, index) => (
-            <div key={index} className="bg-slate-800/50 backdrop-blur-lg rounded-xl p-6 border border-slate-700">
+            <div key={index} className="bg-surface bg-opacity-50 backdrop-blur-lg rounded-xl p-6 border border-default">
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 <div>
-                  <h3 className="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                    <Lightbulb size={20} className="text-orange-400" />
+                  <h3 className="text-lg font-bold text-primary mb-2 flex items-center gap-2">
+                    <Lightbulb size={20} className="text-accent-orange" />
                     {discovery.title}
                   </h3>
-                  <p className="text-slate-300">{discovery.finding}</p>
+                  <p className="text-secondary">{discovery.finding}</p>
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-red-400 mb-2 flex items-center gap-2">
+                  <h4 className="text-sm font-bold text-red-500 mb-2 flex items-center gap-2">
                     <AlertTriangle size={16} />
                     Impact
                   </h4>
-                  <p className="text-slate-300">{discovery.impact}</p>
+                  <p className="text-secondary">{discovery.impact}</p>
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-blue-400 mb-2 flex items-center gap-2">
+                  <h4 className="text-sm font-bold text-accent-blue mb-2 flex items-center gap-2">
                     <TrendingUp size={16} />
                     Recommendation
                   </h4>
-                  <p className="text-slate-300">{discovery.recommendation}</p>
+                  <p className="text-secondary">{discovery.recommendation}</p>
                 </div>
               </div>
             </div>
@@ -162,23 +162,23 @@ export const SlideDiscoveryFindings = () => {
         </div>
 
         {/* Meter Types Identified */}
-        <div className="bg-slate-800/50 backdrop-blur-lg rounded-xl p-6 border border-slate-700">
+        <div className="bg-surface bg-opacity-50 backdrop-blur-lg rounded-xl p-6 border border-default">
           <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-            <BarChart className="text-blue-400" />
+            <BarChart className="text-accent-blue" />
             Meter Types Identified
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {meeterTypes.map((meter, index) => (
-              <div key={index} className="flex items-center justify-between p-4 bg-slate-700/50 rounded-lg">
+              <div key={index} className="flex items-center justify-between p-4 bg-muted bg-opacity-50 rounded-lg">
                 <div>
-                  <h4 className="font-bold text-white">{meter.type}</h4>
-                  <p className="text-sm text-slate-400">{meter.example}</p>
+                  <h4 className="font-bold text-primary">{meter.type}</h4>
+                  <p className="text-sm text-muted">{meter.example}</p>
                 </div>
                 <span className={`
                   px-3 py-1 rounded-full text-xs font-bold
                   ${meter.priority === 'Critical' ? 'bg-red-500 text-white' :
-                    meter.priority === 'High' ? 'bg-orange-500 text-white' :
-                    'bg-blue-500 text-white'
+                    meter.priority === 'High' ? 'bg-accent-orange text-white' :
+                    'bg-accent-blue text-white'
                   }
                 `}>
                   {meter.priority}
@@ -189,9 +189,9 @@ export const SlideDiscoveryFindings = () => {
         </div>
 
         {/* Key Takeaway */}
-        <div className="mt-8 bg-blue-900/20 backdrop-blur-lg rounded-xl p-6 border border-blue-500/30">
-          <h3 className="text-xl font-bold text-white mb-3">Key Takeaway</h3>
-          <p className="text-blue-300">
+        <div className="mt-8 bg-accent-blue bg-opacity-10 backdrop-blur-lg rounded-xl p-6 border border-accent-blue border-opacity-30">
+          <h3 className="text-xl font-bold text-primary mb-3">Key Takeaway</h3>
+          <p className="text-accent-blue">
             We have the vision and partial technical foundation, but need focused execution 
             on service integration and organizational alignment to deliver value quickly.
           </p>

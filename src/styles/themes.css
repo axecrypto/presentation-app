@@ -140,3 +140,62 @@
 .bg-red-600 * {
   color: white !important;
 }
+
+/* Utility classes for transparent backgrounds */
+.bg-accent-orange.bg-opacity-10 { 
+  background-color: rgba(255, 77, 0, 0.1) !important; 
+}
+.bg-accent-blue.bg-opacity-10 { 
+  background-color: rgba(0, 102, 255, 0.1) !important; 
+}
+.dark-theme .bg-accent-orange.bg-opacity-10 { 
+  background-color: rgba(255, 77, 0, 0.15) !important; 
+}
+.dark-theme .bg-accent-blue.bg-opacity-10 { 
+  background-color: rgba(77, 148, 255, 0.15) !important; 
+}
+
+/* Border opacity utilities */
+.border-accent-orange.border-opacity-30 {
+  border-color: rgba(255, 77, 0, 0.3) !important;
+}
+.border-accent-blue.border-opacity-30 {
+  border-color: rgba(0, 102, 255, 0.3) !important;
+}
+.dark-theme .border-accent-orange.border-opacity-30 {
+  border-color: rgba(255, 125, 0, 0.3) !important;
+}
+.dark-theme .border-accent-blue.border-opacity-30 {
+  border-color: rgba(77, 148, 255, 0.3) !important;
+}
+
+/* Red color opacity utilities */
+.bg-red-500.bg-opacity-10 {
+  background-color: rgba(226, 52, 0, 0.1) !important;
+}
+.dark-theme .bg-red-500.bg-opacity-10 {
+  background-color: rgba(226, 52, 0, 0.15) !important;
+}
+.border-red-500.border-opacity-30 {
+  border-color: rgba(226, 52, 0, 0.3) !important;
+}
+
+/* Glassmorphism support */
+.bg-surface.bg-opacity-50 {
+  background-color: rgba(248, 249, 250, 0.5) !important;
+}
+.dark-theme .bg-surface.bg-opacity-50 {
+  background-color: rgba(30, 41, 59, 0.5) !important;
+}
+.bg-muted.bg-opacity-50 {
+  background-color: rgba(233, 236, 239, 0.5) !important;
+}
+.dark-theme .bg-muted.bg-opacity-50 {
+  background-color: rgba(71, 85, 105, 0.5) !important;
+}
+.border-default.hover\:border-opacity-80:hover {
+  border-color: rgba(222, 226, 230, 0.8) !important;
+}
+.dark-theme .border-default.hover\:border-opacity-80:hover {
+  border-color: rgba(51, 65, 85, 0.8) !important;
+}

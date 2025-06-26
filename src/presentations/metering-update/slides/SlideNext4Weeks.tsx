@@ -111,14 +111,14 @@ export const SlideNext4Weeks = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-900 text-white p-8">
+    <div className="min-h-screen bg-primary text-primary p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-10">
           <h1 className="text-5xl font-bold mb-4">
-            Next <span className="text-orange-500">4-6 Weeks</span>
+            Next <span className="text-accent-orange">4-6 Weeks</span>
           </h1>
-          <p className="text-xl text-slate-300">
+          <p className="text-xl text-secondary">
             Critical path to platform-wide metering capability
           </p>
         </div>
@@ -139,23 +139,23 @@ export const SlideNext4Weeks = () => {
                     <div className={`
                       w-16 h-16 rounded-full flex items-center justify-center transition-all duration-300
                       ${isActive ? 
-                        'bg-orange-500 scale-110 shadow-lg' : 
-                        'bg-slate-700 hover:bg-slate-600'
+                        'bg-accent-orange scale-110 shadow-lg' : 
+                        'bg-muted hover:bg-elevated'
                       }
                     `}>
                       <WeekIcon size={24} className="text-white" />
                     </div>
                     <div className="mt-2 text-center">
-                      <div className={`text-sm font-bold ${isActive ? 'text-orange-400' : 'text-slate-300'}`}>
+                      <div className={`text-sm font-bold ${isActive ? 'text-accent-orange' : 'text-secondary'}`}>
                         {week.week}
                       </div>
-                      <div className={`text-xs ${isActive ? 'text-slate-200' : 'text-slate-500'} max-w-[100px]`}>
+                      <div className={`text-xs ${isActive ? 'text-secondary' : 'text-muted'} max-w-[100px]`}>
                         {week.focus}
                       </div>
                     </div>
                   </div>
                   {index < weeklyPlan.length - 1 && (
-                    <div className="flex-1 h-0.5 bg-slate-700 relative top-[-24px]" />
+                    <div className="flex-1 h-0.5 bg-muted relative top-[-24px]" />
                   )}
                 </React.Fragment>
               );
@@ -165,49 +165,49 @@ export const SlideNext4Weeks = () => {
 
         {/* Selected Week Details */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-          <div className="bg-slate-800/50 backdrop-blur-lg rounded-xl p-6 border border-slate-700">
-            <h2 className="text-2xl font-bold mb-4 text-white">
+          <div className="bg-surface bg-opacity-50 backdrop-blur-lg rounded-xl p-6 border border-default">
+            <h2 className="text-2xl font-bold mb-4 text-primary">
               {weeklyPlan[selectedWeek].week}: {weeklyPlan[selectedWeek].focus}
             </h2>
             <div className="space-y-3 mb-6">
               {weeklyPlan[selectedWeek].deliverables.map((deliverable, idx) => (
                 <div key={idx} className="flex items-start gap-3">
-                  <CheckCircle size={16} className="text-blue-400 mt-1 flex-shrink-0" />
-                  <span className="text-slate-300">{deliverable}</span>
+                  <CheckCircle size={16} className="text-accent-blue mt-1 flex-shrink-0" />
+                  <span className="text-secondary">{deliverable}</span>
                 </div>
               ))}
             </div>
-            <div className="flex items-center justify-between pt-4 border-t border-slate-700">
+            <div className="flex items-center justify-between pt-4 border-t border-default">
               <div>
-                <p className="text-sm text-slate-400">Owners</p>
-                <p className="text-white font-bold">{weeklyPlan[selectedWeek].owners.join(", ")}</p>
+                <p className="text-sm text-muted">Owners</p>
+                <p className="text-primary font-bold">{weeklyPlan[selectedWeek].owners.join(", ")}</p>
               </div>
               <div className="text-right">
-                <p className="text-sm text-slate-400">Milestone</p>
-                <p className="text-blue-400 font-bold">{weeklyPlan[selectedWeek].milestone}</p>
+                <p className="text-sm text-muted">Milestone</p>
+                <p className="text-accent-blue font-bold">{weeklyPlan[selectedWeek].milestone}</p>
               </div>
             </div>
           </div>
 
           {/* Critical Path Visualization */}
-          <div className="bg-slate-800/50 backdrop-blur-lg rounded-xl p-6 border border-slate-700">
-            <h3 className="text-xl font-bold mb-4 text-white">Dependencies & Risks</h3>
+          <div className="bg-surface bg-opacity-50 backdrop-blur-lg rounded-xl p-6 border border-default">
+            <h3 className="text-xl font-bold mb-4 text-primary">Dependencies & Risks</h3>
             <div className="space-y-4">
-              <div className="p-4 bg-red-900/20 rounded-lg border border-red-500/30">
-                <h4 className="font-bold text-red-400 mb-2">Critical Dependency</h4>
-                <p className="text-sm text-slate-300">
+              <div className="p-4 bg-red-500 bg-opacity-10 rounded-lg border border-red-500 border-opacity-30">
+                <h4 className="font-bold text-red-500 mb-2">Critical Dependency</h4>
+                <p className="text-sm text-secondary">
                   Technical design must be finalized before service onboarding can begin at scale
                 </p>
               </div>
-              <div className="p-4 bg-orange-900/20 rounded-lg border border-orange-500/30">
-                <h4 className="font-bold text-orange-400 mb-2">Resource Risk</h4>
-                <p className="text-sm text-slate-300">
+              <div className="p-4 bg-accent-orange bg-opacity-10 rounded-lg border border-accent-orange border-opacity-30">
+                <h4 className="font-bold text-accent-orange mb-2">Resource Risk</h4>
+                <p className="text-sm text-secondary">
                   Engineering teams need dedicated capacity - competing with Q1 feature delivery
                 </p>
               </div>
-              <div className="p-4 bg-blue-900/20 rounded-lg border border-blue-500/30">
-                <h4 className="font-bold text-blue-400 mb-2">Success Factor</h4>
-                <p className="text-sm text-slate-300">
+              <div className="p-4 bg-accent-blue bg-opacity-10 rounded-lg border border-accent-blue border-opacity-30">
+                <h4 className="font-bold text-accent-blue mb-2">Success Factor</h4>
+                <p className="text-sm text-secondary">
                   Executive sponsorship critical for cross-team prioritization
                 </p>
               </div>
@@ -216,21 +216,21 @@ export const SlideNext4Weeks = () => {
         </div>
 
         {/* 5 Critical Tasks */}
-        <div className="bg-slate-800/50 backdrop-blur-lg rounded-xl p-6 border border-slate-700">
-          <h2 className="text-2xl font-bold mb-6 text-white">5 Critical Tasks</h2>
+        <div className="bg-surface bg-opacity-50 backdrop-blur-lg rounded-xl p-6 border border-default">
+          <h2 className="text-2xl font-bold mb-6 text-primary">5 Critical Tasks</h2>
           <div className="space-y-4">
             {criticalTasks.map((item, index) => (
-              <div key={index} className="border-l-4 border-orange-500 pl-4">
-                <h3 className="font-bold text-white mb-2">{item.task}</h3>
+              <div key={index} className="border-l-4 border-accent-orange pl-4">
+                <h3 className="font-bold text-primary mb-2">{item.task}</h3>
                 <ul className="space-y-1 mb-2">
                   {item.details.map((detail, idx) => (
-                    <li key={idx} className="text-sm text-slate-300 flex items-start gap-2">
-                      <span className="text-orange-400 mt-1">•</span>
+                    <li key={idx} className="text-sm text-secondary flex items-start gap-2">
+                      <span className="text-accent-orange mt-1">•</span>
                       <span>{detail}</span>
                     </li>
                   ))}
                 </ul>
-                <p className="text-sm text-blue-400 font-medium">
+                <p className="text-sm text-accent-blue font-medium">
                   Impact: {item.impact}
                 </p>
               </div>

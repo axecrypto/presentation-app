@@ -97,12 +97,12 @@ export const SlideAsksBenefits = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-surface">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-4 px-8">
+      <div className="bg-gradient-accent py-4 px-8">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <h2 className="text-2xl font-bold">What We Need & What You Get</h2>
-          <div className="text-sm opacity-90">Investment & Returns</div>
+          <h2 className="text-2xl font-bold text-white">What We Need & What You Get</h2>
+          <div className="text-sm text-white opacity-90">Investment & Returns</div>
         </div>
       </div>
 
@@ -111,23 +111,23 @@ export const SlideAsksBenefits = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           {/* Asks Section */}
           <div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-6 flex items-center gap-2">
-              <HandshakeIcon className="text-blue-600" />
+            <h2 className="text-3xl font-bold text-primary mb-6 flex items-center gap-2">
+              <HandshakeIcon className="text-accent-blue" />
               What We Need
             </h2>
             <div className="space-y-4">
               {asks.map((ask, index) => {
                 const AskIcon = ask.icon;
                 return (
-                  <div key={index} className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
-                    <h3 className="text-lg font-bold text-gray-800 mb-3 flex items-center gap-2">
-                      <AskIcon size={20} className="text-blue-600" />
+                  <div key={index} className="bg-elevated rounded-xl p-6 border border-default shadow-default">
+                    <h3 className="text-lg font-bold text-primary mb-3 flex items-center gap-2">
+                      <AskIcon size={20} className="text-accent-blue" />
                       {ask.category}
                     </h3>
                     <ul className="space-y-2">
                       {ask.items.map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-gray-600">
-                          <span className="text-blue-500 mt-1">•</span>
+                        <li key={idx} className="flex items-start gap-2 text-secondary">
+                          <span className="text-accent-blue mt-1">•</span>
                           <span>{item}</span>
                         </li>
                       ))}
@@ -140,25 +140,25 @@ export const SlideAsksBenefits = () => {
 
           {/* Benefits Section */}
           <div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-6 flex items-center gap-2">
-              <TrendingUp className="text-blue-600" />
+            <h2 className="text-3xl font-bold text-primary mb-6 flex items-center gap-2">
+              <TrendingUp className="text-accent-blue" />
               What You Get
             </h2>
             <div className="space-y-4">
               {benefits.map((benefit, index) => {
                 const BenefitIcon = benefit.icon;
                 return (
-                  <div key={index} className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
-                    <h3 className={`text-lg font-bold text-gray-800 mb-3 flex items-center gap-2`}>
-                      <BenefitIcon size={20} className={`text-${benefit.color}-600`} />
+                  <div key={index} className="bg-elevated rounded-xl p-6 border border-default shadow-default">
+                    <h3 className="text-lg font-bold text-primary mb-3 flex items-center gap-2">
+                      <BenefitIcon size={20} className={benefit.color === 'orange' ? 'text-accent-orange' : 'text-accent-blue'} />
                       {benefit.timeframe}
                     </h3>
                     <div className="space-y-3">
                       {benefit.items.map((item, idx) => (
-                        <div key={idx} className="border-l-2 border-gray-200 pl-4">
-                          <h4 className="font-semibold text-gray-800">{item.benefit}</h4>
-                          <p className="text-sm text-gray-600">{item.impact}</p>
-                          <p className={`text-sm font-bold text-${benefit.color}-600`}>{item.value}</p>
+                        <div key={idx} className="border-l-2 border-default pl-4">
+                          <h4 className="font-semibold text-primary">{item.benefit}</h4>
+                          <p className="text-sm text-secondary">{item.impact}</p>
+                          <p className={`text-sm font-bold ${benefit.color === 'orange' ? 'text-accent-orange' : 'text-accent-blue'}`}>{item.value}</p>
                         </div>
                       ))}
                     </div>
@@ -170,44 +170,44 @@ export const SlideAsksBenefits = () => {
         </div>
 
         {/* ROI Summary */}
-        <div className="bg-gradient-to-r from-blue-50 to-blue-50 rounded-2xl p-8 border border-blue-200">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center flex items-center justify-center gap-2">
-            <Award className="text-blue-600" />
+        <div className="bg-accent-blue bg-opacity-10 rounded-2xl p-8 border border-accent-blue border-opacity-30">
+          <h2 className="text-2xl font-bold text-primary mb-6 text-center flex items-center justify-center gap-2">
+            <Award className="text-accent-blue" />
             Return on Investment
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="text-center">
-              <p className="text-sm text-gray-600 mb-1">Total Investment</p>
-              <p className="text-2xl font-bold text-red-600">{roi.investment}</p>
+              <p className="text-sm text-secondary mb-1">Total Investment</p>
+              <p className="text-2xl font-bold text-red-500">{roi.investment}</p>
             </div>
             <div className="text-center">
-              <p className="text-sm text-gray-600 mb-1">Year 1 Return</p>
-              <p className="text-2xl font-bold text-blue-600">{roi.yearOneReturn}</p>
+              <p className="text-sm text-secondary mb-1">Year 1 Return</p>
+              <p className="text-2xl font-bold text-accent-blue">{roi.yearOneReturn}</p>
             </div>
             <div className="text-center">
-              <p className="text-sm text-gray-600 mb-1">Payback Period</p>
-              <p className="text-2xl font-bold text-blue-600">{roi.paybackPeriod}</p>
+              <p className="text-sm text-secondary mb-1">Payback Period</p>
+              <p className="text-2xl font-bold text-accent-blue">{roi.paybackPeriod}</p>
             </div>
             <div className="text-center">
-              <p className="text-sm text-gray-600 mb-1">3-Year ROI</p>
-              <p className="text-2xl font-bold text-orange-600">{roi.threeYearROI}</p>
+              <p className="text-sm text-secondary mb-1">3-Year ROI</p>
+              <p className="text-2xl font-bold text-accent-orange">{roi.threeYearROI}</p>
             </div>
           </div>
         </div>
 
         {/* Call to Action */}
-        <div className="mt-8 bg-blue-600 rounded-xl p-8 text-center">
+        <div className="mt-8 bg-accent-blue rounded-xl p-8 text-center">
           <h3 className="text-2xl font-bold text-white mb-4">
             Ready to Transform Our Platform?
           </h3>
-          <p className="text-lg text-blue-100 mb-6">
+          <p className="text-lg text-white opacity-90 mb-6">
             Every week of delay costs us $50K in lost opportunities and inefficiencies
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-3 bg-white text-blue-600 rounded-lg font-bold hover:bg-blue-50 transition-colors">
+            <button className="px-8 py-3 bg-white text-accent-blue rounded-lg font-bold hover:bg-opacity-90 transition-colors">
               Approve Resources
             </button>
-            <button className="px-8 py-3 bg-blue-700 text-white rounded-lg font-bold hover:bg-blue-800 transition-colors">
+            <button className="px-8 py-3 bg-black bg-opacity-20 text-white rounded-lg font-bold hover:bg-opacity-30 transition-colors">
               Schedule Deep Dive
             </button>
           </div>

@@ -109,17 +109,17 @@ export const SlideCurrentStatus = () => {
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'aligned':
-        return { bg: 'bg-blue-500', text: 'text-white', border: 'border-blue-400' };
+        return { bg: 'bg-accent-blue', text: 'text-white', border: 'border-accent-blue' };
       case 'in-progress':
-        return { bg: 'bg-orange-500', text: 'text-white', border: 'border-orange-400' };
+        return { bg: 'bg-accent-orange', text: 'text-white', border: 'border-accent-orange' };
       case 'started':
-        return { bg: 'bg-blue-500', text: 'text-white', border: 'border-blue-400' };
+        return { bg: 'bg-accent-blue', text: 'text-white', border: 'border-accent-blue' };
       case 'incomplete':
-        return { bg: 'bg-red-500', text: 'text-white', border: 'border-red-400' };
+        return { bg: 'bg-red-500', text: 'text-white', border: 'border-red-500' };
       case 'later-phase':
-        return { bg: 'bg-gray-500', text: 'text-white', border: 'border-gray-400' };
+        return { bg: 'bg-gray-500', text: 'text-white', border: 'border-gray-500' };
       default:
-        return { bg: 'bg-gray-100', text: 'text-gray-800', border: 'border-gray-300' };
+        return { bg: 'bg-muted', text: 'text-primary', border: 'border-default' };
     }
   };
 
@@ -139,14 +139,14 @@ export const SlideCurrentStatus = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 text-white p-8">
+    <div className="min-h-screen bg-primary text-primary p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-10">
           <h1 className="text-5xl font-bold mb-4">
-            Where We Are <span className="text-blue-400">Today</span>
+            Where We Are <span className="text-accent-blue">Today</span>
           </h1>
-          <p className="text-xl text-slate-300">
+          <p className="text-xl text-secondary">
             Current Phase: Discovery & Alignment
           </p>
         </div>
@@ -166,26 +166,26 @@ export const SlideCurrentStatus = () => {
                 className={`
                   relative p-4 rounded-xl border-2 cursor-pointer transition-all duration-300
                   ${isSelected ? 
-                    'bg-slate-700 border-blue-500 scale-105 shadow-xl' : 
-                    'bg-slate-800/50 border-slate-600 hover:border-slate-500'
+                    'bg-elevated border-accent-blue scale-105 shadow-xl' : 
+                    'bg-surface bg-opacity-50 border-default hover:border-opacity-80'
                   }
                 `}
               >
                 <div className="flex items-start justify-between mb-3">
-                  <div className="p-2 bg-slate-700 rounded-lg">
-                    <ItemIcon size={20} className="text-white" />
+                  <div className="p-2 bg-muted rounded-lg">
+                    <ItemIcon size={20} className="text-primary" />
                   </div>
                   <StatusIcon size={20} className={colors.text} />
                 </div>
                 
-                <h3 className="font-bold text-white mb-2 text-sm">{item.area}</h3>
+                <h3 className="font-bold text-primary mb-2 text-sm">{item.area}</h3>
                 
                 {/* Progress Bar */}
-                <div className="w-full bg-slate-700 rounded-full h-2 mb-3">
+                <div className="w-full bg-muted rounded-full h-2 mb-3">
                   <div 
                     className={`h-2 rounded-full transition-all duration-500 ${
-                      item.progress === 100 ? 'bg-blue-500' :
-                      item.progress >= 50 ? 'bg-orange-500' :
+                      item.progress === 100 ? 'bg-accent-blue' :
+                      item.progress >= 50 ? 'bg-accent-orange' :
                       'bg-red-500'
                     }`}
                     style={{ width: `${item.progress}%` }}
@@ -205,26 +205,26 @@ export const SlideCurrentStatus = () => {
 
         {/* Selected Area Details */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="bg-slate-800/50 backdrop-blur-lg rounded-xl p-6 border border-slate-700">
-            <h2 className="text-2xl font-bold mb-4 text-white">
+          <div className="bg-surface bg-opacity-50 backdrop-blur-lg rounded-xl p-6 border border-default">
+            <h2 className="text-2xl font-bold mb-4 text-primary">
               {statusData[selectedArea].area}
             </h2>
-            <p className="text-slate-300 mb-4">
+            <p className="text-secondary mb-4">
               {statusData[selectedArea].notes}
             </p>
             <div className="flex items-center gap-4 mb-4">
               <div className="flex-1">
                 <div className="flex justify-between items-center mb-1">
-                  <span className="text-sm text-slate-400">Progress</span>
-                  <span className="text-sm font-bold text-white">
+                  <span className="text-sm text-muted">Progress</span>
+                  <span className="text-sm font-bold text-primary">
                     {statusData[selectedArea].progress}%
                   </span>
                 </div>
-                <div className="w-full bg-slate-700 rounded-full h-3">
+                <div className="w-full bg-muted rounded-full h-3">
                   <div 
                     className={`h-3 rounded-full transition-all duration-500 ${
-                      statusData[selectedArea].progress === 100 ? 'bg-blue-500' :
-                      statusData[selectedArea].progress >= 50 ? 'bg-orange-500' :
+                      statusData[selectedArea].progress === 100 ? 'bg-accent-blue' :
+                      statusData[selectedArea].progress >= 50 ? 'bg-accent-orange' :
                       'bg-red-500'
                     }`}
                     style={{ width: `${statusData[selectedArea].progress}%` }}
@@ -235,34 +235,34 @@ export const SlideCurrentStatus = () => {
             <div className="space-y-2">
               {statusData[selectedArea].details.map((detail, idx) => (
                 <div key={idx} className="flex items-center gap-2">
-                  <CheckCircle size={16} className="text-blue-400" />
-                  <span className="text-sm text-slate-300">{detail}</span>
+                  <CheckCircle size={16} className="text-accent-blue" />
+                  <span className="text-sm text-secondary">{detail}</span>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Overall Progress Summary */}
-          <div className="bg-slate-800/50 backdrop-blur-lg rounded-xl p-6 border border-slate-700">
-            <h3 className="text-xl font-bold mb-4 text-white">Overall Progress</h3>
+          <div className="bg-surface bg-opacity-50 backdrop-blur-lg rounded-xl p-6 border border-default">
+            <h3 className="text-xl font-bold mb-4 text-primary">Overall Progress</h3>
             
             <div className="space-y-4">
-              <div className="flex items-center justify-between p-3 bg-blue-900/20 rounded-lg border border-blue-500/30">
-                <span className="text-blue-400">Completed</span>
-                <span className="font-bold text-white">2 of 8 areas</span>
+              <div className="flex items-center justify-between p-3 bg-accent-blue bg-opacity-10 rounded-lg border border-accent-blue border-opacity-30">
+                <span className="text-accent-blue">Completed</span>
+                <span className="font-bold text-primary">2 of 8 areas</span>
               </div>
-              <div className="flex items-center justify-between p-3 bg-orange-900/20 rounded-lg border border-orange-500/30">
-                <span className="text-orange-400">In Progress</span>
-                <span className="font-bold text-white">3 of 8 areas</span>
+              <div className="flex items-center justify-between p-3 bg-accent-orange bg-opacity-10 rounded-lg border border-accent-orange border-opacity-30">
+                <span className="text-accent-orange">In Progress</span>
+                <span className="font-bold text-primary">3 of 8 areas</span>
               </div>
-              <div className="flex items-center justify-between p-3 bg-red-900/20 rounded-lg border border-red-500/30">
-                <span className="text-red-400">Blocked/Incomplete</span>
-                <span className="font-bold text-white">2 of 8 areas</span>
+              <div className="flex items-center justify-between p-3 bg-red-500 bg-opacity-10 rounded-lg border border-red-500 border-opacity-30">
+                <span className="text-red-500">Blocked/Incomplete</span>
+                <span className="font-bold text-primary">2 of 8 areas</span>
               </div>
             </div>
 
-            <div className="mt-6 p-4 bg-blue-900/20 rounded-lg border border-blue-500/30">
-              <p className="text-sm text-blue-300">
+            <div className="mt-6 p-4 bg-accent-blue bg-opacity-10 rounded-lg border border-accent-blue border-opacity-30">
+              <p className="text-sm text-accent-blue">
                 <strong>Key Risk:</strong> Platform integration at only 17% - this is our critical path
               </p>
             </div>

@@ -109,25 +109,25 @@ export const SlideRoadmap = () => {
   const getPhaseStatus = (status: string) => {
     switch (status) {
       case 'in-progress':
-        return { icon: Clock, color: 'text-orange-400', bg: 'bg-orange-900/20' };
+        return { icon: Clock, color: 'text-accent-orange', bg: 'bg-accent-orange bg-opacity-10' };
       case 'planned':
-        return { icon: Map, color: 'text-blue-400', bg: 'bg-blue-900/20' };
+        return { icon: Map, color: 'text-accent-blue', bg: 'bg-accent-blue bg-opacity-10' };
       case 'future':
-        return { icon: TrendingUp, color: 'text-gray-400', bg: 'bg-gray-900/20' };
+        return { icon: TrendingUp, color: 'text-muted', bg: 'bg-muted bg-opacity-10' };
       default:
-        return { icon: CheckCircle, color: 'text-blue-400', bg: 'bg-blue-900/20' };
+        return { icon: CheckCircle, color: 'text-accent-blue', bg: 'bg-accent-blue bg-opacity-10' };
     }
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 text-white p-8">
+    <div className="min-h-screen bg-primary text-primary p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-10">
           <h1 className="text-5xl font-bold mb-4">
-            <span className="text-blue-400">3-6 Month</span> Roadmap
+            <span className="text-accent-blue">3-6 Month</span> Roadmap
           </h1>
-          <p className="text-xl text-slate-300">
+          <p className="text-xl text-secondary">
             From foundation to monetization
           </p>
         </div>
@@ -136,7 +136,7 @@ export const SlideRoadmap = () => {
         <div className="mb-8">
           <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute top-8 left-0 right-0 h-1 bg-slate-700"></div>
+            <div className="absolute top-8 left-0 right-0 h-1 bg-muted"></div>
             
             {/* Phase Markers */}
             <div className="relative flex justify-between">
@@ -154,20 +154,20 @@ export const SlideRoadmap = () => {
                     <div className={`
                       w-16 h-16 rounded-full flex items-center justify-center transition-all duration-300 z-10
                       ${isSelected ? 
-                        'bg-blue-600 scale-110 shadow-xl' : 
-                        phase.status === 'in-progress' ? 'bg-orange-500' : 'bg-slate-700 hover:bg-slate-600'
+                        'bg-accent-blue scale-110 shadow-xl' : 
+                        phase.status === 'in-progress' ? 'bg-accent-orange' : 'bg-muted hover:bg-elevated'
                       }
                     `}>
                       <PhaseIcon size={24} className="text-white" />
                     </div>
                     <div className="mt-3 text-center">
-                      <div className={`text-sm font-bold ${isSelected ? 'text-blue-400' : 'text-slate-300'}`}>
+                      <div className={`text-sm font-bold ${isSelected ? 'text-accent-blue' : 'text-secondary'}`}>
                         {phase.phase}
                       </div>
-                      <div className={`text-xs ${isSelected ? 'text-slate-200' : 'text-slate-500'}`}>
+                      <div className={`text-xs ${isSelected ? 'text-secondary' : 'text-muted'}`}>
                         {phase.name}
                       </div>
-                      <div className="text-xs text-slate-500 mt-1">
+                      <div className="text-xs text-muted mt-1">
                         {phase.timeline}
                       </div>
                     </div>
@@ -181,38 +181,38 @@ export const SlideRoadmap = () => {
         {/* Selected Phase Details */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Objectives */}
-          <div className="bg-slate-800/50 backdrop-blur-lg rounded-xl p-6 border border-slate-700">
-            <h3 className="text-xl font-bold mb-4 text-white">Objectives</h3>
+          <div className="bg-surface bg-opacity-50 backdrop-blur-lg rounded-xl p-6 border border-default">
+            <h3 className="text-xl font-bold mb-4 text-primary">Objectives</h3>
             <div className="space-y-3">
               {phases[selectedPhase].objectives.map((objective, idx) => (
                 <div key={idx} className="flex items-start gap-3">
-                  <CheckCircle size={16} className="text-green-400 mt-1 flex-shrink-0" />
-                  <span className="text-slate-300">{objective}</span>
+                  <CheckCircle size={16} className="text-green-500 mt-1 flex-shrink-0" />
+                  <span className="text-secondary">{objective}</span>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Key Metrics */}
-          <div className="bg-slate-800/50 backdrop-blur-lg rounded-xl p-6 border border-slate-700">
-            <h3 className="text-xl font-bold mb-4 text-white">Success Metrics</h3>
+          <div className="bg-surface bg-opacity-50 backdrop-blur-lg rounded-xl p-6 border border-default">
+            <h3 className="text-xl font-bold mb-4 text-primary">Success Metrics</h3>
             <div className="space-y-3">
               {phases[selectedPhase].keyMetrics.map((metric, idx) => (
-                <div key={idx} className="p-3 bg-slate-700/50 rounded-lg">
-                  <p className="text-blue-400 font-medium">{metric}</p>
+                <div key={idx} className="p-3 bg-muted bg-opacity-50 rounded-lg">
+                  <p className="text-accent-blue font-medium">{metric}</p>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Deliverables */}
-          <div className="bg-slate-800/50 backdrop-blur-lg rounded-xl p-6 border border-slate-700">
-            <h3 className="text-xl font-bold mb-4 text-white">Deliverables</h3>
+          <div className="bg-surface bg-opacity-50 backdrop-blur-lg rounded-xl p-6 border border-default">
+            <h3 className="text-xl font-bold mb-4 text-primary">Deliverables</h3>
             <div className="space-y-3">
               {phases[selectedPhase].deliverables.map((deliverable, idx) => (
                 <div key={idx} className="flex items-center gap-3">
-                  <ArrowRight size={16} className="text-orange-400" />
-                  <span className="text-slate-300">{deliverable}</span>
+                  <ArrowRight size={16} className="text-accent-orange" />
+                  <span className="text-secondary">{deliverable}</span>
                 </div>
               ))}
             </div>
@@ -222,47 +222,47 @@ export const SlideRoadmap = () => {
         {/* Phase Status Summary */}
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Current Focus */}
-          <div className="bg-orange-900/20 backdrop-blur-lg rounded-xl p-6 border border-orange-500/30">
-            <h3 className="text-xl font-bold mb-4 text-white flex items-center gap-2">
-              <Rocket className="text-orange-400" />
+          <div className="bg-accent-orange bg-opacity-10 backdrop-blur-lg rounded-xl p-6 border border-accent-orange border-opacity-30">
+            <h3 className="text-xl font-bold mb-4 text-primary flex items-center gap-2">
+              <Rocket className="text-accent-orange" />
               Current Focus
             </h3>
-            <p className="text-orange-300 mb-3">
+            <p className="text-accent-orange mb-3">
               Phase 1: Foundation - establishing core infrastructure and proving value with initial services
             </p>
             <div className="space-y-2">
               <div className="flex justify-between text-sm">
-                <span className="text-slate-300">Progress</span>
-                <span className="text-orange-400 font-bold">35%</span>
+                <span className="text-secondary">Progress</span>
+                <span className="text-accent-orange font-bold">35%</span>
               </div>
-              <div className="w-full bg-slate-700 rounded-full h-2">
-                <div className="bg-orange-500 h-2 rounded-full" style={{ width: '35%' }}></div>
+              <div className="w-full bg-muted rounded-full h-2">
+                <div className="bg-accent-orange h-2 rounded-full" style={{ width: '35%' }}></div>
               </div>
             </div>
           </div>
 
           {/* Value Timeline */}
-          <div className="bg-blue-900/20 backdrop-blur-lg rounded-xl p-6 border border-blue-500/30">
-            <h3 className="text-xl font-bold mb-4 text-white flex items-center gap-2">
-              <TrendingUp className="text-blue-400" />
+          <div className="bg-accent-blue bg-opacity-10 backdrop-blur-lg rounded-xl p-6 border border-accent-blue border-opacity-30">
+            <h3 className="text-xl font-bold mb-4 text-primary flex items-center gap-2">
+              <TrendingUp className="text-accent-blue" />
               Value Delivery
             </h3>
             <div className="space-y-3 text-sm">
               <div className="flex justify-between">
-                <span className="text-slate-300">Internal visibility</span>
-                <span className="text-blue-400">6 weeks</span>
+                <span className="text-secondary">Internal visibility</span>
+                <span className="text-accent-blue">6 weeks</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-300">Cost optimization</span>
-                <span className="text-blue-400">12 weeks</span>
+                <span className="text-secondary">Cost optimization</span>
+                <span className="text-accent-blue">12 weeks</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-300">Customer value</span>
-                <span className="text-blue-400">3 months</span>
+                <span className="text-secondary">Customer value</span>
+                <span className="text-accent-blue">3 months</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-300">Revenue impact</span>
-                <span className="text-blue-400">6 months</span>
+                <span className="text-secondary">Revenue impact</span>
+                <span className="text-accent-blue">6 months</span>
               </div>
             </div>
           </div>
