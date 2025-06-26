@@ -60,12 +60,12 @@ export const SlideCurrentStatus = () => {
       area: "Platform Integration",
       status: "incomplete",
       icon: GitMerge,
-      progress: 17,
-      notes: "~5/30 services integrated; full landscape and plan for coverage needed.",
+      progress: 10,
+      notes: "Scattered implementations exist; comprehensive service inventory and unified approach needed.",
       details: [
-        "5 services completed",
-        "25 services pending",
-        "Integration roadmap needed"
+        "Some services have partial metering",
+        "No complete service inventory",
+        "Integration standards undefined"
       ]
     },
     {

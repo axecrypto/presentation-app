@@ -1,12 +1,19 @@
 import { Presentation } from '../../types/presentation';
 import { SlideTitle } from './slides/SlideTitle';
-import { SlideExecutiveSummary } from './slides/SlideExecutiveSummary';
-import { SlideCurrentStatus } from './slides/SlideCurrentStatus';
-import { SlideDiscoveryFindings } from './slides/SlideDiscoveryFindings';
+import { SlideTheProblem } from './slides/SlideTheProblem';
+import { SlideTheOpportunity } from './slides/SlideTheOpportunity';
+import { SlideWhereWeAre } from './slides/SlideWhereWeAre';
+import { SlideFirstWave } from './slides/SlideFirstWave';
+import { SlideSimpleRoadmap } from './slides/SlideSimpleRoadmap';
 import { SlideNext4Weeks } from './slides/SlideNext4Weeks';
-import { SlideRoadmap } from './slides/SlideRoadmap';
 import { SlideAsksBenefits } from './slides/SlideAsksBenefits';
 import { SlideClosing } from './slides/SlideClosing';
+
+// Legacy slides - kept for reference but not used
+// import { SlideExecutiveSummary } from './slides/SlideExecutiveSummary';
+// import { SlideCurrentStatus } from './slides/SlideCurrentStatus';
+// import { SlideDiscoveryFindings } from './slides/SlideDiscoveryFindings';
+// import { SlideRoadmap } from './slides/SlideRoadmap';
 
 export const meteringUpdatePresentation: Presentation = {
   id: 'metering-update',
@@ -33,37 +40,50 @@ export const meteringUpdatePresentation: Presentation = {
       content: <SlideTitle />,
     },
     {
-      id: 'slide-executive-summary',
+      id: 'slide-the-problem',
+      title: 'The Problem',
       layout: 'full',
       transition: { type: 'slide' },
-      content: <SlideExecutiveSummary />,
+      content: <SlideTheProblem />,
     },
     {
-      id: 'slide-current-status',
+      id: 'slide-the-opportunity',
+      title: 'The Opportunity',
       layout: 'full',
       transition: { type: 'slide' },
-      content: <SlideCurrentStatus />,
+      content: <SlideTheOpportunity />,
     },
     {
-      id: 'slide-discovery-findings',
+      id: 'slide-where-we-are',
+      title: 'Where We Are',
       layout: 'full',
       transition: { type: 'slide' },
-      content: <SlideDiscoveryFindings />,
+      content: <SlideWhereWeAre />,
+    },
+    {
+      id: 'slide-first-wave',
+      title: 'First Wave',
+      layout: 'full',
+      transition: { type: 'slide' },
+      content: <SlideFirstWave />,
+    },
+    {
+      id: 'slide-simple-roadmap',
+      title: 'The Roadmap',
+      layout: 'full',
+      transition: { type: 'slide' },
+      content: <SlideSimpleRoadmap />,
     },
     {
       id: 'slide-next-4-weeks',
+      title: 'Planning Sprint: Critical Decisions',
       layout: 'full',
       transition: { type: 'slide' },
       content: <SlideNext4Weeks />,
     },
     {
-      id: 'slide-roadmap',
-      layout: 'full',
-      transition: { type: 'slide' },
-      content: <SlideRoadmap />,
-    },
-    {
       id: 'slide-asks-benefits',
+      title: 'What We Need',
       layout: 'full',
       transition: { type: 'slide' },
       content: <SlideAsksBenefits />,

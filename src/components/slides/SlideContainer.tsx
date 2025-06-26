@@ -39,20 +39,19 @@ const Container = styled(motion.div)<{ background?: string }>`
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: ${({ background, theme }) => background && background !== 'gradient-dark' ? background : theme.colors.background};
   padding: ${({ theme }) => theme.spacing.xxl};
   overflow: auto;
   
   &.gradient-dark {
-    background: var(--gradient-surface);
+    background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-surface) 100%);
   }
 `;
 
-const ContentWrapper = styled.div<{ layout?: string }>`
+const ContentWrapper = styled.div<{ layout?: string; hasTitle?: boolean }>`
   flex: 1;
   display: flex;
   flex-direction: column;
-  ${({ layout }) => {
+  ${({ layout, hasTitle }) => {
     switch (layout) {
       case 'centered':
         return `
@@ -71,7 +70,7 @@ const ContentWrapper = styled.div<{ layout?: string }>`
       case 'full':
         return `
           padding: 0;
-          margin: -3rem;
+          margin: ${hasTitle ? '-1rem -3rem -3rem -3rem' : '-3rem'};
         `;
       default:
         return '';
@@ -89,15 +88,17 @@ export const SlideContainer: React.FC<SlideContainerProps> = ({ slide, isActive 
         <Container
           key={slide.id}
           background={slide.background}
-          className={slide.background === 'gradient-dark' ? 'gradient-dark' : ''}
+          className={`bg-primary ${slide.background === 'gradient-dark' ? 'gradient-dark' : ''}`}
           variants={slideVariants[transitionType]}
           initial="initial"
           animate="animate"
           exit="exit"
           transition={{ duration }}
         >
-          {slide.title && <h1>{slide.title}</h1>}
-          <ContentWrapper layout={slide.layout}>
+          {slide.title && (
+            <h1 className="text-4xl font-bold text-primary mb-8 z-10">{slide.title}</h1>
+          )}
+          <ContentWrapper layout={slide.layout} hasTitle={!!slide.title}>
             {slide.content}
           </ContentWrapper>
         </Container>

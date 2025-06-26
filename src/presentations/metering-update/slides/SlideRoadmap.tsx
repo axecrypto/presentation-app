@@ -17,12 +17,12 @@ export const SlideRoadmap = () => {
       status: "in-progress",
       objectives: [
         "Complete technical architecture",
-        "Onboard first 10 services",
+        "Onboard initial high-priority services",
         "Internal dashboard MVP",
         "Establish data collection pipeline"
       ],
       keyMetrics: [
-        "10 services integrated",
+        "Initial services integrated",
         "< 5min data latency",
         "99.9% collection uptime"
       ],
@@ -40,7 +40,7 @@ export const SlideRoadmap = () => {
       color: "orange",
       status: "planned",
       objectives: [
-        "Scale to all 30 services",
+        "Scale to all platform services",
         "Advanced analytics capabilities",
         "Alerting and anomaly detection",
         "Cost allocation models"

@@ -18,7 +18,7 @@ export const SlideNext4Weeks = () => {
         "Meter hierarchy definition",
         "Storage and query patterns"
       ],
-      owners: ["Platform Architect", "Tech Leads"],
+      owners: ["Technical Leadership"],
       milestone: "Technical blueprint approved"
     },
     {
@@ -26,13 +26,13 @@ export const SlideNext4Weeks = () => {
       focus: "Service Prioritization",
       icon: Target,
       deliverables: [
-        "Complete service inventory (30 services)",
+        "Complete service inventory",
         "Business impact scoring",
         "Integration complexity assessment",
         "Prioritized rollout schedule"
       ],
-      owners: ["Product Manager", "Engineering Leads"],
-      milestone: "Top 10 services identified"
+      owners: ["Product & Engineering"],
+      milestone: "Priority services identified"
     },
     {
       week: "Week 3",
@@ -44,7 +44,7 @@ export const SlideNext4Weeks = () => {
         "User journey mapping",
         "Feedback from stakeholders"
       ],
-      owners: ["UX Lead", "Product Designer"],
+      owners: ["Design Team"],
       milestone: "Dashboard prototype ready"
     },
     {
@@ -57,7 +57,7 @@ export const SlideNext4Weeks = () => {
         "JIRA epic breakdown",
         "Executive readout deck"
       ],
-      owners: ["Program Manager", "Leadership"],
+      owners: ["Program Management", "Leadership"],
       milestone: "Go-forward plan approved"
     }
   ];
@@ -75,7 +75,7 @@ export const SlideNext4Weeks = () => {
     {
       task: "2. Create Prioritized Service Onboarding Plan",
       details: [
-        "Finalize list of 30 services/APIs for metering",
+        "Create comprehensive list of all services/APIs for metering",
         "Define integration tasks and ownership by team",
         "Track in JIRA with EPIC breakdown"
       ],
@@ -85,7 +85,7 @@ export const SlideNext4Weeks = () => {
       task: "3. UX Wireframe & Feedback Loop",
       details: [
         "Internal UX prototype for dashboard",
-        "Schedule review with PMs and Eng leads",
+        "Schedule review with stakeholders",
         "Iterate based on feedback"
       ],
       impact: "Validates user experience early"
@@ -93,7 +93,7 @@ export const SlideNext4Weeks = () => {
     {
       task: "4. Platform Capability Review",
       details: [
-        "Lead sync with platform architects",
+        "Lead sync with platform team",
         "Align on tech stack and extensions",
         "Identify reusable components"
       ],
@@ -116,10 +116,10 @@ export const SlideNext4Weeks = () => {
         {/* Header */}
         <div className="text-center mb-10">
           <h1 className="text-5xl font-bold mb-4">
-            Next <span className="text-accent-orange">4-6 Weeks</span>
+            Planning Sprint: <span className="text-accent-orange">Critical Decisions</span>
           </h1>
           <p className="text-xl text-secondary">
-            Critical path to platform-wide metering capability
+            Key decisions and planning before implementation begins
           </p>
         </div>
 
@@ -193,19 +193,19 @@ export const SlideNext4Weeks = () => {
           <div className="bg-surface bg-opacity-50 backdrop-blur-lg rounded-xl p-6 border border-default">
             <h3 className="text-xl font-bold mb-4 text-primary">Dependencies & Risks</h3>
             <div className="space-y-4">
-              <div className="p-4 bg-red-500 bg-opacity-10 rounded-lg border border-red-500 border-opacity-30">
+              <div className="p-4 bg-surface rounded-lg border-2 border-red-500">
                 <h4 className="font-bold text-red-500 mb-2">Critical Dependency</h4>
                 <p className="text-sm text-secondary">
                   Technical design must be finalized before service onboarding can begin at scale
                 </p>
               </div>
-              <div className="p-4 bg-accent-orange bg-opacity-10 rounded-lg border border-accent-orange border-opacity-30">
+              <div className="p-4 bg-surface rounded-lg border-2 border-accent-orange">
                 <h4 className="font-bold text-accent-orange mb-2">Resource Risk</h4>
                 <p className="text-sm text-secondary">
-                  Engineering teams need dedicated capacity - competing with Q1 feature delivery
+                  Engineering teams need dedicated capacity - competing with existing feature commitments
                 </p>
               </div>
-              <div className="p-4 bg-accent-blue bg-opacity-10 rounded-lg border border-accent-blue border-opacity-30">
+              <div className="p-4 bg-surface rounded-lg border-2 border-accent-blue">
                 <h4 className="font-bold text-accent-blue mb-2">Success Factor</h4>
                 <p className="text-sm text-secondary">
                   Executive sponsorship critical for cross-team prioritization

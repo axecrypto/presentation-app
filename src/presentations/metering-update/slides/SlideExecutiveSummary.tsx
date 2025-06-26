@@ -19,7 +19,7 @@ export const SlideExecutiveSummary = () => {
     {
       icon: AlertCircle,
       title: "Key Challenge",
-      message: "Only 5 of 30 services integrated - need accelerated onboarding plan"
+      message: "Scattered implementation across services - no unified approach"
     },
     {
       icon: CheckCircle,
@@ -30,19 +30,19 @@ export const SlideExecutiveSummary = () => {
 
   const businessDrivers = [
     {
-      metric: "$2.5M",
-      label: "Revenue at Risk",
-      description: "Without usage visibility"
+      metric: "20%",
+      label: "Revenue Uplift",
+      description: "Industry standard with usage-based pricing"
     },
     {
-      metric: "30+",
-      label: "Services",
-      description: "Requiring integration"
+      metric: "$20M",
+      label: "Annual Opportunity",
+      description: "Up to 20% of $100M revenue"
     },
     {
-      metric: "Q2 2024",
-      label: "Target",
-      description: "Customer-facing rollout"
+      metric: "Zero",
+      label: "Usage Visibility",
+      description: "Cannot differentiate user consumption"
     }
   ];
 
@@ -109,8 +109,8 @@ export const SlideExecutiveSummary = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-accent-orange bg-opacity-10 rounded-xl p-6 border border-accent-orange border-opacity-30">
             <AlertCircle className="text-accent-orange mb-3" size={32} />
-            <h3 className="text-lg font-bold text-primary mb-2">Limited Coverage</h3>
-            <p className="text-secondary">Only 17% of services have metering capability</p>
+            <h3 className="text-lg font-bold text-primary mb-2">Fragmented Coverage</h3>
+            <p className="text-secondary">Some services have partial metering, most have none</p>
           </div>
           <div className="bg-accent-blue bg-opacity-10 rounded-xl p-6 border border-accent-blue border-opacity-30">
             <Users className="text-accent-blue mb-3" size={32} />
@@ -120,7 +120,7 @@ export const SlideExecutiveSummary = () => {
           <div className="bg-accent-orange bg-opacity-10 rounded-xl p-6 border border-accent-orange border-opacity-30">
             <DollarSign className="text-accent-orange mb-3" size={32} />
             <h3 className="text-lg font-bold text-primary mb-2">Revenue Impact</h3>
-            <p className="text-secondary">Usage-based pricing models require accurate metering</p>
+            <p className="text-secondary">Heavy users paying same as light users - missing 20% uplift</p>
           </div>
         </div>
       </div>
