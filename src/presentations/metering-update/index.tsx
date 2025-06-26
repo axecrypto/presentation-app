@@ -33,7 +33,6 @@ export const meteringUpdatePresentation: Presentation = {
   slides: [
     {
       id: 'slide-title',
-      title: 'Metering Platform Initiative',
       layout: 'centered',
       transition: { type: 'zoom' },
       background: 'gradient-dark',
