@@ -44,11 +44,7 @@ const Container = styled(motion.div)<{ background?: string }>`
   overflow: auto;
   
   &.gradient-dark {
-    background: linear-gradient(to bottom right, #0f172a, #1e293b, #0f172a);
-  }
-  
-  .light-theme &.gradient-dark {
-    background: linear-gradient(to bottom right, #f8fafc, #f1f5f9, #f8fafc);
+    background: var(--gradient-surface);
   }
 `;
 

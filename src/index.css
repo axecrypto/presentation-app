@@ -4,8 +4,6 @@
 
 /* Import theme overrides */
 @import './styles/themes.css';
-@import './styles/corporate-overrides.css';
-@import './styles/informatica-theme.css';
 
 body {
   margin: 0;

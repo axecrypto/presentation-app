@@ -32,24 +32,24 @@ export const mdmPresentation: Presentation = {
       background: 'gradient-dark',
       content: (
         <div className="text-center">
-          <h1 className="text-6xl font-bold mb-8 text-white">
-            AI-Powered <span className="text-orange-500">MDM</span> Configuration
+          <h1 className="text-6xl font-bold mb-8 text-primary">
+            AI-Powered <span className="text-accent-orange">MDM</span> Configuration
           </h1>
-          <p className="text-2xl text-gray-300 mb-12">
+          <p className="text-2xl text-secondary mb-12">
             From business requirements to demo-ready MDM in under one hour
           </p>
-          <div className="flex flex-col gap-4 text-lg text-gray-400">
+          <div className="flex flex-col gap-4 text-lg text-muted">
             <p className="flex items-center justify-center gap-2">
-              <span className="text-orange-500">•</span> 7-step automated workflow
+              <span className="text-accent-orange">•</span> 7-step automated workflow
             </p>
             <p className="flex items-center justify-center gap-2">
-              <span className="text-orange-500">•</span> AI agents handle complexity
+              <span className="text-accent-orange">•</span> AI agents handle complexity
             </p>
             <p className="flex items-center justify-center gap-2">
-              <span className="text-orange-500">•</span> Complete configuration in minutes
+              <span className="text-accent-orange">•</span> Complete configuration in minutes
             </p>
             <p className="flex items-center justify-center gap-2">
-              <span className="text-orange-500">•</span> Demo-ready with synthetic data
+              <span className="text-accent-orange">•</span> Demo-ready with synthetic data
             </p>
           </div>
         </div>
@@ -111,13 +111,13 @@ export const mdmPresentation: Presentation = {
       background: 'gradient-dark',
       content: (
         <div className="text-center">
-          <h1 className="text-6xl font-bold mb-8 text-white">
+          <h1 className="text-6xl font-bold mb-8 text-primary">
             Thank You!
           </h1>
-          <p className="text-2xl text-gray-300 mb-8">
+          <p className="text-2xl text-secondary mb-8">
             Ready to transform your MDM implementation?
           </p>
-          <p className="text-lg text-gray-400">
+          <p className="text-lg text-muted">
             Get started with AI-powered configuration today
           </p>
         </div>
