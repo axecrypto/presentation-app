@@ -14,32 +14,28 @@ export const SlideAI = () => {
         {/* Visual Balance */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-16">
           {/* AI Side */}
-          <div className="text-center">
-            <div className={spacing.margin.md}>
-              <IconContainer size="xl" variant="secondary">
-                <Bot size={iconSizes.xl.icon} className="text-lerbee-yellow" />
-              </IconContainer>
-            </div>
-            <h2 className={`${typography.subtitle} font-semibold text-primary ${spacing.margin.sm}`}>
+          <div className="flex flex-col items-center">
+            <IconContainer size="xl" variant="secondary">
+              <Bot size={iconSizes.xl.icon} className="text-lerbee-yellow" />
+            </IconContainer>
+            <h2 className={`${typography.subtitle} font-semibold text-primary mt-6 mb-2`}>
               AI
             </h2>
-            <p className={`${typography.large} text-secondary`}>
+            <p className={`${typography.large} text-secondary text-center`}>
               Automates operations<br/>
               Scales infinitely
             </p>
           </div>
 
           {/* Human Side */}
-          <div className="text-center">
-            <div className={spacing.margin.md}>
-              <IconContainer size="xl" variant="primary">
-                <Users size={iconSizes.xl.icon} />
-              </IconContainer>
-            </div>
-            <h2 className={`${typography.subtitle} font-semibold text-primary ${spacing.margin.sm}`}>
+          <div className="flex flex-col items-center">
+            <IconContainer size="xl" variant="primary">
+              <Users size={iconSizes.xl.icon} />
+            </IconContainer>
+            <h2 className={`${typography.subtitle} font-semibold text-primary mt-6 mb-2`}>
               Humans
             </h2>
-            <p className={`${typography.large} text-secondary`}>
+            <p className={`${typography.large} text-secondary text-center`}>
               Build relationships<br/>
               Create trust
             </p>

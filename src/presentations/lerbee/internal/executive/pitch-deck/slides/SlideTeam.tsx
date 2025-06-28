@@ -24,17 +24,17 @@ export const SlideTeam = () => {
         {/* Founders Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 my-12">
           {founders.map((founder, index) => (
-            <div key={index} className="text-center">
+            <div key={index} className="flex flex-col items-center">
               <IconContainer size="large" variant="secondary">
                 <Users size={iconSizes.large.icon} className="text-lerbee-yellow" />
               </IconContainer>
-              <h3 className={`${typography.large} font-semibold text-primary mt-3`}>
+              <h3 className={`${typography.large} font-semibold text-primary mt-4 mb-1`}>
                 {founder.name}
               </h3>
-              <p className={`${typography.small} text-secondary`}>
+              <p className={`${typography.small} text-secondary mb-1`}>
                 {founder.role}
               </p>
-              <p className={`${typography.small} text-primary mt-1`}>
+              <p className={`${typography.small} text-primary`}>
                 {founder.highlight}
               </p>
             </div>

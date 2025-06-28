@@ -44,12 +44,12 @@ export const SlideCompetitiveLandscape = () => {
         </div>
 
         {/* Core Differentiator */}
-        <div className="text-center mb-16">
-          <div className={`bg-surface rounded-xl ${spacing.lg} border border-lerbee-yellow inline-block`}>
+        <div className="flex justify-center mb-16">
+          <div className={`bg-surface rounded-xl ${spacing.lg} border border-lerbee-yellow flex flex-col items-center`}>
             <IconContainer size="large" variant="primary">
               <Brain size={iconSizes.large.icon} />
             </IconContainer>
-            <p className={`${typography.heading} text-primary font-semibold mt-4`}>
+            <p className={`${typography.heading} text-primary font-semibold mt-4 text-center`}>
               Peer-to-peer trust + Micro-communities
             </p>
           </div>

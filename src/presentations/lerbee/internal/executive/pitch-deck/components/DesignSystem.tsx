@@ -76,15 +76,16 @@ export const SlideHeader: React.FC<{ title: string; subtitle?: string }> = ({ ti
 );
 
 export const IconContainer: React.FC<{ 
-  size?: 'small' | 'medium' | 'large' | 'xl';
+  size?: 'tiny' | 'small' | 'medium' | 'large' | 'xl';
   variant?: 'primary' | 'secondary';
   children: React.ReactNode;
-}> = ({ size = 'medium', variant = 'primary', children }) => {
+  className?: string;
+}> = ({ size = 'medium', variant = 'primary', children, className = '' }) => {
   const sizeClass = iconSizes[size].container;
   const bgClass = variant === 'primary' ? 'bg-lerbee-yellow' : 'bg-surface border-2 border-lerbee-yellow';
   
   return (
-    <div className={`${sizeClass} ${bgClass} rounded-full flex items-center justify-center`}>
+    <div className={`${sizeClass} ${bgClass} rounded-full flex items-center justify-center mx-auto ${className}`}>
       {children}
     </div>
   );
@@ -95,14 +96,12 @@ export const MetricCard: React.FC<{
   label: string;
   icon: React.ReactNode;
 }> = ({ value, label, icon }) => (
-  <div className="text-center">
-    <div className={spacing.margin.md}>
-      {icon}
-    </div>
-    <p className={`${metricSizes.value} font-bold text-primary ${spacing.margin.xs}`}>
+  <div className="flex flex-col items-center">
+    {icon}
+    <p className={`${metricSizes.value} font-bold text-primary mt-6 mb-2`}>
       {value}
     </p>
-    <p className={`${metricSizes.label} text-secondary`}>
+    <p className={`${metricSizes.label} text-secondary text-center`}>
       {label}
     </p>
   </div>

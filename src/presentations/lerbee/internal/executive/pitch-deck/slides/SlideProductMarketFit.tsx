@@ -21,11 +21,11 @@ export const SlideProductMarketFit = () => {
           {metrics.map((metric, index) => {
             const Icon = metric.icon;
             return (
-              <div key={index} className="text-center">
+              <div key={index} className="flex flex-col items-center">
                 <IconContainer size="large" variant="primary">
                   <Icon size={iconSizes.large.icon} />
                 </IconContainer>
-                <p className={`${metricSizes.value} font-bold text-primary ${spacing.margin.xs}`}>
+                <p className={`${metricSizes.value} font-bold text-primary mt-6 mb-2`}>
                   {metric.value}
                 </p>
                 <p className={`${typography.body} text-secondary`}>

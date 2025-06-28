@@ -11,30 +11,26 @@ export const SlideMarketOpportunity = () => {
         />
 
         {/* Main Focus: SOM */}
-        <div className="text-center">
-          <div className="inline-block">
-            <div className={spacing.margin.md}>
-              <IconContainer size="xl" variant="primary">
-                <Target size={iconSizes.xl.icon} className="text-black" />
-              </IconContainer>
-            </div>
-            
-            <p className={`${typography.hero} font-bold text-primary ${spacing.margin.sm}`}>
-              $6B
+        <div className="flex flex-col items-center">
+          <IconContainer size="xl" variant="primary">
+            <Target size={iconSizes.xl.icon} className="text-black" />
+          </IconContainer>
+          
+          <p className={`${typography.hero} font-bold text-primary mt-6 mb-2`}>
+            $6B
+          </p>
+          <p className={`${typography.heading} text-secondary mb-8`}>
+            Addressable Market
+          </p>
+          
+          {/* Simple Math */}
+          <div className={`bg-surface rounded-xl ${spacing.lg} border border-lerbee-yellow`}>
+            <p className={`${typography.subtitle} text-primary font-semibold mb-2`}>
+              143K shoppers × 140 buyers each
             </p>
-            <p className={`${typography.heading} text-secondary ${spacing.margin.lg}`}>
-              Addressable Market
+            <p className={`${typography.large} text-secondary`}>
+              = 20M buyers × $300/year = $6B
             </p>
-            
-            {/* Simple Math */}
-            <div className={`bg-surface rounded-xl ${spacing.lg} border border-lerbee-yellow`}>
-              <p className={`${typography.subtitle} text-primary font-semibold ${spacing.margin.xs}`}>
-                143K shoppers × 140 buyers each
-              </p>
-              <p className={`${typography.large} text-secondary`}>
-                = 20M buyers × $300/year = $6B
-              </p>
-            </div>
           </div>
         </div>
 

@@ -26,19 +26,17 @@ export const SlideWhatWeDo = () => {
         {/* Split screen visualization */}
         <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 ${spacing.margin.xl} mt-12`}>
           {/* Shopper Side */}
-          <div className={`bg-surface rounded-xl ${spacing.lg} border border-default`}>
-            <h3 className={`${typography.heading} font-semibold text-primary ${spacing.margin.md} text-center`}>
+          <div className={`bg-surface rounded-xl ${spacing.lg} border border-default flex flex-col items-center`}>
+            <h3 className={`${typography.heading} font-semibold text-primary text-center mb-6`}>
               Shopper
             </h3>
             
-            <div className={spacing.margin.md}>
-              <IconContainer size="xl" variant="secondary">
-                <Users size={iconSizes.xl.icon} className="text-lerbee-yellow" />
-              </IconContainer>
-            </div>
+            <IconContainer size="xl" variant="secondary">
+              <Users size={iconSizes.xl.icon} className="text-lerbee-yellow" />
+            </IconContainer>
             
             {/* Feature icons */}
-            <div className={`flex justify-center gap-4 ${spacing.margin.md}`}>
+            <div className={`flex justify-center gap-4 mt-6 mb-6`}>
               <IconContainer size="small" variant="primary">
                 <Camera size={iconSizes.small.icon} />
               </IconContainer>
@@ -56,19 +54,17 @@ export const SlideWhatWeDo = () => {
           </div>
 
           {/* Buyer Side */}
-          <div className={`bg-surface rounded-xl ${spacing.lg} border border-default`}>
-            <h3 className={`${typography.heading} font-semibold text-primary ${spacing.margin.md} text-center`}>
+          <div className={`bg-surface rounded-xl ${spacing.lg} border border-default flex flex-col items-center`}>
+            <h3 className={`${typography.heading} font-semibold text-primary text-center mb-6`}>
               Buyer
             </h3>
             
-            <div className={spacing.margin.md}>
-              <IconContainer size="xl" variant="secondary">
-                <Package size={iconSizes.xl.icon} className="text-lerbee-yellow" />
-              </IconContainer>
-            </div>
+            <IconContainer size="xl" variant="secondary">
+              <Package size={iconSizes.xl.icon} className="text-lerbee-yellow" />
+            </IconContainer>
             
             {/* Feature icons */}
-            <div className={`flex justify-center gap-4 ${spacing.margin.md}`}>
+            <div className={`flex justify-center gap-4 mt-6 mb-6`}>
               <IconContainer size="small" variant="primary">
                 <Star size={iconSizes.small.icon} />
               </IconContainer>

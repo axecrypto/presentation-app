@@ -11,31 +11,31 @@ export const SlideBusinessModel = () => {
         />
 
         {/* Core Model */}
-        <div className="text-center">
+        <div className="flex flex-col items-center">
           {/* Commission */}
-          <div className={spacing.margin.xl}>
+          <div className="mb-12">
             <IconContainer size="large" variant="primary">
               <DollarSign size={iconSizes.large.icon} />
             </IconContainer>
-            <p className={`${typography.hero} font-bold text-primary mt-4 ${spacing.margin.xs}`}>
+            <p className={`${typography.hero} font-bold text-primary mt-6 mb-2 text-center`}>
               5-8%
             </p>
-            <p className={`${typography.large} text-secondary`}>
+            <p className={`${typography.large} text-secondary text-center`}>
               Commission per transaction
             </p>
           </div>
 
           {/* LTV > CAC */}
-          <div className={`bg-surface rounded-xl ${spacing.lg} border border-lerbee-yellow inline-block mt-12`}>
-            <div className="flex items-center gap-8">
+          <div className={`bg-surface rounded-xl ${spacing.lg} border border-lerbee-yellow`}>
+            <div className="flex items-center justify-center gap-8">
               <div className="text-center">
                 <p className={`text-4xl font-bold text-primary`}>LTV</p>
-                <p className={`${typography.small} text-secondary`}>95% repeat</p>
+                <p className={`${typography.small} text-secondary mt-1`}>95% repeat</p>
               </div>
-              <span className="text-3xl text-lerbee-yellow font-bold">&gt;</span>
+              <span className="text-3xl text-lerbee-yellow font-bold px-4">&gt;</span>
               <div className="text-center">
                 <p className={`text-4xl font-bold text-primary`}>CAC</p>
-                <p className={`${typography.small} text-secondary`}>Viral growth</p>
+                <p className={`${typography.small} text-secondary mt-1`}>Viral growth</p>
               </div>
             </div>
           </div>

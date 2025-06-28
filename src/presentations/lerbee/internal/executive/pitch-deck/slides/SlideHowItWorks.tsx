@@ -59,11 +59,9 @@ export const SlideHowItWorks = () => {
                   </div>
                   
                   {/* Icon */}
-                  <div className={spacing.margin.md}>
-                    <IconContainer size="medium" variant="primary">
-                      <Icon size={iconSizes.medium.icon} />
-                    </IconContainer>
-                  </div>
+                  <IconContainer size="medium" variant="primary" className="mb-4">
+                    <Icon size={iconSizes.medium.icon} />
+                  </IconContainer>
                   
                   {/* Title */}
                   <h3 className={`${typography.body} font-semibold text-primary ${spacing.margin.sm}`}>
