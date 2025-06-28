@@ -1,116 +1,114 @@
 import React from 'react';
-import { TrendingUp, Rocket, BarChart } from 'lucide-react';
-import { SlideHeader, BottomTagline, iconSizes, typography, spacing } from '../components/DesignSystem';
+import { TrendingUp, Users, DollarSign, ShoppingCart, Target } from 'lucide-react';
+import { SlideHeader, SlideWrapper, typography } from '../components/DesignSystem';
 
 export const SlideForecast = () => {
-  const metrics = [
+  const keyMetrics = [
     {
-      metric: 'Registered Users',
-      current: '7,810',
-      target: '100,000',
-      highlight: true
+      icon: Users,
+      metric: 'Users',
+      current: '7.8K',
+      target: '100K',
+      growth: '13x'
     },
     {
-      metric: 'Paying Clients',
+      icon: ShoppingCart,
+      metric: 'Buyers',
       current: '647',
-      target: '20,000',
-      highlight: true
+      target: '20K',
+      growth: '31x'
     },
     {
+      icon: DollarSign,
       metric: 'GMV',
-      current: '$390,000',
-      target: '$8–15M',
-      highlight: true
+      current: '$390K',
+      target: '$10M',
+      growth: '26x'
     },
     {
-      metric: 'Platform Revenue',
-      current: '~$20–30K (organic)',
-      target: '$640K–1.2M'
-    },
-    {
-      metric: 'Runway',
-      current: '–',
-      target: '18 months'
+      icon: Target,
+      metric: 'Revenue',
+      current: '$25K',
+      target: '$800K',
+      growth: '32x'
     }
   ];
 
-  const growthLevers = [
-    'LATAM + MENA shopper expansion',
-    'Referrals and UGC as virality engine',
-    'AI-enabled content scaling',
-    'Creator education + community tools',
-    'Higher-value categories (home, wellness, limited drops)'
+  const growthDrivers = [
+    { title: 'Expand to LATAM + MENA', detail: '50K+ new shoppers in high-growth markets' },
+    { title: 'Launch referral program', detail: 'Each user brings 3-5 friends (proven in tests)' },
+    { title: 'AI-powered operations', detail: 'Scale without adding headcount' },
+    { title: 'Add premium categories', detail: 'Home, wellness, luxury = higher AOV' }
   ];
 
   return (
-    <div className="min-h-screen bg-primary p-8">
-      <div className="max-w-7xl mx-auto">
+    <SlideWrapper>
+      <div className="max-w-6xl mx-auto">
         <SlideHeader 
-          title="2025 Growth Plan: Driven by Retention, Community, and Scale"
+          title="2025: From Traction to Scale"
+          subtitle="Conservative projections with $1-1.5M seed round"
         />
 
-        {/* Metrics Table */}
-        <div className={spacing.margin.xl}>
-          <h2 className={`${typography.heading} font-semibold text-primary ${spacing.margin.md} flex items-center gap-3`}>
-            <TrendingUp size={iconSizes.medium.icon} className="text-lerbee-yellow" />
-            <span className="flex items-center gap-2">
-              <BarChart size={iconSizes.small.icon} className="text-lerbee-yellow" />
-              <span>2025 Target Metrics</span>
-            </span>
-            <span className={`${typography.body} text-secondary font-normal`}>(Assuming $1M Seed Round)</span>
-          </h2>
-          
-          <div className="bg-surface rounded-xl overflow-hidden border border-default">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b border-default bg-muted">
-                  <th className="text-left p-4 text-primary font-semibold">Metric</th>
-                  <th className="text-left p-4 text-primary font-semibold">2024 (Current)</th>
-                  <th className="text-left p-4 text-primary font-semibold">2025 (Target)</th>
-                </tr>
-              </thead>
-              <tbody>
-                {metrics.map((item, index) => (
-                  <tr 
-                    key={index} 
-                    className={`border-b border-default ${item.highlight ? 'hover:bg-surface' : ''}`}
-                  >
-                    <td className={`p-4 text-primary font-medium ${typography.body}`}>{item.metric}</td>
-                    <td className={`p-4 text-secondary ${typography.body}`}>{item.current}</td>
-                    <td className={`p-4 font-semibold ${typography.body} ${item.highlight ? 'text-lerbee-yellow' : 'text-primary'}`}>
-                      {item.target}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+        {/* Key Metrics Growth */}
+        <div className="grid grid-cols-4 gap-2 mb-3">
+          {keyMetrics.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <div key={index} className="text-center">
+                <div className="bg-gradient-to-br from-lerbee-yellow/10 to-lerbee-orange/10 rounded-lg p-2 border border-lerbee-yellow/30">
+                  <Icon size={18} className="text-lerbee-yellow mx-auto" />
+                  <p className={`text-xs text-secondary`}>{item.metric}</p>
+                  <p className={`${typography.body} font-bold text-primary`}>{item.target}</p>
+                  <p className={`text-xs text-lerbee-yellow font-bold`}>{item.growth}</p>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
-        {/* Growth Levers */}
-        <div className={spacing.margin.xl}>
-          <h2 className={`${typography.heading} font-semibold text-primary ${spacing.margin.md} flex items-center gap-3`}>
-            <Rocket size={iconSizes.medium.icon} className="text-lerbee-yellow" />
-            <span>Key Growth Levers</span>
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {growthLevers.map((lever, index) => (
-              <div key={index} className={`bg-surface rounded-lg ${spacing.md} border border-default hover:border-lerbee-yellow transition-colors`}>
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-lerbee-yellow rounded-full flex-shrink-0"></div>
-                  <p className={`${typography.body} text-primary`}>{lever}</p>
-                </div>
+        {/* Growth Drivers */}
+        <div className="mb-3">
+          <p className={`${typography.small} font-semibold text-primary text-center mb-2`}>
+            4 Growth Engines
+          </p>
+          <div className="grid grid-cols-2 gap-2">
+            {growthDrivers.map((driver, index) => (
+              <div key={index} className="border border-lerbee-yellow/30 rounded p-2">
+                <p className={`text-xs font-bold text-primary`}>{index + 1}. {driver.title}</p>
+                <p className={`text-xs text-secondary`}>{driver.detail}</p>
               </div>
             ))}
           </div>
         </div>
 
-        <BottomTagline
-          line1="With $1M, we turn traction into velocity."
-          line2="Our community already works. It's time to scale it."
-        />
+        {/* Use of Funds */}
+        <div className="mb-3">
+          <p className={`${typography.small} font-semibold text-primary text-center mb-2`}>
+            $1-1.5M Use of Funds
+          </p>
+          <div className="flex gap-1 h-8 rounded-lg overflow-hidden">
+            <div className="bg-blue-500 flex-[40] flex items-center justify-center">
+              <span className="text-xs font-bold text-white">Product 40%</span>
+            </div>
+            <div className="bg-lerbee-yellow flex-[30] flex items-center justify-center">
+              <span className="text-xs font-bold text-primary">Growth 30%</span>
+            </div>
+            <div className="bg-lerbee-orange flex-[20] flex items-center justify-center">
+              <span className="text-xs font-bold text-white">Team 20%</span>
+            </div>
+            <div className="bg-green-600 flex-[10] flex items-center justify-center">
+              <span className="text-xs font-bold text-white">10%</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom line */}
+        <div className="bg-gradient-to-r from-lerbee-yellow/10 to-lerbee-orange/10 rounded-lg p-3 text-center border border-lerbee-yellow/30">
+          <p className={`${typography.body} text-primary font-medium`}>
+            "Our community already works. Now we make it unstoppable."
+          </p>
+        </div>
       </div>
-    </div>
+    </SlideWrapper>
   );
 };

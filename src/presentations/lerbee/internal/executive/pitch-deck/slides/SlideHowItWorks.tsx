@@ -1,93 +1,106 @@
 import React from 'react';
 import { Smartphone, MessageCircle, ShoppingBag, Send } from 'lucide-react';
-import { SlideHeader, BottomTagline, IconContainer, iconSizes, typography, spacing } from '../components/DesignSystem';
+import { SlideHeader, SlideWrapper, typography } from '../components/DesignSystem';
 
 export const SlideHowItWorks = () => {
   const steps = [
     {
       number: '1',
-      title: 'Shopper Posts Products Live',
+      title: 'Shopper Goes Live',
       icon: Smartphone,
-      description: 'Visits local stores, shares items via live video or story format.',
-      caption: 'Shoppers showcase what\'s trending nearby.'
+      description: 'From local stores and markets'
     },
     {
       number: '2',
-      title: 'Buyer Engages & Requests',
+      title: 'Buyer Engages',
       icon: MessageCircle,
-      description: 'Asks questions in real-time, requests closer views, info, or comparisons.',
-      caption: 'Buyers get trusted, human advice, not fake reviews.'
+      description: 'Real-time chat and requests'
     },
     {
       number: '3',
-      title: 'Shopper Purchases On-Demand',
+      title: 'Shopper Purchases',
       icon: ShoppingBag,
-      description: 'Fulfills buyer\'s request in-store, confirms final selection.',
-      caption: 'Like a global personal shopper without inventory.'
+      description: 'On-demand fulfillment'
     },
     {
       number: '4',
-      title: 'LerBee Handles Payment & Shipping',
+      title: 'We Handle the Rest',
       icon: Send,
-      description: 'Buyer pays securely. Shopper ships item or drops it for fulfillment.',
-      caption: 'Logistics, payments, protection all built in.'
+      description: 'Payment, shipping, protection'
     }
   ];
 
   return (
-    <div className="min-h-screen bg-primary p-8">
-      <div className="max-w-7xl mx-auto">
+    <SlideWrapper>
+      <div className="max-w-6xl mx-auto">
         <SlideHeader 
-          title="LerBee Connects Global Buyers to Local Shoppers Live and Direct"
+          title="How LerBee Works"
+          subtitle="Connecting global buyers to local shoppers in 4 simple steps"
         />
 
-        {/* Steps Grid */}
-        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 ${spacing.margin.xl}`}>
+        {/* Simple flow with outlined boxes */}
+        <div className="flex justify-center items-stretch gap-4 mb-12">
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
-              <div key={index} className="relative">
-                {/* Connector line (except for last item) */}
-                {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-12 left-full w-full h-0.5 bg-border -ml-3 z-0"></div>
-                )}
-                
-                <div className={`relative bg-surface rounded-xl ${spacing.lg} border border-default hover:border-lerbee-yellow transition-colors z-10`}>
-                  {/* Step number */}
-                  <div className="absolute -top-3 -right-3 w-8 h-8 bg-lerbee-yellow rounded-full flex items-center justify-center font-bold text-sm">
-                    {step.number}
+              <div key={index} className="flex items-center">
+                {/* Step box - outline only */}
+                <div className="border-2 border-lerbee-yellow rounded-xl p-5 text-center w-[200px] h-[160px] flex flex-col justify-center">
+                  {/* Icon with step number */}
+                  <div className="relative mb-4 inline-block mx-auto">
+                    <div className="w-14 h-14 bg-lerbee-yellow/20 rounded-xl flex items-center justify-center">
+                      <Icon size={26} className="text-lerbee-yellow" />
+                    </div>
+                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-lerbee-yellow rounded-full flex items-center justify-center">
+                      <span className="text-xs font-bold text-primary">{step.number}</span>
+                    </div>
                   </div>
                   
-                  {/* Icon */}
-                  <IconContainer size="medium" variant="primary" className="mb-4">
-                    <Icon size={iconSizes.medium.icon} />
-                  </IconContainer>
-                  
-                  {/* Title */}
-                  <h3 className={`${typography.body} font-semibold text-primary ${spacing.margin.sm}`}>
+                  {/* Content */}
+                  <h3 className={`${typography.body} font-semibold text-primary mb-1`}>
                     {step.title}
                   </h3>
-                  
-                  {/* Description */}
-                  <p className={`${typography.small} text-secondary ${spacing.margin.md}`}>
+                  <p className={`${typography.small} text-secondary`}>
                     {step.description}
                   </p>
-                  
-                  {/* Caption */}
-                  <p className={`${typography.small} text-primary font-medium italic`}>
-                    "{step.caption}"
-                  </p>
                 </div>
+                
+                {/* Arrow connector */}
+                {index < steps.length - 1 && (
+                  <div className="mx-2 text-lerbee-yellow">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                )}
               </div>
             );
           })}
         </div>
 
-        <BottomTagline
-          line1="Your phone + your taste = your income"
-          line2="Your city becomes someone's dream store."
-        />
+        {/* Key differentiators */}
+        <div className="grid grid-cols-3 gap-6 mb-8">
+          <div className="bg-gradient-to-br from-lerbee-yellow/10 to-lerbee-yellow/5 rounded-xl p-4 text-center">
+            <p className={`${typography.body} font-semibold text-primary mb-1`}>No Inventory</p>
+            <p className={`${typography.small} text-secondary`}>Zero warehouse costs</p>
+          </div>
+          <div className="bg-gradient-to-br from-lerbee-orange/10 to-lerbee-orange/5 rounded-xl p-4 text-center">
+            <p className={`${typography.body} font-semibold text-primary mb-1`}>Real-Time Trust</p>
+            <p className={`${typography.small} text-secondary`}>Live human connections</p>
+          </div>
+          <div className="bg-gradient-to-br from-lerbee-green/10 to-lerbee-green/5 rounded-xl p-4 text-center">
+            <p className={`${typography.body} font-semibold text-primary mb-1`}>Global Access</p>
+            <p className={`${typography.small} text-secondary`}>Shop anywhere, anytime</p>
+          </div>
+        </div>
+
+        {/* Bottom tagline */}
+        <div className="text-center">
+          <p className={`${typography.large} text-secondary font-medium`}>
+            Your phone + your taste = your income
+          </p>
+        </div>
       </div>
-    </div>
+    </SlideWrapper>
   );
 };

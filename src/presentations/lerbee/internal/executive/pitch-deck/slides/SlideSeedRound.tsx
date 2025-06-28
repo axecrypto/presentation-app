@@ -1,127 +1,98 @@
 import React from 'react';
-import { DollarSign, PieChart, Mail, Coins, BarChart3 } from 'lucide-react';
-import { SlideHeader, iconSizes, typography, spacing } from '../components/DesignSystem';
+import { DollarSign, Mail, Rocket, TrendingUp, Users } from 'lucide-react';
+import { SlideHeader, SlideWrapper, typography } from '../components/DesignSystem';
 
 export const SlideSeedRound = () => {
-  const raiseDetails = [
-    { label: 'Round Size', value: '$1M–1.5M (Seed)' },
-    { label: 'Structure', value: 'SAFE or equity' },
-    { label: 'Stage', value: 'Post-product, revenue-generating, high retention' },
-    { label: 'Runway Goal', value: '18 months' }
+  const keyPoints = [
+    { icon: DollarSign, metric: '$1-1.5M', label: 'Seed Round' },
+    { icon: Rocket, metric: '18 months', label: 'Runway' },
+    { icon: TrendingUp, metric: '10x', label: 'Growth Target' },
+    { icon: Users, metric: '100K', label: 'Users by 2026' }
   ];
 
   const fundAllocation = [
-    {
-      percentage: '50%',
-      category: 'Product & AI Development',
-      details: 'Shopper tools, content automation, marketplace UX',
-      color: 'bg-lerbee-yellow'
-    },
-    {
-      percentage: '30%',
-      category: 'Growth & Market Expansion',
-      details: 'LATAM, MENA, referral engine, UGC strategy',
-      color: 'bg-lerbee-orange'
-    },
-    {
-      percentage: '20%',
-      category: 'Team & Operations',
-      details: 'Support, moderation, partner onboarding',
-      color: 'bg-lerbee-green'
-    }
+    { percentage: 40, label: 'Product & AI', color: 'bg-blue-500' },
+    { percentage: 30, label: 'Growth', color: 'bg-lerbee-yellow' },
+    { percentage: 20, label: 'Team', color: 'bg-lerbee-orange' },
+    { percentage: 10, label: 'Ops', color: 'bg-green-600' }
   ];
 
   return (
-    <div className="min-h-screen bg-primary p-8">
-      <div className="max-w-7xl mx-auto">
+    <SlideWrapper>
+      <div className="max-w-6xl mx-auto">
         <SlideHeader 
-          title="Raising $1–1.5M to Scale What Already Works"
+          title="$1-1.5M Seed to Scale What Works"
+          subtitle="From proven traction to global dominance"
         />
 
-        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 ${spacing.margin.xl}`}>
-          {/* Left: Raise Details */}
-          <div>
-            <h2 className={`${typography.heading} font-semibold text-primary ${spacing.margin.md} flex items-center gap-3`}>
-              <DollarSign size={iconSizes.medium.icon} className="text-lerbee-yellow" />
-              <span className="flex items-center gap-2">
-                <Coins size={iconSizes.small.icon} className="text-lerbee-yellow" />
-                <span>Raise Details</span>
-              </span>
-            </h2>
-            
-            <div className="space-y-4">
-              {raiseDetails.map((detail, index) => (
-                <div key={index} className={`bg-surface rounded-lg ${spacing.md} border border-default`}>
-                  <p className={`text-secondary ${typography.small}`}>{detail.label}</p>
-                  <p className={`text-primary font-semibold ${typography.large}`}>{detail.value}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right: Use of Funds */}
-          <div>
-            <h2 className={`${typography.heading} font-semibold text-primary ${spacing.margin.md} flex items-center gap-3`}>
-              <PieChart size={iconSizes.medium.icon} className="text-lerbee-yellow" />
-              <span className="flex items-center gap-2">
-                <BarChart3 size={iconSizes.small.icon} className="text-lerbee-yellow" />
-                <span>Use of Funds</span>
-              </span>
-            </h2>
-            
-            {/* Visual Bar Chart */}
-            <div className={spacing.margin.md}>
-              <div className="flex h-12 rounded-lg overflow-hidden border border-default">
-                <div className="bg-lerbee-yellow flex items-center justify-center text-sm font-bold" style={{width: '50%'}}>
-                  50%
-                </div>
-                <div className="bg-lerbee-orange flex items-center justify-center text-sm font-bold" style={{width: '30%'}}>
-                  30%
-                </div>
-                <div className="bg-lerbee-green flex items-center justify-center text-sm font-bold text-white" style={{width: '20%'}}>
-                  20%
+        {/* Key Metrics */}
+        <div className="grid grid-cols-4 gap-3 mb-4">
+          {keyPoints.map((point, index) => {
+            const Icon = point.icon;
+            return (
+              <div key={index} className="text-center">
+                <div className="bg-gradient-to-br from-lerbee-yellow/10 to-lerbee-orange/10 rounded-lg p-3 border border-lerbee-yellow/30">
+                  <Icon size={20} className="text-lerbee-yellow mx-auto mb-1" />
+                  <p className={`${typography.body} font-bold text-primary`}>{point.metric}</p>
+                  <p className={`text-xs text-secondary`}>{point.label}</p>
                 </div>
               </div>
-            </div>
-            
-            {/* Fund Categories */}
-            <div className="space-y-4">
-              {fundAllocation.map((item, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <div className={`w-4 h-4 ${item.color} rounded flex-shrink-0 mt-1`}></div>
-                  <div>
-                    <p className={`text-primary font-semibold ${typography.body}`}>
-                      {item.percentage} – {item.category}
-                    </p>
-                    <p className={`text-secondary ${typography.small}`}>{item.details}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            );
+          })}
+        </div>
+
+        {/* Use of Funds Visual */}
+        <div className="mb-4">
+          <p className={`${typography.body} font-semibold text-primary text-center mb-2`}>
+            Use of Funds
+          </p>
+          <div className="flex gap-1 h-10 rounded-lg overflow-hidden mb-2">
+            {fundAllocation.map((item, index) => (
+              <div 
+                key={index} 
+                className={`${item.color} flex items-center justify-center`}
+                style={{ flex: item.percentage }}
+              >
+                <span className="text-xs font-bold text-white">
+                  {item.label} {item.percentage}%
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Key Focus Areas */}
+        <div className="grid grid-cols-2 gap-3 mb-4">
+          <div className="border border-lerbee-yellow/30 rounded-lg p-3">
+            <p className={`${typography.small} font-bold text-primary mb-1`}>Product (40%)</p>
+            <p className={`text-xs text-secondary`}>• Emotional AI agents</p>
+            <p className={`text-xs text-secondary`}>• Viral referral engine</p>
+            <p className={`text-xs text-secondary`}>• Trust infrastructure</p>
+          </div>
+          <div className="border border-lerbee-yellow/30 rounded-lg p-3">
+            <p className={`${typography.small} font-bold text-primary mb-1`}>Growth (30%)</p>
+            <p className={`text-xs text-secondary`}>• LATAM/India expansion</p>
+            <p className={`text-xs text-secondary`}>• Influencer partnerships</p>
+            <p className={`text-xs text-secondary`}>• Community incentives</p>
           </div>
         </div>
 
         {/* Bottom Message */}
-        <div className={`bg-surface rounded-xl ${spacing.lg} border border-lerbee-yellow ${spacing.margin.lg}`}>
-          <p className={`${typography.large} text-primary font-semibold ${spacing.margin.sm} text-center`}>
-            We're not experimenting. We're operationalizing.
-          </p>
-          <p className={`${typography.body} text-secondary text-center`}>
-            LerBee is ready to scale a proven model, one trust loop at a time.
+        <div className="bg-gradient-to-r from-lerbee-yellow/10 to-lerbee-orange/10 rounded-lg p-3 text-center border border-lerbee-yellow/30 mb-4">
+          <p className={`${typography.body} text-primary font-medium`}>
+            "We're not experimenting. We're scaling what already works."
           </p>
         </div>
 
-        {/* Contact Info */}
-        <div className={`text-center bg-primary border-2 border-lerbee-yellow rounded-xl ${spacing.lg}`}>
-          <div className={`flex items-center justify-center gap-2 ${spacing.margin.sm}`}>
-            <Mail size={iconSizes.small.icon} className="text-lerbee-yellow" />
-            <span className={typography.body}>Contact</span>
+        {/* Contact */}
+        <div className="text-center">
+          <div className="flex items-center justify-center gap-2 mb-1">
+            <Mail size={16} className="text-lerbee-yellow" />
+            <p className={`${typography.small} text-primary font-semibold`}>Valeria Mikova, CEO</p>
           </div>
-          <p className={`text-primary font-semibold ${typography.body}`}>Valeria Mikova – CEO</p>
-          <p className={`text-secondary ${typography.body}`}>vmikova@lerbee.com</p>
-          <p className={`text-secondary ${typography.body}`}>+1 407 634 9122</p>
+          <p className={`text-xs text-secondary`}>vmikova@lerbee.com • +1 407 634 9122</p>
         </div>
       </div>
-    </div>
+    </SlideWrapper>
   );
 };

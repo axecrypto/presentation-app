@@ -1,97 +1,84 @@
 import React from 'react';
 import { Search, ShoppingBag, X } from 'lucide-react';
-import { SlideHeader, QuoteBox, IconContainer, iconSizes, typography, spacing } from '../components/DesignSystem';
+import { SlideHeader, SlideWrapper, typography } from '../components/DesignSystem';
 
 export const SlideProblem = () => {
   const buyerPainPoints = [
     "Can't trust product photos or reviews",
-    "No way to ask real questions or compare in real time",
-    "High anxiety on international purchases (fraud, sizing, quality)",
-    "Limited access to offline/local brands abroad"
+    "No way to ask real questions in real time",
+    "Limited access to local brands abroad"
   ];
 
   const shopperPainPoints = [
-    "Already shop daily but earn nothing from it",
+    "Shop daily but earn nothing from it",
     "No platform for trusted personal sales",
-    "Can't easily accept international payments or arrange shipping",
-    "Fear of responsibility, fraud, and no support"
+    "Can't accept international payments easily"
   ];
 
   return (
-    <div className="min-h-screen bg-primary p-8">
-      <div className="max-w-7xl mx-auto">
+    <SlideWrapper>
+      <div className="max-w-6xl mx-auto">
         <SlideHeader 
           title="Online Shopping Is Convenient But Broken"
+          subtitle="Trust, access, and monetization are broken on both sides"
         />
-        
-        <QuoteBox>
-          "I don't trust what I see online. I want to ask someone who knows." 
-          <span className="text-secondary text-sm block mt-2">(Ana, mother of 3, Barcelona)</span>
-        </QuoteBox>
 
         {/* Two columns for Buyers and Shoppers */}
-        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 ${spacing.margin.xl}`}>
+        <div className="grid grid-cols-2 gap-8 mb-8">
           {/* Buyers Column */}
-          <div className={`bg-surface rounded-xl ${spacing.lg} border border-default`}>
-            <div className={`flex items-center gap-3 ${spacing.margin.md}`}>
-              <IconContainer size="medium" variant="primary">
-                <Search size={iconSizes.medium.icon} />
-              </IconContainer>
-              <h2 className={`${typography.heading} font-semibold text-primary`}>FOR BUYERS</h2>
+          <div className="bg-surface rounded-xl p-6 border border-default">
+            <div className="flex items-center gap-3 mb-6 h-12">
+              <div className="w-10 h-10 bg-red-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <Search size={20} className="text-red-500" />
+              </div>
+              <h3 className={`${typography.heading} font-semibold text-primary`}>
+                Buyers
+              </h3>
             </div>
 
-            <div className={`space-y-3 ${spacing.margin.lg}`}>
+            <div className="space-y-4">
               {buyerPainPoints.map((point, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  <X size={20} className="text-red-500 mt-0.5 flex-shrink-0" />
-                  <p className={`${typography.body} text-secondary`}>{point}</p>
+                  <div className="w-5 h-5 flex-shrink-0 flex items-center justify-center">
+                    <X size={18} className="text-red-500" />
+                  </div>
+                  <p className={`${typography.small} text-primary`}>{point}</p>
                 </div>
               ))}
-            </div>
-
-            <div className={`bg-surface rounded-lg ${spacing.md} border border-default`}>
-              <p className={`${typography.body} text-primary font-medium italic`}>
-                "Shopping feels like gambling when you can't see or ask."
-              </p>
             </div>
           </div>
 
           {/* Shoppers Column */}
-          <div className={`bg-surface rounded-xl ${spacing.lg} border border-default`}>
-            <div className={`flex items-center gap-3 ${spacing.margin.md}`}>
-              <IconContainer size="medium" variant="primary">
-                <ShoppingBag size={iconSizes.medium.icon} />
-              </IconContainer>
-              <h2 className={`${typography.heading} font-semibold text-primary`}>FOR SHOPPERS</h2>
+          <div className="bg-surface rounded-xl p-6 border border-default">
+            <div className="flex items-center gap-3 mb-6 h-12">
+              <div className="w-10 h-10 bg-red-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <ShoppingBag size={20} className="text-red-500" />
+              </div>
+              <h3 className={`${typography.heading} font-semibold text-primary`}>
+                Shoppers
+              </h3>
             </div>
 
-            <div className={`space-y-3 ${spacing.margin.lg}`}>
+            <div className="space-y-4">
               {shopperPainPoints.map((point, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  <X size={20} className="text-red-500 mt-0.5 flex-shrink-0" />
-                  <p className={`${typography.body} text-secondary`}>{point}</p>
+                  <div className="w-5 h-5 flex-shrink-0 flex items-center justify-center">
+                    <X size={18} className="text-red-500" />
+                  </div>
+                  <p className={`${typography.small} text-primary`}>{point}</p>
                 </div>
               ))}
-            </div>
-
-            <div className={`bg-surface rounded-lg ${spacing.md} border border-default`}>
-              <p className={`${typography.body} text-primary font-medium italic`}>
-                "Millions walk stores daily but can't monetize it safely or globally."
-              </p>
             </div>
           </div>
         </div>
 
         {/* Bottom Line */}
-        <div className={`text-center bg-surface rounded-xl ${spacing.lg} border border-default`}>
-          <p className={`${typography.large} text-secondary ${spacing.margin.sm}`}>
-            Trust, access, and monetization are broken on both sides.
-          </p>
+        <div className="bg-gradient-to-r from-lerbee-yellow/10 to-lerbee-orange/10 rounded-xl p-6 text-center">
           <p className={`${typography.subtitle} text-primary font-bold`}>
-            We fix all three.
+            We fix all three: Trust, Access, and Monetization
           </p>
         </div>
       </div>
-    </div>
+    </SlideWrapper>
   );
 };

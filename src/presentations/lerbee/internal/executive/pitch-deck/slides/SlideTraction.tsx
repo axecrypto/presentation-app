@@ -1,49 +1,46 @@
 import React from 'react';
-import { Globe, RefreshCcw, DollarSign } from 'lucide-react';
-import { SlideHeader, IconContainer, MetricCard, BottomTagline, QuoteBox, iconSizes } from '../components/DesignSystem';
+import { DollarSign } from 'lucide-react';
+import { SlideHeader, SlideWrapper, typography } from '../components/DesignSystem';
 
 export const SlideTraction = () => {
-  const heroMetrics = [
-    { value: '$390K', label: 'GMV in 6 months', icon: DollarSign },
-    { value: '95%', label: 'Repeat buyers', icon: RefreshCcw },
-    { value: '10+', label: 'Countries', icon: Globe }
-  ];
 
   return (
-    <div className="min-h-screen bg-primary p-8 flex items-center">
-      <div className="max-w-6xl mx-auto w-full">
+    <SlideWrapper>
+      <div className="max-w-6xl mx-auto">
         <SlideHeader 
           title="From Zero to Global Product With No Paid Marketing"
+          subtitle="Built lean, scaled globally, monetizing already"
         />
-        
-        <QuoteBox>
-          "Thousands of buyers came back not because we paid them, but because they believed it."
-        </QuoteBox>
 
-        {/* Hero Metrics */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16 mt-16">
-          {heroMetrics.map((metric, index) => {
-            const Icon = metric.icon;
-            return (
-              <MetricCard
-                key={index}
-                value={metric.value}
-                label={metric.label}
-                icon={
-                  <IconContainer size="large" variant="primary">
-                    <Icon size={iconSizes.large.icon} />
-                  </IconContainer>
-                }
-              />
-            );
-          })}
+        {/* Key metrics line */}
+        <div className="text-center mb-8">
+          <p className={`${typography.subtitle} text-secondary flex justify-center items-center gap-6`}>
+            <span><span className="text-primary font-bold">7,800+</span> users</span>
+            <span className="text-lerbee-yellow">•</span>
+            <span><span className="text-primary font-bold">11M+</span> views</span>
+            <span className="text-lerbee-yellow">•</span>
+            <span><span className="text-primary font-bold">95%</span> repeat buyers</span>
+          </p>
         </div>
 
-        <BottomTagline
-          line1="We didn't just build a product."
-          line2="We built a habit across cultures and continents."
-        />
+        {/* Hero GMV */}
+        <div className="text-center mb-8">
+          <div className="inline-block">
+            <div className="bg-gradient-to-br from-lerbee-yellow/20 to-lerbee-orange/20 rounded-2xl p-8 border-2 border-lerbee-yellow">
+              <DollarSign size={48} className="text-lerbee-yellow mx-auto mb-4" />
+              <p className={`${typography.hero} font-bold text-primary text-5xl mb-2`}>$390K GMV</p>
+              <p className={`${typography.body} text-secondary`}>in 6 months</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom message */}
+        <div className="text-center">
+          <p className={`${typography.large} text-secondary font-medium`}>
+            "Thousands of buyers came back not because we paid them, but because they believed it."
+          </p>
+        </div>
       </div>
-    </div>
+    </SlideWrapper>
   );
 };

@@ -1,85 +1,90 @@
 import React from 'react';
 import { Brain, Users, Smartphone, Store } from 'lucide-react';
-import { SlideHeader, QuoteBox, IconContainer, iconSizes, typography, spacing } from '../components/DesignSystem';
+import { SlideHeader, SlideWrapper, typography } from '../components/DesignSystem';
 
 export const SlideWhyNow = () => {
   const drivers = [
     {
       icon: Brain,
-      title: 'AI Is Ready to Scale the Infrastructure',
-      description: 'Automates descriptions, translation, routing, letting humans focus on trust & style.'
+      title: 'AI Makes It Scalable',
+      description: 'Translation, routing, and matching automated',
+      stat: 'Cost per transaction: $0.001'
     },
     {
       icon: Users,
-      title: 'Consumers Demand Authenticity',
-      description: '73% of Gen Z prefer real people and live video to polished ads.',
-      stat: 'Live commerce grew 3x in 2 years (McKinsey)'
+      title: 'Trust Crisis in E-commerce',
+      description: 'Fake reviews and photos drive buyer anxiety',
+      stat: '64% don\'t trust online reviews'
     },
     {
       icon: Smartphone,
-      title: 'Millions Seek Flexible Income',
-      description: 'People want work-from-phone options without upfront investment. This is that.'
+      title: 'Everyone Has a Smartphone',
+      description: 'Global mobile penetration enables participation',
+      stat: '6.8B smartphone users globally'
     },
     {
       icon: Store,
-      title: 'Offline Stores Are Dying, But Still Have Value',
-      description: 'We revive them by turning every local shop into a global inventory.'
+      title: 'Physical Retail Still Matters',
+      description: 'Touch, feel, and instant gratification remain key',
+      stat: '85% of sales still in-store'
     }
   ];
 
   return (
-    <div className="min-h-screen bg-primary p-8">
-      <div className="max-w-7xl mx-auto">
+    <SlideWrapper>
+      <div className="max-w-6xl mx-auto">
         <SlideHeader 
           title="The World Is Ready for Peer-to-Peer Shopping"
+          subtitle="Four unstoppable trends converge to create our moment"
         />
-        
-        <QuoteBox>
-          "Millions lost jobs. Stores lost foot traffic. <span className="font-bold">We connect them both.</span>"
-        </QuoteBox>
 
-        {/* Drivers Grid */}
-        <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 ${spacing.margin.xl}`}>
+        {/* Quote */}
+        <div className="bg-lerbee-yellow/10 border border-lerbee-yellow/30 rounded-xl p-4 mb-6 text-center">
+          <p className={`${typography.body} text-primary`}>
+            "Millions lost jobs. Stores lost foot traffic. <span className="font-bold">We connect them both.</span>"
+          </p>
+        </div>
+
+        {/* Drivers Grid - 2x2 compact */}
+        <div className="grid grid-cols-2 gap-6 mb-8">
           {drivers.map((driver, index) => {
             const Icon = driver.icon;
             return (
-              <div key={index} className={`bg-surface rounded-xl ${spacing.lg} border border-default hover:border-lerbee-yellow transition-colors`}>
-                {/* Icon and Title */}
-                <div className={`flex items-start gap-4 ${spacing.margin.md}`}>
-                  <IconContainer size="large" variant="primary">
-                    <Icon size={iconSizes.large.icon} />
-                  </IconContainer>
-                  <h3 className={`${typography.body} font-semibold text-primary leading-tight flex-1`}>
-                    {driver.title}
-                  </h3>
+              <div key={index} className="border-2 border-lerbee-yellow rounded-xl p-5">
+                <div className="flex items-start gap-4">
+                  {/* Icon */}
+                  <div className="w-10 h-10 bg-lerbee-yellow/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Icon size={20} className="text-lerbee-yellow" />
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="flex-1">
+                    <h3 className={`${typography.body} font-semibold text-primary mb-1`}>
+                      {driver.title}
+                    </h3>
+                    <p className={`${typography.small} text-secondary mb-2`}>
+                      {driver.description}
+                    </p>
+                    <span className={`${typography.small} font-bold text-lerbee-yellow`}>
+                      {driver.stat}
+                    </span>
+                  </div>
                 </div>
-                
-                {/* Description */}
-                <p className={`${typography.body} text-secondary ${spacing.margin.sm}`}>
-                  {driver.description}
-                </p>
-                
-                {/* Stat if available */}
-                {driver.stat && (
-                  <p className={`${typography.small} text-primary font-medium bg-surface rounded-lg px-4 py-2 inline-block border border-lerbee-yellow`}>
-                    {driver.stat}
-                  </p>
-                )}
               </div>
             );
           })}
         </div>
 
-        {/* Bottom Line */}
-        <div className={`text-center bg-surface rounded-xl ${spacing.lg} border border-lerbee-yellow`}>
-          <p className={`${typography.large} text-primary font-semibold`}>
-            LerBee taps into five unstoppable shifts: 
+        {/* Visual summary */}
+        <div className="bg-gradient-to-r from-lerbee-yellow/10 to-lerbee-orange/10 rounded-xl p-6 text-center">
+          <p className={`${typography.subtitle} text-primary font-bold mb-2`}>
+            Perfect Storm = Perfect Timing
           </p>
-          <p className={`${typography.subtitle} text-primary font-bold ${spacing.margin.sm}`}>
-            AI, gig work, distrust in brands, retail collapse, and global curiosity.
+          <p className={`${typography.body} text-secondary`}>
+            AI Infrastructure + Trust Crisis + Mobile Ubiquity + Physical Retail = LerBee's Moment
           </p>
         </div>
       </div>
-    </div>
+    </SlideWrapper>
   );
 };

@@ -1,53 +1,72 @@
 import React from 'react';
-import { DollarSign } from 'lucide-react';
-import { SlideHeader, IconContainer, BottomTagline, iconSizes, typography, spacing } from '../components/DesignSystem';
+import { DollarSign, TrendingUp, Package, RotateCw } from 'lucide-react';
+import { SlideHeader, SlideWrapper, typography } from '../components/DesignSystem';
 
 export const SlideBusinessModel = () => {
+  const unitEconomics = [
+    { label: 'Take Rate', value: '5-8%', sublabel: 'commission' },
+    { label: 'Avg Order', value: '$25-40', sublabel: 'per transaction' },
+    { label: 'CAC', value: '$15-20', sublabel: 'blended' },
+    { label: 'Payback', value: '<60', sublabel: 'days' }
+  ];
+
+  const flywheel = [
+    { icon: Package, text: 'Zero inventory = high margins' },
+    { icon: RotateCw, text: '95% repeat rate = lower CAC over time' },
+    { icon: TrendingUp, text: 'Word of mouth reduces paid spend' },
+    { icon: DollarSign, text: 'LTV:CAC ratio improves with scale' }
+  ];
+
   return (
-    <div className="min-h-screen bg-primary p-8 flex items-center">
-      <div className="max-w-5xl mx-auto w-full">
+    <SlideWrapper>
+      <div className="max-w-6xl mx-auto">
         <SlideHeader 
           title="Asset-Light Model with Fast Payback"
+          subtitle="Real revenue from day one, no burn required"
         />
 
-        {/* Core Model */}
-        <div className="flex flex-col items-center">
-          {/* Commission */}
-          <div className="mb-12">
-            <IconContainer size="large" variant="primary">
-              <DollarSign size={iconSizes.large.icon} />
-            </IconContainer>
-            <p className={`${typography.hero} font-bold text-primary mt-6 mb-2 text-center`}>
-              5-8%
-            </p>
-            <p className={`${typography.large} text-secondary text-center`}>
-              Commission per transaction
-            </p>
-          </div>
+        {/* Unit Economics Grid */}
+        <div className="grid grid-cols-4 gap-3 mb-6">
+          {unitEconomics.map((metric, index) => (
+            <div key={index} className="bg-gradient-to-br from-lerbee-yellow/10 to-lerbee-orange/10 rounded-lg p-3 text-center border border-lerbee-yellow/30">
+              <p className={`text-xs text-secondary`}>{metric.label}</p>
+              <p className={`${typography.body} font-bold text-primary`}>{metric.value}</p>
+              <p className={`text-xs text-secondary`}>{metric.sublabel}</p>
+            </div>
+          ))}
+        </div>
 
-          {/* LTV > CAC */}
-          <div className={`bg-surface rounded-xl ${spacing.lg} border border-lerbee-yellow`}>
-            <div className="flex items-center justify-center gap-8">
-              <div className="text-center">
-                <p className={`text-4xl font-bold text-primary`}>LTV</p>
-                <p className={`${typography.small} text-secondary mt-1`}>95% repeat</p>
+        {/* The Flywheel */}
+        <div className="grid grid-cols-2 gap-3 mb-6">
+          {flywheel.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <div key={index} className="border border-lerbee-yellow/30 rounded-lg p-3 flex items-center gap-3">
+                <Icon size={20} className="text-lerbee-yellow flex-shrink-0" />
+                <p className={`${typography.small} text-primary`}>{item.text}</p>
               </div>
-              <span className="text-3xl text-lerbee-yellow font-bold px-4">&gt;</span>
-              <div className="text-center">
-                <p className={`text-4xl font-bold text-primary`}>CAC</p>
-                <p className={`${typography.small} text-secondary mt-1`}>Viral growth</p>
-              </div>
+            );
+          })}
+        </div>
+
+        {/* LTV > CAC Visual */}
+        <div className="bg-gradient-to-r from-green-500/10 to-green-600/10 rounded-xl p-4 text-center border border-green-500/30">
+          <div className="flex items-center justify-center gap-6 mb-2">
+            <div>
+              <p className={`${typography.subtitle} font-bold text-primary`}>LTV</p>
+              <p className={`text-xs text-secondary`}>$603 avg</p>
+            </div>
+            <span className={`${typography.subtitle} text-green-600 font-bold`}>&gt;</span>
+            <div>
+              <p className={`${typography.subtitle} font-bold text-primary`}>CAC</p>
+              <p className={`text-xs text-secondary`}>$15-20</p>
             </div>
           </div>
-        </div>
-
-        <div className="mt-16">
-          <BottomTagline
-            line1="Real revenue. Low cost."
-            line2="Growth driven by loyalty, not burn."
-          />
+          <p className={`${typography.small} text-secondary`}>
+            Growth driven by loyalty, not burn. Every dollar compounds.
+          </p>
         </div>
       </div>
-    </div>
+    </SlideWrapper>
   );
 };

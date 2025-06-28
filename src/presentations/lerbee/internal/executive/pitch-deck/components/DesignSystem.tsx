@@ -147,18 +147,29 @@ export const BrandPattern: React.FC<{
   if (position === 'corner') {
     return (
       <div className="absolute bottom-12 right-12 w-96 h-96 pointer-events-none">
-        {/* Background overlay for visibility */}
-        <div 
-          className="absolute inset-0 bg-gradient-to-tl from-gray-900/20 to-transparent dark:from-white/20"
+        {/* Light mode - show the actual image to debug */}
+        <img 
+          src={beeMark} 
+          alt="" 
+          className="w-full h-full object-cover dark:hidden"
           style={{
+            opacity: 0.5,
+            filter: 'contrast(2) brightness(0.3)'
+          }}
+        />
+        {/* Dark mode - yellow pattern */}
+        <div 
+          className="w-full h-full bg-lerbee-yellow hidden dark:block"
+          style={{
+            opacity: 0.15,
             maskImage: `url(${beeMark})`,
             WebkitMaskImage: `url(${beeMark})`,
             maskSize: 'cover',
             WebkitMaskSize: 'cover',
             maskRepeat: 'no-repeat',
             WebkitMaskRepeat: 'no-repeat',
-            maskPosition: 'center',
-            WebkitMaskPosition: 'center'
+            maskPosition: 'bottom right',
+            WebkitMaskPosition: 'bottom right'
           }}
         />
       </div>

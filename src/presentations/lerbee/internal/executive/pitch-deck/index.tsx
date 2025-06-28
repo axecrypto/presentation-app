@@ -17,6 +17,7 @@ import { SlideRoadmap } from './slides/SlideRoadmap';
 import { SlideSeedRound } from './slides/SlideSeedRound';
 import { SlideWhyWeExist } from './slides/SlideWhyWeExist';
 import { SlideShopperStory } from './slides/SlideShopperStory';
+import { SlideQuote } from './slides/SlideQuote';
 // Appendix slides
 import { AppendixTraction } from './appendix/AppendixTraction';
 import { AppendixMarketOpportunity } from './appendix/AppendixMarketOpportunity';
@@ -55,6 +56,13 @@ export const lerbeePitchDeckPresentation: Presentation = {
       layout: 'full',
       content: <SlideWhatWeDo />,
       notes: 'We turn everyday shoppers into global style ambassadors',
+    },
+    {
+      id: 'quote',
+      title: 'Customer Voice',
+      layout: 'full',
+      content: <SlideQuote />,
+      notes: 'Real customer pain point that drives our solution',
     },
     {
       id: 'problem',
