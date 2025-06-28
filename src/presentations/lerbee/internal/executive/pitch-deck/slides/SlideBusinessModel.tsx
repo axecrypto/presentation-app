@@ -44,7 +44,7 @@ export const SlideBusinessModel = () => {
         <div className="mt-16">
           <BottomTagline
             line1="Real revenue. Low cost."
-            line2="Growth driven by loyalty — not burn."
+            line2="Growth driven by loyalty, not burn."
           />
         </div>
       </div>

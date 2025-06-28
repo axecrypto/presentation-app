@@ -1,4 +1,6 @@
 import React from 'react';
+// Import bee brand mark
+import beeMark from '../assets/brand/bee-mark.png';
 
 // Consistent spacing values
 export const spacing = {
@@ -130,3 +132,77 @@ export const QuoteBox: React.FC<{
     </p>
   </div>
 );
+
+// Brand pattern component - displays the bee cells background
+export const BrandPattern: React.FC<{
+  opacity?: number;
+  position?: 'full' | 'corner' | 'side';
+}> = ({ opacity = 0.3, position = 'corner' }) => {
+  const positionStyles = {
+    full: 'inset-0',
+    corner: 'bottom-0 right-0 w-1/3 h-1/3',
+    side: 'top-0 right-0 w-1/4 h-full'
+  };
+  
+  if (position === 'corner') {
+    return (
+      <div className="absolute bottom-12 right-12 w-96 h-96 pointer-events-none">
+        {/* Background overlay for visibility */}
+        <div 
+          className="absolute inset-0 bg-gradient-to-tl from-gray-900/20 to-transparent dark:from-white/20"
+          style={{
+            maskImage: `url(${beeMark})`,
+            WebkitMaskImage: `url(${beeMark})`,
+            maskSize: 'cover',
+            WebkitMaskSize: 'cover',
+            maskRepeat: 'no-repeat',
+            WebkitMaskRepeat: 'no-repeat',
+            maskPosition: 'center',
+            WebkitMaskPosition: 'center'
+          }}
+        />
+      </div>
+    );
+  }
+  
+  return (
+    <div className={`absolute ${positionStyles[position]} pointer-events-none`}>
+      <div 
+        className="w-full h-full"
+        style={{ 
+          opacity,
+          backgroundImage: `url(${beeMark})`,
+          backgroundRepeat: 'repeat',
+          backgroundSize: '100px 100px'
+        }}
+      />
+    </div>
+  );
+};
+
+// Slide wrapper that includes the brand pattern
+export const SlideWrapper: React.FC<{
+  children: React.ReactNode;
+  showBrandPattern?: boolean;
+  patternPosition?: 'full' | 'corner' | 'side';
+  patternOpacity?: number;
+}> = ({ 
+  children, 
+  showBrandPattern = true,
+  patternPosition = 'corner',
+  patternOpacity = 0.3
+}) => {
+  return (
+    <div className="min-h-screen bg-primary p-8 flex items-center relative overflow-hidden">
+      {showBrandPattern && (
+        <BrandPattern 
+          position={patternPosition} 
+          opacity={patternOpacity} 
+        />
+      )}
+      <div className="max-w-6xl mx-auto w-full relative z-10">
+        {children}
+      </div>
+    </div>
+  );
+};

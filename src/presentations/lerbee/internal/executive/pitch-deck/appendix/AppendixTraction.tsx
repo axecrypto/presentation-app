@@ -152,7 +152,7 @@ export const AppendixTraction = () => {
               </div>
               <div className="flex items-center gap-3">
                 <RefreshCcw size={20} className="text-lerbee-yellow" />
-                <p className="text-primary">Buyers return naturally — <strong>LTV &gt; CAC</strong> even without paid growth</p>
+                <p className="text-primary">Buyers return naturally. <strong>LTV &gt; CAC</strong> even without paid growth</p>
               </div>
             </div>
           </div>

@@ -16,21 +16,21 @@ export const SlideHowItWorks = () => {
       title: 'Buyer Engages & Requests',
       icon: MessageCircle,
       description: 'Asks questions in real-time, requests closer views, info, or comparisons.',
-      caption: 'Buyers get trusted, human advice — not fake reviews.'
+      caption: 'Buyers get trusted, human advice, not fake reviews.'
     },
     {
       number: '3',
       title: 'Shopper Purchases On-Demand',
       icon: ShoppingBag,
       description: 'Fulfills buyer\'s request in-store, confirms final selection.',
-      caption: 'Like a global personal shopper — without inventory.'
+      caption: 'Like a global personal shopper without inventory.'
     },
     {
       number: '4',
       title: 'LerBee Handles Payment & Shipping',
       icon: Send,
       description: 'Buyer pays securely. Shopper ships item or drops it for fulfillment.',
-      caption: 'Logistics, payments, protection — all built in.'
+      caption: 'Logistics, payments, protection all built in.'
     }
   ];
 
@@ -38,7 +38,7 @@ export const SlideHowItWorks = () => {
     <div className="min-h-screen bg-primary p-8">
       <div className="max-w-7xl mx-auto">
         <SlideHeader 
-          title="LerBee Connects Global Buyers to Local Shoppers — Live and Direct"
+          title="LerBee Connects Global Buyers to Local Shoppers Live and Direct"
         />
 
         {/* Steps Grid */}

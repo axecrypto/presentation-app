@@ -16,7 +16,7 @@ export const SlideWhatWeDo = () => {
       <div className="max-w-7xl mx-auto">
         <SlideHeader 
           title="LerBee Turns Everyday Routines into Global Opportunity"
-          subtitle="A peer-to-peer marketplace where people earn by shopping — and others get trusted access to products worldwide."
+          subtitle="A peer-to-peer marketplace where people earn by shopping, and others get trusted access to products worldwide."
         />
         
         <QuoteBox>

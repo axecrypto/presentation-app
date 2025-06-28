@@ -11,7 +11,7 @@ export const SlideProblem = () => {
   ];
 
   const shopperPainPoints = [
-    "Already shop daily — but earn nothing from it",
+    "Already shop daily but earn nothing from it",
     "No platform for trusted personal sales",
     "Can't easily accept international payments or arrange shipping",
     "Fear of responsibility, fraud, and no support"
@@ -21,12 +21,12 @@ export const SlideProblem = () => {
     <div className="min-h-screen bg-primary p-8">
       <div className="max-w-7xl mx-auto">
         <SlideHeader 
-          title="Online Shopping Is Convenient — But Broken"
+          title="Online Shopping Is Convenient But Broken"
         />
         
         <QuoteBox>
           "I don't trust what I see online. I want to ask someone who knows." 
-          <span className="text-secondary text-sm block mt-2">— Ana, mother of 3, Barcelona</span>
+          <span className="text-secondary text-sm block mt-2">(Ana, mother of 3, Barcelona)</span>
         </QuoteBox>
 
         {/* Two columns for Buyers and Shoppers */}
@@ -76,7 +76,7 @@ export const SlideProblem = () => {
 
             <div className={`bg-surface rounded-lg ${spacing.md} border border-default`}>
               <p className={`${typography.body} text-primary font-medium italic`}>
-                "Millions walk stores daily — but can't monetize it safely or globally."
+                "Millions walk stores daily but can't monetize it safely or globally."
               </p>
             </div>
           </div>

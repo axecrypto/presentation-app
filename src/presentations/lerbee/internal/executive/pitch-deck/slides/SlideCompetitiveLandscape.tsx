@@ -56,7 +56,7 @@ export const SlideCompetitiveLandscape = () => {
         </div>
 
         <BottomTagline
-          line1="We don't warehouse products —"
+          line1="We don't warehouse products,"
           line2="We warehouse trust."
         />
       </div>

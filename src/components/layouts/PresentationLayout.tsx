@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styled from '@emotion/styled';
 import { usePresentation } from '../../contexts/PresentationContext';
 import { SlideContainer } from '../slides/SlideContainer';
@@ -19,7 +19,7 @@ const SlideWrapper = styled.div`
   height: 100%;
 `;
 
-const Controls = styled.div`
+const Controls = styled.div<{ isVisible: boolean }>`
   position: absolute;
   bottom: ${({ theme }) => theme.spacing.lg};
   left: 50%;
@@ -32,6 +32,9 @@ const Controls = styled.div`
   border-radius: ${({ theme }) => theme.borderRadius.full};
   box-shadow: ${({ theme }) => theme.shadows.lg};
   z-index: 100;
+  opacity: ${({ isVisible }) => isVisible ? 1 : 0};
+  visibility: ${({ isVisible }) => isVisible ? 'visible' : 'hidden'};
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 `;
 
 const ProgressBar = styled.div`
@@ -73,6 +76,47 @@ export const PresentationLayout: React.FC = () => {
     toggleTheme,
   } = usePresentation();
 
+  const [controlsVisible, setControlsVisible] = useState(true);
+  const [isHoveringControls, setIsHoveringControls] = useState(false);
+  const hideTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Auto-hide controls after 3 seconds of inactivity
+  useEffect(() => {
+    const showControls = () => {
+      setControlsVisible(true);
+      
+      // Clear existing timeout
+      if (hideTimeoutRef.current) {
+        clearTimeout(hideTimeoutRef.current);
+      }
+      
+      // Don't hide if hovering over controls
+      if (!isHoveringControls) {
+        hideTimeoutRef.current = setTimeout(() => {
+          setControlsVisible(false);
+        }, 3000);
+      }
+    };
+
+    // Show controls on mouse movement
+    const handleMouseMove = () => {
+      showControls();
+    };
+
+    // Add event listener
+    window.addEventListener('mousemove', handleMouseMove);
+    
+    // Initial timeout
+    showControls();
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      if (hideTimeoutRef.current) {
+        clearTimeout(hideTimeoutRef.current);
+      }
+    };
+  }, [isHoveringControls]);
+
   if (!presentation) {
     return (
       <LayoutContainer>
@@ -105,25 +149,29 @@ export const PresentationLayout: React.FC = () => {
           <SlideContainer slide={currentSlide} isActive={true} />
         </SlideWrapper>
 
-        <Controls>
-        <Button size="sm" variant="ghost" onClick={previousSlide}>
-          ←
-        </Button>
-        <Button size="sm" variant="ghost" onClick={togglePlay}>
-          {isPlaying ? '⏸' : '▶'}
-        </Button>
-        <Button size="sm" variant="ghost" onClick={nextSlide}>
-          →
-        </Button>
-        <Button size="sm" variant="ghost" onClick={toggleFullscreen}>
-          ⛶
-        </Button>
-        {presentation.settings?.availableThemes && presentation.settings.availableThemes.length > 1 && (
-          <Button size="sm" variant="ghost" onClick={toggleTheme}>
-            {currentTheme === 'dark' ? '☀️' : '🌙'}
+        <Controls 
+          isVisible={controlsVisible}
+          onMouseEnter={() => setIsHoveringControls(true)}
+          onMouseLeave={() => setIsHoveringControls(false)}
+        >
+          <Button size="sm" variant="ghost" onClick={previousSlide}>
+            ←
           </Button>
-        )}
-      </Controls>
+          <Button size="sm" variant="ghost" onClick={togglePlay}>
+            {isPlaying ? '⏸' : '▶'}
+          </Button>
+          <Button size="sm" variant="ghost" onClick={nextSlide}>
+            →
+          </Button>
+          <Button size="sm" variant="ghost" onClick={toggleFullscreen}>
+            ⛶
+          </Button>
+          {presentation.settings?.availableThemes && presentation.settings.availableThemes.length > 1 && (
+            <Button size="sm" variant="ghost" onClick={toggleTheme}>
+              {currentTheme === 'dark' ? '☀️' : '🌙'}
+            </Button>
+          )}
+        </Controls>
       </LayoutContainer>
     </ThemeWrapper>
   );

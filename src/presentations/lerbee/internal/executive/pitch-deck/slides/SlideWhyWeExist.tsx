@@ -12,7 +12,7 @@ export const SlideWhyWeExist = () => {
       
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <SlideHeader 
-          title="LerBee Isn't Just a Marketplace — It's a Movement"
+          title="LerBee Isn't Just a Marketplace: It's a Movement"
         />
         
         {/* Globe Icon */}
@@ -28,7 +28,7 @@ export const SlideWhyWeExist = () => {
           
           <p>
             For centuries, humanity connected through marketplaces.<br />
-            We're reviving that — not geographically, but digitally.
+            We're reviving that, not geographically, but digitally.
           </p>
           
           <p className="text-secondary">

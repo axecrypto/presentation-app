@@ -1,10 +1,11 @@
 import React from 'react';
 import { Globe } from 'lucide-react';
+import { SlideWrapper } from '../components/DesignSystem';
 
 export const SlideTitle = () => {
   return (
-    <div className="min-h-screen bg-primary flex items-center justify-center p-8">
-      <div className="max-w-5xl mx-auto text-center">
+    <SlideWrapper>
+      <div className="text-center">
         {/* Logo */}
         <div className="mb-8">
           <div className="inline-flex items-center justify-center w-20 h-20 bg-lerbee-yellow rounded-2xl">
@@ -36,6 +37,6 @@ export const SlideTitle = () => {
           <p>Valeria Mikova • vmikova@lerbee.com • +1 407 634 9122</p>
         </div>
       </div>
-    </div>
+    </SlideWrapper>
   );
 };

@@ -37,7 +37,7 @@ export const SlideMarketOpportunity = () => {
         <div className="mt-16">
           <BottomTagline
             line1="Commerce is shifting from platforms to people."
-            line2="LerBee builds on the trust graph — not search results."
+            line2="LerBee builds on the trust graph, not search results."
           />
         </div>
       </div>

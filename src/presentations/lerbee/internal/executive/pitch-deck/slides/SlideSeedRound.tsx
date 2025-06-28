@@ -107,7 +107,7 @@ export const SlideSeedRound = () => {
             We're not experimenting. We're operationalizing.
           </p>
           <p className={`${typography.body} text-secondary text-center`}>
-            LerBee is ready to scale a proven model — one trust loop at a time.
+            LerBee is ready to scale a proven model, one trust loop at a time.
           </p>
         </div>
 

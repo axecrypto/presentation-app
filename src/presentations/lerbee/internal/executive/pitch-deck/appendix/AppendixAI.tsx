@@ -14,7 +14,7 @@ export const AppendixAI = () => {
     { icon: Video, task: 'Host live streams, share context and nuance' },
     { icon: Brain, task: 'Provide personalized advice & taste' },
     { icon: MessageCircle, task: 'Build real connection in chat' },
-    { icon: Palette, task: 'Curate — not just sell' },
+    { icon: Palette, task: 'Curate, not just sell' },
     { icon: RotateCw, task: 'Retain micro-community trust and loyalty' }
   ];
 

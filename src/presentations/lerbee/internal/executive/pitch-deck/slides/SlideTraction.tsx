@@ -13,11 +13,11 @@ export const SlideTraction = () => {
     <div className="min-h-screen bg-primary p-8 flex items-center">
       <div className="max-w-6xl mx-auto w-full">
         <SlideHeader 
-          title="From Zero to Global Product — With No Paid Marketing"
+          title="From Zero to Global Product With No Paid Marketing"
         />
         
         <QuoteBox>
-          "Thousands of buyers came back — not because we paid them, but because they believed it."
+          "Thousands of buyers came back not because we paid them, but because they believed it."
         </QuoteBox>
 
         {/* Hero Metrics */}
@@ -41,7 +41,7 @@ export const SlideTraction = () => {
 
         <BottomTagline
           line1="We didn't just build a product."
-          line2="We built a habit — across cultures and continents."
+          line2="We built a habit across cultures and continents."
         />
       </div>
     </div>

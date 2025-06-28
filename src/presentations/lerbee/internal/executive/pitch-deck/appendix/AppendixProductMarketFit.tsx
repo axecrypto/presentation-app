@@ -26,9 +26,9 @@ export const AppendixProductMarketFit = () => {
       icon: DollarSign,
       title: 'Monetization',
       metrics: [
-        '$390,000 GMV in 6 months — bootstrapped',
+        '$390,000 GMV in 6 months (bootstrapped)',
         'Avg buyer revenue: ~$603 in 7 months',
-        'No subsidies, no discounts — real buying behavior',
+        'No subsidies, no discounts: real buying behavior',
         'Average order value increasing over time'
       ]
     }

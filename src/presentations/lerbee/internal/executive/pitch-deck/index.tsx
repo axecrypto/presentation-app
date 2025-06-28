@@ -13,8 +13,10 @@ import { SlideCompetitiveLandscape } from './slides/SlideCompetitiveLandscape';
 import { SlideAI } from './slides/SlideAI';
 import { SlideTeam } from './slides/SlideTeam';
 import { SlideForecast } from './slides/SlideForecast';
+import { SlideRoadmap } from './slides/SlideRoadmap';
 import { SlideSeedRound } from './slides/SlideSeedRound';
 import { SlideWhyWeExist } from './slides/SlideWhyWeExist';
+import { SlideShopperStory } from './slides/SlideShopperStory';
 // Appendix slides
 import { AppendixTraction } from './appendix/AppendixTraction';
 import { AppendixMarketOpportunity } from './appendix/AppendixMarketOpportunity';
@@ -90,6 +92,13 @@ export const lerbeePitchDeckPresentation: Presentation = {
       notes: 'From zero to global product — with no paid marketing',
     },
     {
+      id: 'shopper-story',
+      title: 'Shopper Success Story',
+      layout: 'full',
+      content: <SlideShopperStory />,
+      notes: 'Real people building real income — Vicky\'s transformation story',
+    },
+    {
       id: 'product-market-fit',
       title: 'Product-Market Fit',
       layout: 'full',
@@ -130,6 +139,13 @@ export const lerbeePitchDeckPresentation: Presentation = {
       layout: 'full',
       content: <SlideForecast />,
       notes: '2025 growth plan — driven by retention, community, and scale',
+    },
+    {
+      id: 'roadmap',
+      title: 'Product Roadmap',
+      layout: 'full',
+      content: <SlideRoadmap />,
+      notes: 'From product polish to global scale — concrete execution plan',
     },
     {
       id: 'seed-round',

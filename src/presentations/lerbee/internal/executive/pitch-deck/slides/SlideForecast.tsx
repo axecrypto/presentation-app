@@ -46,7 +46,7 @@ export const SlideForecast = () => {
     <div className="min-h-screen bg-primary p-8">
       <div className="max-w-7xl mx-auto">
         <SlideHeader 
-          title="2025 Growth Plan — Driven by Retention, Community, and Scale"
+          title="2025 Growth Plan: Driven by Retention, Community, and Scale"
         />
 
         {/* Metrics Table */}
@@ -108,7 +108,7 @@ export const SlideForecast = () => {
 
         <BottomTagline
           line1="With $1M, we turn traction into velocity."
-          line2="Our community already works — it's time to scale it."
+          line2="Our community already works. It's time to scale it."
         />
       </div>
     </div>

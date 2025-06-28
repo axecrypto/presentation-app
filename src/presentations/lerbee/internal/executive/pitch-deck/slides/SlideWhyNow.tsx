@@ -7,7 +7,7 @@ export const SlideWhyNow = () => {
     {
       icon: Brain,
       title: 'AI Is Ready to Scale the Infrastructure',
-      description: 'Automates descriptions, translation, routing — lets humans focus on trust & style.'
+      description: 'Automates descriptions, translation, routing, letting humans focus on trust & style.'
     },
     {
       icon: Users,
@@ -18,11 +18,11 @@ export const SlideWhyNow = () => {
     {
       icon: Smartphone,
       title: 'Millions Seek Flexible Income',
-      description: 'People want work-from-phone options without upfront investment — this is that.'
+      description: 'People want work-from-phone options without upfront investment. This is that.'
     },
     {
       icon: Store,
-      title: 'Offline Stores Are Dying — But Still Have Value',
+      title: 'Offline Stores Are Dying, But Still Have Value',
       description: 'We revive them by turning every local shop into a global inventory.'
     }
   ];
