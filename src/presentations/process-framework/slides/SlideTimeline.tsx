@@ -108,24 +108,24 @@ export const SlideTimeline = () => {
   const getColorClasses = (color: string, isActive: boolean) => {
     const colors: any = {
       blue: {
-        bg: isActive ? 'bg-blue-600' : 'bg-blue-100',
-        text: isActive ? 'text-white' : 'text-blue-700',
-        border: 'border-blue-300',
-        iconBg: 'bg-blue-50',
-        iconText: 'text-blue-600'
+        bg: isActive ? 'bg-accent-blue' : 'bg-accent-blue bg-opacity-20',
+        text: isActive ? 'text-white' : 'text-accent-blue',
+        border: 'border-accent-blue border-opacity-30',
+        iconBg: 'bg-accent-blue bg-opacity-10',
+        iconText: 'text-accent-blue'
       },
       orange: {
-        bg: isActive ? 'bg-orange-600' : 'bg-orange-100',
-        text: isActive ? 'text-white' : 'text-orange-700',
-        border: 'border-orange-300',
-        iconBg: 'bg-orange-50',
-        iconText: 'text-orange-600'
+        bg: isActive ? 'bg-accent-orange' : 'bg-accent-orange bg-opacity-20',
+        text: isActive ? 'text-white' : 'text-accent-orange',
+        border: 'border-accent-orange border-opacity-30',
+        iconBg: 'bg-accent-orange bg-opacity-10',
+        iconText: 'text-accent-orange'
       },
       red: {
-        bg: isActive ? 'bg-red-600' : 'bg-red-100',
-        text: isActive ? 'text-white' : 'text-red-700',
-        border: 'border-red-300',
-        iconBg: 'bg-red-50',
+        bg: isActive ? 'bg-red-600' : 'bg-red-500 bg-opacity-20',
+        text: isActive ? 'text-white' : 'text-red-600',
+        border: 'border-red-500 border-opacity-30',
+        iconBg: 'bg-red-500 bg-opacity-10',
         iconText: 'text-red-600'
       }
     };
@@ -133,14 +133,14 @@ export const SlideTimeline = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white p-8">
+    <div className="min-h-screen bg-gradient-dark text-white p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-10">
           <h1 className="text-5xl font-bold mb-4">
-            5-Week <span className="text-blue-400">Sprint Timeline</span>
+            5-Week <span className="text-accent-blue">Sprint Timeline</span>
           </h1>
-          <p className="text-xl text-slate-300">
+          <p className="text-xl text-gray-300">
             From discovery to pilot implementation in focused sprints
           </p>
         </div>
@@ -166,16 +166,16 @@ export const SlideTimeline = () => {
                       <WeekIcon size={32} className={colors.text} />
                     </div>
                     <div className="mt-3 text-center">
-                      <div className={`text-sm font-bold ${isActive ? 'text-white' : 'text-slate-300'}`}>
+                      <div className={`text-sm font-bold ${isActive ? 'text-white' : 'text-gray-300'}`}>
                         Week {week.week}
                       </div>
-                      <div className={`text-xs ${isActive ? 'text-slate-200' : 'text-slate-400'}`}>
+                      <div className={`text-xs ${isActive ? 'text-gray-200' : 'text-gray-400'}`}>
                         {week.title}
                       </div>
                     </div>
                   </div>
                   {index < weeks.length - 1 && (
-                    <div className="flex-1 h-1 bg-slate-700 relative top-[-30px]">
+                    <div className="flex-1 h-1 bg-gray-700 relative top-[-30px]">
                       <div className={`
                         h-full transition-all duration-500
                         ${index < activeWeek ? 'bg-blue-500' : ''}
@@ -191,30 +191,30 @@ export const SlideTimeline = () => {
         {/* Week Details */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Activities */}
-          <div className="bg-slate-800/50 backdrop-blur-lg rounded-xl p-6 border border-slate-700">
+          <div className="bg-gray-800/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700">
             <h3 className="text-lg font-bold mb-4 flex items-center">
-              <Target className="mr-2 text-blue-400" size={20} />
+              <Target className="mr-2 text-accent-blue" size={20} />
               Activities
             </h3>
             <div className="space-y-2">
               {weeks[activeWeek].activities.map((activity, index) => (
                 <div key={index} className="flex items-start gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2 flex-shrink-0"></div>
-                  <p className="text-sm text-slate-300">{activity}</p>
+                  <p className="text-sm text-gray-300">{activity}</p>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Deliverables */}
-          <div className="bg-slate-800/50 backdrop-blur-lg rounded-xl p-6 border border-slate-700">
+          <div className="bg-gray-800/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700">
             <h3 className="text-lg font-bold mb-4 flex items-center">
-              <Lightbulb className="mr-2 text-blue-400" size={20} />
+              <Lightbulb className="mr-2 text-accent-blue" size={20} />
               Deliverables
             </h3>
             <div className="space-y-3">
               {weeks[activeWeek].deliverables.map((deliverable, index) => (
-                <div key={index} className="bg-slate-700/50 rounded-lg p-3 border border-slate-600">
+                <div key={index} className="bg-gray-700/50 rounded-lg p-3 border border-slate-600">
                   <p className="text-sm text-white">{deliverable}</p>
                 </div>
               ))}
@@ -222,7 +222,7 @@ export const SlideTimeline = () => {
           </div>
 
           {/* Participants & Duration */}
-          <div className="bg-slate-800/50 backdrop-blur-lg rounded-xl p-6 border border-slate-700">
+          <div className="bg-gray-800/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700">
             <div className="mb-6">
               <h3 className="text-lg font-bold mb-2 flex items-center">
                 <Clock className="mr-2 text-orange-400" size={20} />
@@ -235,21 +235,21 @@ export const SlideTimeline = () => {
                 <Users className="mr-2 text-orange-400" size={20} />
                 Participants
               </h3>
-              <p className="text-sm text-slate-300">{weeks[activeWeek].participants}</p>
+              <p className="text-sm text-gray-300">{weeks[activeWeek].participants}</p>
             </div>
           </div>
         </div>
 
         {/* Progress Indicator */}
-        <div className="mt-8 bg-slate-800/50 backdrop-blur-lg rounded-xl p-6 border border-slate-700">
+        <div className="mt-8 bg-gray-800/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700">
           <div className="flex items-center justify-between">
             <div>
               <h3 className="text-lg font-bold text-white mb-1">Total Duration</h3>
-              <p className="text-slate-300">5 weeks • 25 business days</p>
+              <p className="text-gray-300">5 weeks • 25 business days</p>
             </div>
             <div className="text-right">
               <h3 className="text-lg font-bold text-white mb-1">Expected Outcome</h3>
-              <p className="text-slate-300">Validated process with pilot ready to launch</p>
+              <p className="text-gray-300">Validated process with pilot ready to launch</p>
             </div>
           </div>
         </div>

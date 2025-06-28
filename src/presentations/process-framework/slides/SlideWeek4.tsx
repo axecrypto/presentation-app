@@ -116,18 +116,18 @@ export const SlideWeek4 = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white p-8">
+    <div className="min-h-screen bg-gradient-dark text-white p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-2 bg-orange-600 text-white px-4 py-2 rounded-full text-sm font-bold mb-4">
+          <div className="inline-flex items-center gap-2 bg-accent-orange text-white px-4 py-2 rounded-full text-sm font-bold mb-4">
             <Palette size={16} />
             Week 4
           </div>
           <h1 className="text-5xl font-bold mb-4">
-            Design <span className="text-orange-400">Workshop</span>
+            Design <span className="text-accent-orange">Workshop</span>
           </h1>
-          <p className="text-xl text-slate-300">
+          <p className="text-xl text-gray-300">
             Co-creating the future state with cross-functional teams
           </p>
         </div>
@@ -135,22 +135,22 @@ export const SlideWeek4 = () => {
         {/* Current vs Future State */}
         <div className="mb-8">
           <h2 className="text-2xl font-bold mb-6 flex items-center">
-            <Map className="mr-2 text-orange-400" />
+            <Map className="mr-2 text-accent-orange" />
             Current vs. Future State Mapping
           </h2>
           
           <div className="space-y-6">
             {currentVsFuture.map((item, index) => (
-              <div key={index} className="bg-slate-800/50 backdrop-blur-lg rounded-xl p-6 border border-slate-700">
+              <div key={index} className="bg-gray-800/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700">
                 <h3 className="text-lg font-bold text-white mb-4">{item.aspect}</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Current State */}
-                  <div className="bg-red-900/20 rounded-lg p-4 border border-red-500/30">
+                  <div className="bg-red-500 bg-opacity-20 rounded-lg p-4 border border-red-500 border-opacity-30">
                     <h4 className="font-bold text-red-400 mb-3">Current State</h4>
                     <p className="text-white mb-3">{item.current.state}</p>
                     <ul className="space-y-2">
                       {item.current.issues.map((issue, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm text-slate-300">
+                        <li key={idx} className="flex items-start gap-2 text-sm text-gray-300">
                           <span className="text-red-400 mt-0.5">✗</span>
                           <span>{issue}</span>
                         </li>
@@ -160,17 +160,17 @@ export const SlideWeek4 = () => {
                   
                   {/* Arrow */}
                   <div className="hidden md:flex items-center justify-center">
-                    <ArrowRight size={32} className="text-orange-400" />
+                    <ArrowRight size={32} className="text-accent-orange" />
                   </div>
                   
                   {/* Future State */}
-                  <div className="bg-blue-900/20 rounded-lg p-4 border border-blue-500/30 md:col-start-2">
-                    <h4 className="font-bold text-blue-400 mb-3">Future State</h4>
+                  <div className="bg-accent-blue bg-opacity-20 rounded-lg p-4 border border-accent-blue border-opacity-30 md:col-start-2">
+                    <h4 className="font-bold text-accent-blue mb-3">Future State</h4>
                     <p className="text-white mb-3">{item.future.state}</p>
                     <ul className="space-y-2">
                       {item.future.benefits.map((benefit, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm text-slate-300">
-                          <CheckCircle size={16} className="text-blue-400 mt-0.5 flex-shrink-0" />
+                        <li key={idx} className="flex items-start gap-2 text-sm text-gray-300">
+                          <CheckCircle size={16} className="text-accent-blue mt-0.5 flex-shrink-0" />
                           <span>{benefit}</span>
                         </li>
                       ))}
@@ -185,7 +185,7 @@ export const SlideWeek4 = () => {
         {/* Pilot Improvements */}
         <div className="mb-8">
           <h2 className="text-2xl font-bold mb-6 flex items-center">
-            <Lightbulb className="mr-2 text-orange-400" />
+            <Lightbulb className="mr-2 text-accent-orange" />
             Prioritized Pilot Improvements
           </h2>
           
@@ -201,20 +201,20 @@ export const SlideWeek4 = () => {
                   className={`
                     p-4 rounded-xl border-2 transition-all duration-300 text-left
                     ${isActive ? 
-                      'bg-orange-600 border-orange-400 scale-105 shadow-xl' : 
-                      'bg-slate-800/50 border-slate-600 hover:border-orange-500'
+                      'bg-accent-orange border-accent-orange scale-105 shadow-xl' : 
+                      'bg-gray-800/50 border-gray-600 hover:border-accent-orange'
                     }
                   `}
                 >
                   <div className="flex items-center gap-3 mb-3">
                     <div className={`
-                      p-2 rounded-lg ${isActive ? 'bg-orange-700' : 'bg-slate-700'}
+                      p-2 rounded-lg ${isActive ? 'bg-accent-orange' : 'bg-gray-700'}
                     `}>
                       <ImprovementIcon size={24} className="text-white" />
                     </div>
                     <h3 className="font-bold text-white flex-1">{improvement.title}</h3>
                   </div>
-                  <p className="text-sm text-slate-300">{improvement.description}</p>
+                  <p className="text-sm text-gray-300">{improvement.description}</p>
                 </button>
               );
             })}
@@ -222,24 +222,24 @@ export const SlideWeek4 = () => {
           
           {/* Selected Improvement Details */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <div className="bg-slate-800/50 backdrop-blur-lg rounded-xl p-6 border border-slate-700">
+            <div className="bg-gray-800/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700">
               <h3 className="text-lg font-bold mb-4 text-white">Key Components</h3>
               <div className="space-y-2">
                 {pilotImprovements[activeImprovement].components.map((component, index) => (
-                  <div key={index} className="flex items-center gap-3 p-3 bg-slate-700/50 rounded-lg">
-                    <Settings size={16} className="text-orange-400" />
+                  <div key={index} className="flex items-center gap-3 p-3 bg-gray-700/50 rounded-lg">
+                    <Settings size={16} className="text-accent-orange" />
                     <span className="text-white">{component}</span>
                   </div>
                 ))}
               </div>
             </div>
             
-            <div className="bg-slate-800/50 backdrop-blur-lg rounded-xl p-6 border border-slate-700">
+            <div className="bg-gray-800/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700">
               <h3 className="text-lg font-bold mb-4 text-white">Success Metrics</h3>
               <div className="space-y-2">
                 {pilotImprovements[activeImprovement].metrics.map((metric, index) => (
-                  <div key={index} className="flex items-center gap-3 p-3 bg-slate-700/50 rounded-lg">
-                    <Play size={16} className="text-blue-400" />
+                  <div key={index} className="flex items-center gap-3 p-3 bg-gray-700/50 rounded-lg">
+                    <Play size={16} className="text-accent-blue" />
                     <span className="text-white">{metric}</span>
                   </div>
                 ))}
@@ -250,15 +250,15 @@ export const SlideWeek4 = () => {
 
         {/* Workshop Agenda */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="bg-slate-800/50 backdrop-blur-lg rounded-xl p-6 border border-slate-700">
+          <div className="bg-gray-800/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700">
             <h3 className="text-xl font-bold mb-4 flex items-center">
-              <Users className="mr-2 text-blue-400" />
+              <Users className="mr-2 text-accent-blue" />
               Workshop Agenda
             </h3>
             <div className="space-y-3">
               {workshopActivities.map((item, index) => (
-                <div key={index} className="flex items-start gap-4 p-3 bg-slate-700/50 rounded-lg">
-                  <span className="text-orange-400 font-mono text-sm whitespace-nowrap">{item.time}</span>
+                <div key={index} className="flex items-start gap-4 p-3 bg-gray-700/50 rounded-lg">
+                  <span className="text-accent-orange font-mono text-sm whitespace-nowrap">{item.time}</span>
                   <div className="flex-1">
                     <p className="font-bold text-white">{item.activity}</p>
                     <p className="text-xs text-slate-400">{item.output}</p>
@@ -268,24 +268,24 @@ export const SlideWeek4 = () => {
             </div>
           </div>
           
-          <div className="bg-orange-600/20 backdrop-blur-lg rounded-xl p-6 border border-orange-500/30">
+          <div className="bg-accent-orange bg-opacity-20 backdrop-blur-lg rounded-xl p-6 border border-accent-orange border-opacity-30">
             <h3 className="text-xl font-bold mb-4 text-white">Workshop Principles</h3>
             <div className="space-y-4">
               <div>
-                <h4 className="font-bold text-orange-400 mb-1">Co-creation</h4>
-                <p className="text-sm text-slate-300">Solutions designed BY the teams, not FOR the teams</p>
+                <h4 className="font-bold text-accent-orange mb-1">Co-creation</h4>
+                <p className="text-sm text-gray-300">Solutions designed BY the teams, not FOR the teams</p>
               </div>
               <div>
-                <h4 className="font-bold text-orange-400 mb-1">Bias to Action</h4>
-                <p className="text-sm text-slate-300">Focus on what we can pilot immediately</p>
+                <h4 className="font-bold text-accent-orange mb-1">Bias to Action</h4>
+                <p className="text-sm text-gray-300">Focus on what we can pilot immediately</p>
               </div>
               <div>
-                <h4 className="font-bold text-orange-400 mb-1">Measurable Impact</h4>
-                <p className="text-sm text-slate-300">Every improvement has clear success criteria</p>
+                <h4 className="font-bold text-accent-orange mb-1">Measurable Impact</h4>
+                <p className="text-sm text-gray-300">Every improvement has clear success criteria</p>
               </div>
               <div>
-                <h4 className="font-bold text-orange-400 mb-1">Commitment</h4>
-                <p className="text-sm text-slate-300">Leave with owners and timelines, not just ideas</p>
+                <h4 className="font-bold text-accent-orange mb-1">Commitment</h4>
+                <p className="text-sm text-gray-300">Leave with owners and timelines, not just ideas</p>
               </div>
             </div>
           </div>

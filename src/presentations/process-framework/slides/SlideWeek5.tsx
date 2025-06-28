@@ -113,7 +113,7 @@ export const SlideWeek5 = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white p-8">
+    <div className="min-h-screen bg-gradient-dark text-white p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-10">
@@ -124,7 +124,7 @@ export const SlideWeek5 = () => {
           <h1 className="text-5xl font-bold mb-4">
             Commitment & <span className="text-red-400">Launch</span>
           </h1>
-          <p className="text-xl text-slate-300">
+          <p className="text-xl text-gray-300">
             From insights to action with executive buy-in
           </p>
         </div>
@@ -137,38 +137,38 @@ export const SlideWeek5 = () => {
           </h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <div className="bg-slate-800/50 backdrop-blur-lg rounded-xl p-6 border border-slate-700">
+            <div className="bg-gray-800/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700">
               <h3 className="text-lg font-bold mb-4 flex items-center">
-                <AlertCircle className="mr-2 text-orange-400" />
+                <AlertCircle className="mr-2 text-accent-orange" />
                 Key Findings
               </h3>
               <div className="space-y-4">
                 {executiveSummary.findings.map((finding, index) => (
-                  <div key={index} className="bg-slate-700/50 rounded-lg p-4 border border-slate-600">
+                  <div key={index} className="bg-gray-700/50 rounded-lg p-4 border border-gray-600">
                     <p className="text-red-400 font-bold mb-2">{finding.pain}</p>
-                    <p className="text-sm text-slate-300">
-                      <span className="text-slate-500">Root cause:</span> {finding.root}
+                    <p className="text-sm text-gray-300">
+                      <span className="text-gray-500">Root cause:</span> {finding.root}
                     </p>
                   </div>
                 ))}
               </div>
             </div>
             
-            <div className="bg-slate-800/50 backdrop-blur-lg rounded-xl p-6 border border-slate-700">
+            <div className="bg-gray-800/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700">
               <h3 className="text-lg font-bold mb-4 flex items-center">
-                <Target className="mr-2 text-blue-400" />
+                <Target className="mr-2 text-accent-blue" />
                 Recommendations
               </h3>
               <div className="space-y-3">
                 {executiveSummary.recommendations.map((rec, index) => (
-                  <div key={index} className="flex items-start gap-3 p-4 bg-blue-900/20 rounded-lg border border-blue-500/30">
-                    <CheckCircle size={20} className="text-blue-400 flex-shrink-0 mt-0.5" />
+                  <div key={index} className="flex items-start gap-3 p-4 bg-accent-blue bg-opacity-20 rounded-lg border border-accent-blue border-opacity-30">
+                    <CheckCircle size={20} className="text-accent-blue flex-shrink-0 mt-0.5" />
                     <p className="text-white">{rec}</p>
                   </div>
                 ))}
               </div>
-              <div className="mt-4 p-4 bg-blue-900/20 rounded-lg border border-blue-500/30">
-                <p className="text-sm text-blue-300">
+              <div className="mt-4 p-4 bg-accent-blue bg-opacity-20 rounded-lg border border-accent-blue border-opacity-30">
+                <p className="text-sm text-accent-blue">
                   <strong>Impact:</strong> 40-60% improvement in delivery velocity within 90 days
                 </p>
               </div>
@@ -179,7 +179,7 @@ export const SlideWeek5 = () => {
         {/* Pilot Plans */}
         <div className="mb-8">
           <h2 className="text-2xl font-bold mb-6 flex items-center">
-            <Rocket className="mr-2 text-blue-400" />
+            <Rocket className="mr-2 text-accent-blue" />
             Pilot Implementation Plans
           </h2>
           
@@ -192,8 +192,8 @@ export const SlideWeek5 = () => {
                 className={`
                   px-6 py-3 rounded-lg font-bold whitespace-nowrap transition-all duration-300
                   ${selectedPilot === index ? 
-                    'bg-blue-600 text-white shadow-lg scale-105' : 
-                    'bg-slate-800 text-slate-300 hover:bg-slate-700'
+                    'bg-accent-blue text-white shadow-lg scale-105' : 
+                    'bg-gray-800 text-gray-300 hover:bg-gray-700'
                   }
                 `}
               >
@@ -206,38 +206,38 @@ export const SlideWeek5 = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div className="lg:col-span-2 space-y-6">
               {/* Overview */}
-              <div className="bg-slate-800/50 backdrop-blur-lg rounded-xl p-6 border border-slate-700">
+              <div className="bg-gray-800/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700">
                 <h3 className="text-lg font-bold mb-4 text-white">Pilot Overview</h3>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <p className="text-sm text-slate-400">Team</p>
+                    <p className="text-sm text-gray-400">Team</p>
                     <p className="font-bold text-white">{pilots[selectedPilot].team}</p>
                   </div>
                   <div>
-                    <p className="text-sm text-slate-400">Duration</p>
+                    <p className="text-sm text-gray-400">Duration</p>
                     <p className="font-bold text-white">{pilots[selectedPilot].duration}</p>
                   </div>
                   <div>
-                    <p className="text-sm text-slate-400">Scope</p>
+                    <p className="text-sm text-gray-400">Scope</p>
                     <p className="font-bold text-white">{pilots[selectedPilot].scope}</p>
                   </div>
                   <div>
-                    <p className="text-sm text-slate-400">Primary Metric</p>
-                    <p className="font-bold text-blue-400">{pilots[selectedPilot].metrics.primary}</p>
+                    <p className="text-sm text-gray-400">Primary Metric</p>
+                    <p className="font-bold text-accent-blue">{pilots[selectedPilot].metrics.primary}</p>
                   </div>
                 </div>
               </div>
               
               {/* Milestones */}
-              <div className="bg-slate-800/50 backdrop-blur-lg rounded-xl p-6 border border-slate-700">
+              <div className="bg-gray-800/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700">
                 <h3 className="text-lg font-bold mb-4 text-white">Milestones</h3>
                 <div className="space-y-3">
                   {pilots[selectedPilot].milestones.map((milestone, index) => (
                     <div key={index} className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center font-bold">
+                      <div className="w-12 h-12 rounded-full bg-accent-blue flex items-center justify-center font-bold">
                         W{milestone.week}
                       </div>
-                      <div className="flex-1 p-3 bg-slate-700/50 rounded-lg">
+                      <div className="flex-1 p-3 bg-gray-700/50 rounded-lg">
                         <p className="text-white">{milestone.task}</p>
                       </div>
                     </div>
@@ -248,35 +248,35 @@ export const SlideWeek5 = () => {
             
             {/* Ownership */}
             <div className="space-y-6">
-              <div className="bg-slate-800/50 backdrop-blur-lg rounded-xl p-6 border border-slate-700">
+              <div className="bg-gray-800/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700">
                 <h3 className="text-lg font-bold mb-4 text-white">Ownership</h3>
                 <div className="space-y-4">
                   <div>
-                    <p className="text-sm text-slate-400">Executive Sponsor</p>
+                    <p className="text-sm text-gray-400">Executive Sponsor</p>
                     <p className="font-bold text-white">{pilots[selectedPilot].owners.sponsor}</p>
                   </div>
                   <div>
-                    <p className="text-sm text-slate-400">Pilot Lead</p>
+                    <p className="text-sm text-gray-400">Pilot Lead</p>
                     <p className="font-bold text-white">{pilots[selectedPilot].owners.lead}</p>
                   </div>
                   <div>
-                    <p className="text-sm text-slate-400">Core Team</p>
+                    <p className="text-sm text-gray-400">Core Team</p>
                     <ul className="mt-2 space-y-1">
                       {pilots[selectedPilot].owners.team.map((member, idx) => (
-                        <li key={idx} className="text-sm text-slate-300">• {member}</li>
+                        <li key={idx} className="text-sm text-gray-300">• {member}</li>
                       ))}
                     </ul>
                   </div>
                 </div>
               </div>
               
-              <div className="bg-blue-900/20 backdrop-blur-lg rounded-xl p-6 border border-blue-500/30">
+              <div className="bg-accent-blue bg-opacity-20 backdrop-blur-lg rounded-xl p-6 border border-accent-blue border-opacity-30">
                 <h3 className="text-lg font-bold mb-3 text-white">Success Metrics</h3>
                 <div className="space-y-2">
                   {pilots[selectedPilot].metrics.secondary.map((metric, idx) => (
                     <div key={idx} className="flex items-center gap-2">
-                      <BarChart size={16} className="text-blue-400" />
-                      <span className="text-sm text-slate-300">{metric}</span>
+                      <BarChart size={16} className="text-accent-blue" />
+                      <span className="text-sm text-gray-300">{metric}</span>
                     </div>
                   ))}
                 </div>
@@ -287,45 +287,45 @@ export const SlideWeek5 = () => {
 
         {/* Commitment Plan */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-blue-900/20 backdrop-blur-lg rounded-xl p-6 border border-blue-500/30">
+          <div className="bg-accent-blue bg-opacity-20 backdrop-blur-lg rounded-xl p-6 border border-accent-blue border-opacity-30">
             <h3 className="text-lg font-bold mb-3 flex items-center">
-              <Users className="mr-2 text-blue-400" />
+              <Users className="mr-2 text-accent-blue" />
               Leadership Support
             </h3>
             <ul className="space-y-2">
               {commitmentPlan.leadership.map((item, idx) => (
-                <li key={idx} className="text-sm text-slate-300 flex items-start gap-2">
-                  <CheckCircle size={14} className="text-blue-400 mt-0.5 flex-shrink-0" />
+                <li key={idx} className="text-sm text-gray-300 flex items-start gap-2">
+                  <CheckCircle size={14} className="text-accent-blue mt-0.5 flex-shrink-0" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
           </div>
           
-          <div className="bg-blue-900/20 backdrop-blur-lg rounded-xl p-6 border border-blue-500/30">
+          <div className="bg-accent-blue bg-opacity-20 backdrop-blur-lg rounded-xl p-6 border border-accent-blue border-opacity-30">
             <h3 className="text-lg font-bold mb-3 flex items-center">
-              <TrendingUp className="mr-2 text-blue-400" />
+              <TrendingUp className="mr-2 text-accent-blue" />
               Resources
             </h3>
             <ul className="space-y-2">
               {commitmentPlan.resources.map((item, idx) => (
-                <li key={idx} className="text-sm text-slate-300 flex items-start gap-2">
-                  <CheckCircle size={14} className="text-blue-400 mt-0.5 flex-shrink-0" />
+                <li key={idx} className="text-sm text-gray-300 flex items-start gap-2">
+                  <CheckCircle size={14} className="text-accent-blue mt-0.5 flex-shrink-0" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
           </div>
           
-          <div className="bg-orange-900/20 backdrop-blur-lg rounded-xl p-6 border border-orange-500/30">
+          <div className="bg-accent-orange bg-opacity-20 backdrop-blur-lg rounded-xl p-6 border border-accent-orange border-opacity-30">
             <h3 className="text-lg font-bold mb-3 flex items-center">
-              <Clock className="mr-2 text-orange-400" />
+              <Clock className="mr-2 text-accent-orange" />
               Communication
             </h3>
             <ul className="space-y-2">
               {commitmentPlan.communication.map((item, idx) => (
-                <li key={idx} className="text-sm text-slate-300 flex items-start gap-2">
-                  <CheckCircle size={14} className="text-orange-400 mt-0.5 flex-shrink-0" />
+                <li key={idx} className="text-sm text-gray-300 flex items-start gap-2">
+                  <CheckCircle size={14} className="text-accent-orange mt-0.5 flex-shrink-0" />
                   <span>{item}</span>
                 </li>
               ))}
