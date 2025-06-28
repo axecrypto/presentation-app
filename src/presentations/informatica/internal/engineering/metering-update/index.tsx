@@ -1,4 +1,4 @@
-import { Presentation } from '../../types/presentation';
+import { Presentation } from '../../../../../types/presentation';
 import { SlideTitle } from './slides/SlideTitle';
 import { SlideTheProblem } from './slides/SlideTheProblem';
 import { SlideTheOpportunity } from './slides/SlideTheOpportunity';

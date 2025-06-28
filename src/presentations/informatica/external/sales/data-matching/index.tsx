@@ -1,4 +1,4 @@
-import { Presentation } from '../../types/presentation';
+import { Presentation } from '../../../../../types/presentation';
 import { SlideExecutiveSummary } from './slides/SlideExecutiveSummary';
 
 export const dataMatchingPresentation: Presentation = {

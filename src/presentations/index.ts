@@ -1,9 +1,10 @@
 import { Presentation } from '../types/presentation';
 import { samplePresentation } from './samplePresentation';
-import { mdmPresentation } from './mdm-config';
-import { processFrameworkPresentation } from './process-framework';
-import { meteringUpdatePresentation } from './metering-update';
-import { dataMatchingPresentation } from './data-matching';
+import { mdmPresentation } from './informatica/internal/product/mdm-config';
+import { processFrameworkPresentation } from './informatica/internal/engineering/process-framework';
+import { meteringUpdatePresentation } from './informatica/internal/engineering/metering-update';
+import { dataMatchingPresentation } from './informatica/external/sales/data-matching';
+import { lerbeeCompanyOverviewPresentation } from './lerbee/internal/executive/company-overview';
 
 export interface PresentationMetadata {
   id: string;
@@ -77,6 +78,17 @@ export const presentations: Record<string, PresentationEntry> = {
       duration: '3 slides',
     },
     presentation: dataMatchingPresentation,
+  },
+  'lerbee-company-overview': {
+    metadata: {
+      id: 'lerbee-company-overview',
+      title: 'Lerbee Company Overview',
+      description: 'An introduction to Lerbee - our mission, values, and products',
+      author: 'Lerbee Executive Team',
+      tags: ['lerbee', 'company', 'overview', 'executive'],
+      duration: '3 slides',
+    },
+    presentation: lerbeeCompanyOverviewPresentation,
   },
 };
 
