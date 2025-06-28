@@ -1,17 +1,17 @@
 /* Semantic Theme System */
 
 :root {
-  /* Light theme (default) */
-  --color-text-primary: #1a1a1a;
-  --color-text-secondary: #666666;
-  --color-text-muted: #999999;
+  /* Light theme (default) - matching Figma */
+  --color-text-primary: #171717;     /* gray900 from Figma */
+  --color-text-secondary: #737373;   /* gray500 from Figma */
+  --color-text-muted: #A3A3A3;       /* gray400 from Figma */
   --color-text-inverse: #ffffff;
   
-  --color-bg-primary: #ffffff;
-  --color-bg-surface: #f8f9fa;
-  --color-bg-elevated: #ffffff;
-  --color-bg-muted: #e9ecef;
-  --color-bg-inverse: #1a1a1a;
+  --color-bg-primary: #FFFFFF;       /* Pure white */
+  --color-bg-surface: #FAFBFC;       /* gray50 from Figma */
+  --color-bg-elevated: #FFFFFF;      /* Pure white for cards */
+  --color-bg-muted: #F5F5F5;         /* gray100 from Figma */
+  --color-bg-inverse: #171717;
   
   /* Informatica Brand Colors */
   --color-accent-orange: #FF4D00;
@@ -27,25 +27,25 @@
   --color-lerbee-green: #15803D;
   
   /* Semantic colors */
-  --color-border: #dee2e6;
-  --color-shadow: rgba(0, 0, 0, 0.1);
+  --color-border: #E5E5E5;           /* gray200 from Figma */
+  --color-shadow: rgba(0, 0, 0, 0.05);
   
   /* Gradients */
-  --gradient-surface: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  --gradient-surface: linear-gradient(135deg, #FFFFFF 0%, #FAFBFC 100%);
   --gradient-accent: linear-gradient(135deg, #FF4D00 0%, #FF7D00 100%);
 }
 
 .dark-theme {
-  /* Dark theme */
+  /* Dark theme - matching Figma design */
   --color-text-primary: #ffffff;
-  --color-text-secondary: #adb5bd;
-  --color-text-muted: #6c757d;
-  --color-text-inverse: #1a1a1a;
+  --color-text-secondary: #A3A3A3;  /* gray400 from Figma */
+  --color-text-muted: #737373;      /* gray500 from Figma */
+  --color-text-inverse: #0A0A0A;
   
-  --color-bg-primary: #0f172a;
-  --color-bg-surface: #1e293b;
-  --color-bg-elevated: #334155;
-  --color-bg-muted: #475569;
+  --color-bg-primary: #0A0A0A;      /* gray1000 - near black from Figma */
+  --color-bg-surface: #171717;      /* gray900 from Figma */
+  --color-bg-elevated: #262626;     /* gray800 from Figma */
+  --color-bg-muted: #404040;        /* gray700 from Figma */
   --color-bg-inverse: #ffffff;
   
   /* Brand colors stay the same but we might need lighter variants for visibility */
@@ -53,20 +53,20 @@
   --color-accent-orange-light: #FF7D00;
   --color-accent-blue: #4D94FF; /* Lighter for dark backgrounds */
   --color-accent-red: #E23400;
-  --color-accent-gray: #9ca3af;
+  --color-accent-gray: #A3A3A3;
   
-  /* Lerbee Brand Colors - adjusted for dark theme */
-  --color-lerbee-yellow: #FFCE49; /* Brighter for dark bg */
-  --color-lerbee-yellow-light: #FFE89A;
-  --color-lerbee-orange: #FFAF14;
-  --color-lerbee-green: #34D399;
+  /* Lerbee Brand Colors - keep bright for dark theme */
+  --color-lerbee-yellow: #FFAF14;   /* Keep original bright yellow */
+  --color-lerbee-yellow-light: #FFE029;
+  --color-lerbee-orange: #FF9F22;
+  --color-lerbee-green: #059669;    /* green700Alt from Figma */
   
   /* Semantic colors */
-  --color-border: #334155;
-  --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-border: #262626;          /* gray800 from Figma */
+  --color-shadow: rgba(0, 0, 0, 0.5);
   
   /* Gradients */
-  --gradient-surface: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  --gradient-surface: linear-gradient(135deg, #171717 0%, #0A0A0A 100%);
   --gradient-accent: linear-gradient(135deg, #FF4D00 0%, #FF7D00 100%);
 }
 
@@ -144,10 +144,22 @@
 .text-blue-600 { color: var(--color-accent-blue) !important; }
 
 /* Lerbee brand color utilities */
-.bg-lerbee-yellow { background-color: var(--color-lerbee-yellow) !important; }
-.bg-lerbee-yellow-light { background-color: var(--color-lerbee-yellow-light) !important; }
-.bg-lerbee-orange { background-color: var(--color-lerbee-orange) !important; }
-.bg-lerbee-green { background-color: var(--color-lerbee-green) !important; }
+.bg-lerbee-yellow { 
+  background-color: var(--color-lerbee-yellow) !important;
+  color: #0A0A0A !important; /* Dark text on yellow */
+}
+.bg-lerbee-yellow-light { 
+  background-color: var(--color-lerbee-yellow-light) !important;
+  color: #0A0A0A !important; /* Dark text on yellow */
+}
+.bg-lerbee-orange { 
+  background-color: var(--color-lerbee-orange) !important;
+  color: white !important;
+}
+.bg-lerbee-green { 
+  background-color: var(--color-lerbee-green) !important;
+  color: white !important;
+}
 
 .text-lerbee-yellow { color: var(--color-lerbee-yellow) !important; }
 .text-lerbee-yellow-light { color: var(--color-lerbee-yellow-light) !important; }
@@ -159,14 +171,32 @@
   background: linear-gradient(135deg, var(--color-lerbee-yellow) 0%, var(--color-lerbee-orange) 100%) !important;
 }
 
-/* Ensure white text on brand colors */
+/* Ensure proper text contrast on brand colors */
 .bg-orange-500 *,
 .bg-orange-600 *,
 .bg-blue-500 *,
 .bg-blue-600 *,
 .bg-red-500 *,
-.bg-red-600 *,
+.bg-red-600 * {
+  color: white !important;
+}
+
+/* Yellow backgrounds need dark text for contrast */
+.bg-lerbee-yellow,
+.bg-lerbee-yellow-light,
+.bg-yellow-500,
+.bg-yellow-400 {
+  color: #0A0A0A !important; /* Dark text on yellow */
+}
+
 .bg-lerbee-yellow *,
+.bg-lerbee-yellow-light *,
+.bg-yellow-500 *,
+.bg-yellow-400 * {
+  color: #0A0A0A !important; /* Dark text on yellow */
+}
+
+/* Orange can use white text */
 .bg-lerbee-orange * {
   color: white !important;
 }
@@ -230,15 +260,21 @@
   border-color: rgba(77, 148, 255, 0.3) !important;
 }
 
+/* Red color utilities from Figma */
+.text-red-500 { color: #EF4444 !important; }  /* red-500 from Figma */
+.text-red-600 { color: #DC2626 !important; }  /* red-600 from Figma */
+.bg-red-500 { background-color: #EF4444 !important; }
+.bg-red-600 { background-color: #DC2626 !important; }
+
 /* Red color opacity utilities */
 .bg-red-500.bg-opacity-10 {
-  background-color: rgba(226, 52, 0, 0.1) !important;
+  background-color: rgba(239, 68, 68, 0.1) !important;
 }
 .dark-theme .bg-red-500.bg-opacity-10 {
-  background-color: rgba(226, 52, 0, 0.15) !important;
+  background-color: rgba(239, 68, 68, 0.15) !important;
 }
 .border-red-500.border-opacity-30 {
-  border-color: rgba(226, 52, 0, 0.3) !important;
+  border-color: rgba(239, 68, 68, 0.3) !important;
 }
 
 /* Glassmorphism support */

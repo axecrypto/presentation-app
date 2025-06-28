@@ -4,7 +4,7 @@ import { mdmPresentation } from './informatica/internal/product/mdm-config';
 import { processFrameworkPresentation } from './informatica/internal/engineering/process-framework';
 import { meteringUpdatePresentation } from './informatica/internal/engineering/metering-update';
 import { dataMatchingPresentation } from './informatica/external/sales/data-matching';
-import { lerbeeCompanyOverviewPresentation } from './lerbee/internal/executive/company-overview';
+import { lerbeePitchDeckPresentation } from './lerbee/internal/executive/pitch-deck';
 
 export interface PresentationMetadata {
   id: string;
@@ -79,16 +79,16 @@ export const presentations: Record<string, PresentationEntry> = {
     },
     presentation: dataMatchingPresentation,
   },
-  'lerbee-company-overview': {
+  'lerbee-pitch-deck': {
     metadata: {
-      id: 'lerbee-company-overview',
-      title: 'Lerbee Company Overview',
-      description: 'An introduction to Lerbee - our mission, values, and products',
-      author: 'Lerbee Executive Team',
-      tags: ['lerbee', 'company', 'overview', 'executive'],
-      duration: '3 slides',
+      id: 'lerbee-pitch-deck',
+      title: 'Lerbee Pitch Deck',
+      description: 'Live peer-to-peer shopping at global scale',
+      author: 'Valeria Mikova',
+      tags: ['lerbee', 'pitch', 'investor', 'executive'],
+      duration: '10 slides',
     },
-    presentation: lerbeeCompanyOverviewPresentation,
+    presentation: lerbeePitchDeckPresentation,
   },
 };
 

@@ -165,28 +165,28 @@ export const lerbeeThemeLight = {
 // Dark Theme Configuration
 export const lerbeeThemeDark = {
   // Text colors
-  textPrimary: lerbeeTheme.colors.neutral.gray50,         // Light text on dark bg
+  textPrimary: lerbeeTheme.colors.neutral.gray0,           // Pure white text on dark bg
   textSecondary: lerbeeTheme.colors.neutral.gray400,      // Secondary text
   textDisabled: lerbeeTheme.colors.neutral.gray600,       // Disabled text
   
   // Background colors
-  bgPrimary: lerbeeTheme.colors.neutral.gray900,          // Dark background
-  bgSecondary: lerbeeTheme.colors.neutral.gray800,        // Slightly lighter
-  bgSurface: lerbeeTheme.colors.neutral.gray800,          // Card backgrounds
-  bgHover: lerbeeTheme.colors.neutral.gray700,            // Hover states
+  bgPrimary: lerbeeTheme.colors.neutral.gray1000,         // Near black background (#0A0A0A)
+  bgSecondary: lerbeeTheme.colors.neutral.gray900,        // Slightly lighter (#171717)
+  bgSurface: lerbeeTheme.colors.neutral.gray900,          // Card backgrounds (#171717)
+  bgHover: lerbeeTheme.colors.neutral.gray800,            // Hover states (#262626)
   
   // Border colors
-  borderDefault: lerbeeTheme.colors.neutral.gray700,      // Default borders
-  borderSecondary: lerbeeTheme.colors.neutral.gray600,    // Secondary borders
+  borderDefault: lerbeeTheme.colors.neutral.gray800,      // Default borders (#262626)
+  borderSecondary: lerbeeTheme.colors.neutral.gray700,    // Secondary borders (#404040)
   
-  // Brand colors
-  primary: lerbeeTheme.colors.brand.yellow400,            // Primary brand (brighter in dark)
-  primaryHover: lerbeeTheme.colors.brand.yellow300,       // Primary hover
+  // Brand colors - keep bright yellows for dark mode
+  primary: lerbeeTheme.colors.brand.yellow500,            // Primary brand - keep bright (#FFAF14)
+  primaryHover: lerbeeTheme.colors.brand.yellow600,       // Primary hover (#FF9F22)
   
   // Semantic colors
   success: lerbeeTheme.colors.semantic.green700Alt,
   error: lerbeeTheme.colors.semantic.red400,
-  warning: lerbeeTheme.colors.brand.yellow400,
+  warning: lerbeeTheme.colors.brand.yellow500,
 };
 
 // Helper function to apply theme to CSS variables
