@@ -1,5 +1,6 @@
 import React from 'react';
 import { DollarSign, PieChart, Mail, Coins, BarChart3 } from 'lucide-react';
+import { SlideHeader, iconSizes, typography, spacing } from '../components/DesignSystem';
 
 export const SlideSeedRound = () => {
   const raiseDetails = [
@@ -33,29 +34,26 @@ export const SlideSeedRound = () => {
   return (
     <div className="min-h-screen bg-primary p-8">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-primary mb-4">
-            Raising $1–1.5M to Scale What Already Works
-          </h1>
-        </div>
+        <SlideHeader 
+          title="Raising $1–1.5M to Scale What Already Works"
+        />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 ${spacing.margin.xl}`}>
           {/* Left: Raise Details */}
           <div>
-            <h2 className="text-2xl font-semibold text-primary mb-6 flex items-center gap-3">
-              <DollarSign size={24} className="text-lerbee-yellow" />
+            <h2 className={`${typography.heading} font-semibold text-primary ${spacing.margin.md} flex items-center gap-3`}>
+              <DollarSign size={iconSizes.medium.icon} className="text-lerbee-yellow" />
               <span className="flex items-center gap-2">
-                <Coins size={20} className="text-lerbee-yellow" />
+                <Coins size={iconSizes.small.icon} className="text-lerbee-yellow" />
                 <span>Raise Details</span>
               </span>
             </h2>
             
             <div className="space-y-4">
               {raiseDetails.map((detail, index) => (
-                <div key={index} className="bg-surface rounded-lg p-4 border border-default">
-                  <p className="text-secondary text-sm">{detail.label}</p>
-                  <p className="text-primary font-semibold text-lg">{detail.value}</p>
+                <div key={index} className={`bg-surface rounded-lg ${spacing.md} border border-default`}>
+                  <p className={`text-secondary ${typography.small}`}>{detail.label}</p>
+                  <p className={`text-primary font-semibold ${typography.large}`}>{detail.value}</p>
                 </div>
               ))}
             </div>
@@ -63,16 +61,16 @@ export const SlideSeedRound = () => {
 
           {/* Right: Use of Funds */}
           <div>
-            <h2 className="text-2xl font-semibold text-primary mb-6 flex items-center gap-3">
-              <PieChart size={24} className="text-lerbee-yellow" />
+            <h2 className={`${typography.heading} font-semibold text-primary ${spacing.margin.md} flex items-center gap-3`}>
+              <PieChart size={iconSizes.medium.icon} className="text-lerbee-yellow" />
               <span className="flex items-center gap-2">
-                <BarChart3 size={20} className="text-lerbee-yellow" />
+                <BarChart3 size={iconSizes.small.icon} className="text-lerbee-yellow" />
                 <span>Use of Funds</span>
               </span>
             </h2>
             
             {/* Visual Bar Chart */}
-            <div className="mb-6">
+            <div className={spacing.margin.md}>
               <div className="flex h-12 rounded-lg overflow-hidden border border-default">
                 <div className="bg-lerbee-yellow flex items-center justify-center text-sm font-bold" style={{width: '50%'}}>
                   50%
@@ -92,10 +90,10 @@ export const SlideSeedRound = () => {
                 <div key={index} className="flex items-start gap-3">
                   <div className={`w-4 h-4 ${item.color} rounded flex-shrink-0 mt-1`}></div>
                   <div>
-                    <p className="text-primary font-semibold">
+                    <p className={`text-primary font-semibold ${typography.body}`}>
                       {item.percentage} – {item.category}
                     </p>
-                    <p className="text-secondary text-sm">{item.details}</p>
+                    <p className={`text-secondary ${typography.small}`}>{item.details}</p>
                   </div>
                 </div>
               ))}
@@ -104,24 +102,24 @@ export const SlideSeedRound = () => {
         </div>
 
         {/* Bottom Message */}
-        <div className="bg-surface rounded-xl p-8 border border-lerbee-yellow mb-8">
-          <p className="text-xl text-primary font-semibold mb-2 text-center">
+        <div className={`bg-surface rounded-xl ${spacing.lg} border border-lerbee-yellow ${spacing.margin.lg}`}>
+          <p className={`${typography.large} text-primary font-semibold ${spacing.margin.sm} text-center`}>
             We're not experimenting. We're operationalizing.
           </p>
-          <p className="text-lg text-secondary text-center">
+          <p className={`${typography.body} text-secondary text-center`}>
             LerBee is ready to scale a proven model — one trust loop at a time.
           </p>
         </div>
 
         {/* Contact Info */}
-        <div className="text-center bg-primary border-2 border-lerbee-yellow rounded-xl p-6">
-          <div className="flex items-center justify-center gap-2 mb-2">
-            <Mail size={20} className="text-lerbee-yellow" />
-            <span className="text-lg">Contact</span>
+        <div className={`text-center bg-primary border-2 border-lerbee-yellow rounded-xl ${spacing.lg}`}>
+          <div className={`flex items-center justify-center gap-2 ${spacing.margin.sm}`}>
+            <Mail size={iconSizes.small.icon} className="text-lerbee-yellow" />
+            <span className={typography.body}>Contact</span>
           </div>
-          <p className="text-primary font-semibold">Valeria Mikova – CEO</p>
-          <p className="text-secondary">vmikova@lerbee.com</p>
-          <p className="text-secondary">+1 407 634 9122</p>
+          <p className={`text-primary font-semibold ${typography.body}`}>Valeria Mikova – CEO</p>
+          <p className={`text-secondary ${typography.body}`}>vmikova@lerbee.com</p>
+          <p className={`text-secondary ${typography.body}`}>+1 407 634 9122</p>
         </div>
       </div>
     </div>

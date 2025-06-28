@@ -15,6 +15,14 @@ import { SlideTeam } from './slides/SlideTeam';
 import { SlideForecast } from './slides/SlideForecast';
 import { SlideSeedRound } from './slides/SlideSeedRound';
 import { SlideWhyWeExist } from './slides/SlideWhyWeExist';
+// Appendix slides
+import { AppendixTraction } from './appendix/AppendixTraction';
+import { AppendixMarketOpportunity } from './appendix/AppendixMarketOpportunity';
+import { AppendixBusinessModel } from './appendix/AppendixBusinessModel';
+import { AppendixCompetitiveLandscape } from './appendix/AppendixCompetitiveLandscape';
+import { AppendixAI } from './appendix/AppendixAI';
+import { AppendixTeam } from './appendix/AppendixTeam';
+import { AppendixProductMarketFit } from './appendix/AppendixProductMarketFit';
 
 export const lerbeePitchDeckPresentation: Presentation = {
   id: 'lerbee-pitch-deck',
@@ -136,6 +144,68 @@ export const lerbeePitchDeckPresentation: Presentation = {
       layout: 'full',
       content: <SlideWhyWeExist />,
       notes: 'LerBee isn\'t just a marketplace — it\'s a movement',
+    },
+    // Appendix slides
+    {
+      id: 'appendix-divider',
+      title: 'Appendix',
+      layout: 'centered',
+      content: (
+        <div className="text-center">
+          <h1 className="text-6xl font-bold text-primary mb-4">Appendix</h1>
+          <p className="text-2xl text-secondary">Detailed Information & Data</p>
+        </div>
+      ),
+      notes: 'Additional details and supporting data',
+    },
+    {
+      id: 'appendix-traction',
+      title: 'Traction Details',
+      layout: 'full',
+      content: <AppendixTraction />,
+      notes: 'Detailed traction metrics and milestones',
+    },
+    {
+      id: 'appendix-market',
+      title: 'Market Details',
+      layout: 'full',
+      content: <AppendixMarketOpportunity />,
+      notes: 'TAM/SAM/SOM breakdown and calculations',
+    },
+    {
+      id: 'appendix-pmf',
+      title: 'Product-Market Fit Details',
+      layout: 'full',
+      content: <AppendixProductMarketFit />,
+      notes: 'Detailed PMF metrics and behaviors',
+    },
+    {
+      id: 'appendix-business-model',
+      title: 'Business Model Details',
+      layout: 'full',
+      content: <AppendixBusinessModel />,
+      notes: 'Complete unit economics and revenue streams',
+    },
+    {
+      id: 'appendix-competitive',
+      title: 'Competitive Analysis',
+      layout: 'full',
+      content: <AppendixCompetitiveLandscape />,
+      notes: 'Full competitive landscape analysis',
+    },
+    {
+      id: 'appendix-ai',
+      title: 'AI Details',
+      layout: 'full',
+      content: <AppendixAI />,
+      notes: 'Complete AI and human collaboration breakdown',
+    },
+    {
+      id: 'appendix-team',
+      title: 'Team Details',
+      layout: 'full',
+      content: <AppendixTeam />,
+      notes: 'Full team profiles and experience',
     },
   ],
 };

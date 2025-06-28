@@ -1,5 +1,6 @@
 import React from 'react';
 import { Smartphone, MessageCircle, ShoppingBag, Send } from 'lucide-react';
+import { SlideHeader, BottomTagline, IconContainer, iconSizes, typography, spacing } from '../components/DesignSystem';
 
 export const SlideHowItWorks = () => {
   const steps = [
@@ -36,15 +37,12 @@ export const SlideHowItWorks = () => {
   return (
     <div className="min-h-screen bg-primary p-8">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-primary mb-4">
-            LerBee Connects Global Buyers to Local Shoppers — Live and Direct
-          </h1>
-        </div>
+        <SlideHeader 
+          title="LerBee Connects Global Buyers to Local Shoppers — Live and Direct"
+        />
 
         {/* Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 ${spacing.margin.xl}`}>
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
@@ -54,29 +52,31 @@ export const SlideHowItWorks = () => {
                   <div className="hidden lg:block absolute top-12 left-full w-full h-0.5 bg-border -ml-3 z-0"></div>
                 )}
                 
-                <div className="relative bg-surface rounded-xl p-6 border border-default hover:border-lerbee-yellow transition-colors z-10">
+                <div className={`relative bg-surface rounded-xl ${spacing.lg} border border-default hover:border-lerbee-yellow transition-colors z-10`}>
                   {/* Step number */}
                   <div className="absolute -top-3 -right-3 w-8 h-8 bg-lerbee-yellow rounded-full flex items-center justify-center font-bold text-sm">
                     {step.number}
                   </div>
                   
                   {/* Icon */}
-                  <div className="w-12 h-12 bg-lerbee-yellow rounded-lg flex items-center justify-center mb-4">
-                    <Icon size={24} />
+                  <div className={spacing.margin.md}>
+                    <IconContainer size="medium" variant="primary">
+                      <Icon size={iconSizes.medium.icon} />
+                    </IconContainer>
                   </div>
                   
                   {/* Title */}
-                  <h3 className="text-lg font-semibold text-primary mb-3">
+                  <h3 className={`${typography.body} font-semibold text-primary ${spacing.margin.sm}`}>
                     {step.title}
                   </h3>
                   
                   {/* Description */}
-                  <p className="text-sm text-secondary mb-4">
+                  <p className={`${typography.small} text-secondary ${spacing.margin.md}`}>
                     {step.description}
                   </p>
                   
                   {/* Caption */}
-                  <p className="text-sm text-primary font-medium italic">
+                  <p className={`${typography.small} text-primary font-medium italic`}>
                     "{step.caption}"
                   </p>
                 </div>
@@ -85,15 +85,10 @@ export const SlideHowItWorks = () => {
           })}
         </div>
 
-        {/* Bottom Tagline */}
-        <div className="text-center bg-surface rounded-xl p-8 border border-lerbee-yellow">
-          <p className="text-2xl text-primary font-semibold mb-4">
-            Your phone + your taste = your income
-          </p>
-          <p className="text-lg text-secondary italic">
-            "Your city becomes someone's dream store."
-          </p>
-        </div>
+        <BottomTagline
+          line1="Your phone + your taste = your income"
+          line2="Your city becomes someone's dream store."
+        />
       </div>
     </div>
   );

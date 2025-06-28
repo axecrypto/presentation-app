@@ -1,5 +1,6 @@
 import React from 'react';
 import { Package, Users, Handshake, Globe, Zap, Camera, DollarSign, MessageCircle, Star, ShieldCheck, Truck } from 'lucide-react';
+import { SlideHeader, QuoteBox, IconContainer, iconSizes, typography, spacing } from '../components/DesignSystem';
 
 export const SlideWhatWeDo = () => {
   const keyPoints = [
@@ -13,74 +14,73 @@ export const SlideWhatWeDo = () => {
   return (
     <div className="min-h-screen bg-primary p-8">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-primary mb-4">
-            LerBee Turns Everyday Routines into Global Opportunity
-          </h1>
-          <p className="text-xl text-secondary max-w-3xl mx-auto">
-            A peer-to-peer marketplace where people earn by shopping —
-            and others get trusted access to products worldwide.
-          </p>
-          <div className="mt-8 bg-surface rounded-xl p-6 border border-lerbee-yellow max-w-2xl mx-auto">
-            <p className="text-lg text-primary italic">
-              "Every morning, Maria walks through Mexico City markets. Now, her daily routine feeds families in Miami."
-            </p>
-          </div>
-        </div>
+        <SlideHeader 
+          title="LerBee Turns Everyday Routines into Global Opportunity"
+          subtitle="A peer-to-peer marketplace where people earn by shopping — and others get trusted access to products worldwide."
+        />
+        
+        <QuoteBox>
+          "Every morning, Maria walks through Mexico City markets. Now, her daily routine feeds families in Miami."
+        </QuoteBox>
 
         {/* Split screen visualization */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 ${spacing.margin.xl} mt-12`}>
           {/* Shopper Side */}
-          <div className="bg-surface rounded-xl p-8 border border-default">
-            <h3 className="text-2xl font-semibold text-primary mb-6">Shopper</h3>
+          <div className={`bg-surface rounded-xl ${spacing.lg} border border-default`}>
+            <h3 className={`${typography.heading} font-semibold text-primary ${spacing.margin.md} text-center`}>
+              Shopper
+            </h3>
             
-            {/* Icon placeholder */}
-            <div className="w-32 h-32 bg-surface rounded-full mx-auto mb-6 flex items-center justify-center border-2 border-lerbee-yellow">
-              <Users size={64} className="text-lerbee-yellow" />
+            <div className={spacing.margin.md}>
+              <IconContainer size="xl" variant="secondary">
+                <Users size={iconSizes.xl.icon} className="text-lerbee-yellow" />
+              </IconContainer>
             </div>
             
             {/* Feature icons */}
-            <div className="flex justify-center gap-6 mb-6">
-              <div className="w-12 h-12 bg-lerbee-yellow rounded-lg flex items-center justify-center">
-                <Camera size={24} />
-              </div>
-              <div className="w-12 h-12 bg-lerbee-yellow rounded-lg flex items-center justify-center">
-                <DollarSign size={24} />
-              </div>
-              <div className="w-12 h-12 bg-lerbee-yellow rounded-lg flex items-center justify-center">
-                <MessageCircle size={24} />
-              </div>
+            <div className={`flex justify-center gap-4 ${spacing.margin.md}`}>
+              <IconContainer size="small" variant="primary">
+                <Camera size={iconSizes.small.icon} />
+              </IconContainer>
+              <IconContainer size="small" variant="primary">
+                <DollarSign size={iconSizes.small.icon} />
+              </IconContainer>
+              <IconContainer size="small" variant="primary">
+                <MessageCircle size={iconSizes.small.icon} />
+              </IconContainer>
             </div>
             
-            <p className="text-center text-secondary">
+            <p className={`text-center ${typography.body} text-secondary`}>
               Shopper earns by live-streaming and fulfilling requests
             </p>
           </div>
 
           {/* Buyer Side */}
-          <div className="bg-surface rounded-xl p-8 border border-default">
-            <h3 className="text-2xl font-semibold text-primary mb-6">Buyer</h3>
+          <div className={`bg-surface rounded-xl ${spacing.lg} border border-default`}>
+            <h3 className={`${typography.heading} font-semibold text-primary ${spacing.margin.md} text-center`}>
+              Buyer
+            </h3>
             
-            {/* Icon placeholder */}
-            <div className="w-32 h-32 bg-surface rounded-full mx-auto mb-6 flex items-center justify-center border-2 border-lerbee-yellow">
-              <Package size={64} className="text-lerbee-yellow" />
+            <div className={spacing.margin.md}>
+              <IconContainer size="xl" variant="secondary">
+                <Package size={iconSizes.xl.icon} className="text-lerbee-yellow" />
+              </IconContainer>
             </div>
             
             {/* Feature icons */}
-            <div className="flex justify-center gap-6 mb-6">
-              <div className="w-12 h-12 bg-lerbee-yellow rounded-lg flex items-center justify-center">
-                <Star size={24} />
-              </div>
-              <div className="w-12 h-12 bg-lerbee-yellow rounded-lg flex items-center justify-center">
-                <ShieldCheck size={24} />
-              </div>
-              <div className="w-12 h-12 bg-lerbee-yellow rounded-lg flex items-center justify-center">
-                <Truck size={24} />
-              </div>
+            <div className={`flex justify-center gap-4 ${spacing.margin.md}`}>
+              <IconContainer size="small" variant="primary">
+                <Star size={iconSizes.small.icon} />
+              </IconContainer>
+              <IconContainer size="small" variant="primary">
+                <ShieldCheck size={iconSizes.small.icon} />
+              </IconContainer>
+              <IconContainer size="small" variant="primary">
+                <Truck size={iconSizes.small.icon} />
+              </IconContainer>
             </div>
             
-            <p className="text-center text-secondary">
+            <p className={`text-center ${typography.body} text-secondary`}>
               Buyer shops with trust, personal advice, and global access
             </p>
           </div>

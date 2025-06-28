@@ -1,5 +1,6 @@
 import React from 'react';
 import { Brain, Users, Smartphone, Store } from 'lucide-react';
+import { SlideHeader, QuoteBox, IconContainer, iconSizes, typography, spacing } from '../components/DesignSystem';
 
 export const SlideWhyNow = () => {
   const drivers = [
@@ -29,42 +30,38 @@ export const SlideWhyNow = () => {
   return (
     <div className="min-h-screen bg-primary p-8">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-primary mb-4">
-            The World Is Ready for Peer-to-Peer Shopping
-          </h1>
-          <div className="mt-6 bg-surface rounded-xl p-6 border border-lerbee-yellow max-w-3xl mx-auto">
-            <p className="text-lg text-primary">
-              "Millions lost jobs. Stores lost foot traffic. <span className="font-bold">We connect them both.</span>"
-            </p>
-          </div>
-        </div>
+        <SlideHeader 
+          title="The World Is Ready for Peer-to-Peer Shopping"
+        />
+        
+        <QuoteBox>
+          "Millions lost jobs. Stores lost foot traffic. <span className="font-bold">We connect them both.</span>"
+        </QuoteBox>
 
         {/* Drivers Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 ${spacing.margin.xl}`}>
           {drivers.map((driver, index) => {
             const Icon = driver.icon;
             return (
-              <div key={index} className="bg-surface rounded-xl p-8 border border-default hover:border-lerbee-yellow transition-colors">
+              <div key={index} className={`bg-surface rounded-xl ${spacing.lg} border border-default hover:border-lerbee-yellow transition-colors`}>
                 {/* Icon and Title */}
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-14 h-14 bg-lerbee-yellow rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Icon size={28} />
-                  </div>
-                  <h3 className="text-xl font-semibold text-primary leading-tight flex-1">
+                <div className={`flex items-start gap-4 ${spacing.margin.md}`}>
+                  <IconContainer size="large" variant="primary">
+                    <Icon size={iconSizes.large.icon} />
+                  </IconContainer>
+                  <h3 className={`${typography.body} font-semibold text-primary leading-tight flex-1`}>
                     {driver.title}
                   </h3>
                 </div>
                 
                 {/* Description */}
-                <p className="text-secondary mb-3">
+                <p className={`${typography.body} text-secondary ${spacing.margin.sm}`}>
                   {driver.description}
                 </p>
                 
                 {/* Stat if available */}
                 {driver.stat && (
-                  <p className="text-sm text-primary font-medium bg-surface rounded-lg px-4 py-2 inline-block border border-lerbee-yellow">
+                  <p className={`${typography.small} text-primary font-medium bg-surface rounded-lg px-4 py-2 inline-block border border-lerbee-yellow`}>
                     {driver.stat}
                   </p>
                 )}
@@ -74,11 +71,11 @@ export const SlideWhyNow = () => {
         </div>
 
         {/* Bottom Line */}
-        <div className="text-center bg-surface rounded-xl p-8 border border-lerbee-yellow">
-          <p className="text-xl text-primary font-semibold">
+        <div className={`text-center bg-surface rounded-xl ${spacing.lg} border border-lerbee-yellow`}>
+          <p className={`${typography.large} text-primary font-semibold`}>
             LerBee taps into five unstoppable shifts: 
           </p>
-          <p className="text-2xl text-primary font-bold mt-2">
+          <p className={`${typography.subtitle} text-primary font-bold ${spacing.margin.sm}`}>
             AI, gig work, distrust in brands, retail collapse, and global curiosity.
           </p>
         </div>
