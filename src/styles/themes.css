@@ -20,6 +20,12 @@
   --color-accent-red: #E23400;
   --color-accent-gray: #373737;
   
+  /* Lerbee Brand Colors */
+  --color-lerbee-yellow: #FFAF14;
+  --color-lerbee-yellow-light: #FFE029;
+  --color-lerbee-orange: #FF9F22;
+  --color-lerbee-green: #15803D;
+  
   /* Semantic colors */
   --color-border: #dee2e6;
   --color-shadow: rgba(0, 0, 0, 0.1);
@@ -48,6 +54,12 @@
   --color-accent-blue: #4D94FF; /* Lighter for dark backgrounds */
   --color-accent-red: #E23400;
   --color-accent-gray: #9ca3af;
+  
+  /* Lerbee Brand Colors - adjusted for dark theme */
+  --color-lerbee-yellow: #FFCE49; /* Brighter for dark bg */
+  --color-lerbee-yellow-light: #FFE89A;
+  --color-lerbee-orange: #FFAF14;
+  --color-lerbee-green: #34D399;
   
   /* Semantic colors */
   --color-border: #334155;
@@ -131,13 +143,31 @@
 .text-blue-500 { color: var(--color-accent-blue) !important; }
 .text-blue-600 { color: var(--color-accent-blue) !important; }
 
+/* Lerbee brand color utilities */
+.bg-lerbee-yellow { background-color: var(--color-lerbee-yellow) !important; }
+.bg-lerbee-yellow-light { background-color: var(--color-lerbee-yellow-light) !important; }
+.bg-lerbee-orange { background-color: var(--color-lerbee-orange) !important; }
+.bg-lerbee-green { background-color: var(--color-lerbee-green) !important; }
+
+.text-lerbee-yellow { color: var(--color-lerbee-yellow) !important; }
+.text-lerbee-yellow-light { color: var(--color-lerbee-yellow-light) !important; }
+.text-lerbee-orange { color: var(--color-lerbee-orange) !important; }
+.text-lerbee-green { color: var(--color-lerbee-green) !important; }
+
+/* Lerbee gradients */
+.bg-gradient-lerbee {
+  background: linear-gradient(135deg, var(--color-lerbee-yellow) 0%, var(--color-lerbee-orange) 100%) !important;
+}
+
 /* Ensure white text on brand colors */
 .bg-orange-500 *,
 .bg-orange-600 *,
 .bg-blue-500 *,
 .bg-blue-600 *,
 .bg-red-500 *,
-.bg-red-600 * {
+.bg-red-600 *,
+.bg-lerbee-yellow *,
+.bg-lerbee-orange * {
   color: white !important;
 }
 
@@ -153,6 +183,37 @@
 }
 .dark-theme .bg-accent-blue.bg-opacity-10 { 
   background-color: rgba(77, 148, 255, 0.15) !important; 
+}
+
+/* Lerbee transparent backgrounds */
+.bg-lerbee-yellow.bg-opacity-10 {
+  background-color: rgba(255, 175, 20, 0.1) !important;
+}
+.bg-lerbee-orange.bg-opacity-10 {
+  background-color: rgba(255, 159, 34, 0.1) !important;
+}
+.bg-lerbee-green.bg-opacity-10 {
+  background-color: rgba(21, 128, 61, 0.1) !important;
+}
+.dark-theme .bg-lerbee-yellow.bg-opacity-10 {
+  background-color: rgba(255, 206, 73, 0.15) !important;
+}
+.dark-theme .bg-lerbee-orange.bg-opacity-10 {
+  background-color: rgba(255, 175, 20, 0.15) !important;
+}
+.dark-theme .bg-lerbee-green.bg-opacity-10 {
+  background-color: rgba(52, 211, 153, 0.15) !important;
+}
+
+/* Lerbee border opacity */
+.border-lerbee-yellow.border-opacity-30 {
+  border-color: rgba(255, 175, 20, 0.3) !important;
+}
+.border-lerbee-orange.border-opacity-30 {
+  border-color: rgba(255, 159, 34, 0.3) !important;
+}
+.border-lerbee-green.border-opacity-30 {
+  border-color: rgba(21, 128, 61, 0.3) !important;
 }
 
 /* Border opacity utilities */

@@ -58,8 +58,8 @@ export const SlideMission = () => {
                 key={index}
                 className="bg-surface rounded-xl p-6 text-center hover:shadow-lg transition-shadow border border-default"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-yellow-500 bg-opacity-10 rounded-full mb-4">
-                  <Icon size={32} className="text-yellow-600" />
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-lerbee-yellow bg-opacity-10 rounded-full mb-4">
+                  <Icon size={32} className="text-lerbee-yellow" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">{value.title}</h3>
                 <p className="text-secondary text-sm">{value.description}</p>

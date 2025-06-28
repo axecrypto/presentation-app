@@ -29,22 +29,22 @@ export const SlideProducts = () => {
   const getColorClasses = (color: string) => {
     const colors: any = {
       yellow: {
-        bg: 'bg-yellow-500',
-        bgLight: 'bg-yellow-50',
-        text: 'text-yellow-600',
-        border: 'border-yellow-200'
+        bg: 'bg-lerbee-yellow',
+        bgLight: 'bg-lerbee-yellow bg-opacity-10',
+        text: 'text-lerbee-yellow',
+        border: 'border-lerbee-yellow border-opacity-30'
       },
       orange: {
-        bg: 'bg-orange-500',
-        bgLight: 'bg-orange-50',
-        text: 'text-orange-600',
-        border: 'border-orange-200'
+        bg: 'bg-lerbee-orange',
+        bgLight: 'bg-lerbee-orange bg-opacity-10',
+        text: 'text-lerbee-orange',
+        border: 'border-lerbee-orange border-opacity-30'
       },
       green: {
-        bg: 'bg-green-600',
-        bgLight: 'bg-green-50',
-        text: 'text-green-700',
-        border: 'border-green-200'
+        bg: 'bg-lerbee-green',
+        bgLight: 'bg-lerbee-green bg-opacity-10',
+        text: 'text-lerbee-green',
+        border: 'border-lerbee-green border-opacity-30'
       }
     };
     return colors[color];
@@ -55,7 +55,7 @@ export const SlideProducts = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-yellow-500 text-white px-4 py-2 rounded-full text-sm font-bold mb-4">
+          <div className="inline-flex items-center gap-2 bg-lerbee-yellow text-white px-4 py-2 rounded-full text-sm font-bold mb-4">
             <Package size={16} />
             Product Suite
           </div>

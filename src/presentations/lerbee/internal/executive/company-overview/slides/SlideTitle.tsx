@@ -3,7 +3,7 @@ import { Sparkles, ArrowRight } from 'lucide-react';
 
 export const SlideTitle = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-500 via-orange-500 to-orange-700 text-white p-8 flex items-center justify-center">
+    <div className="min-h-screen bg-gradient-lerbee text-white p-8 flex items-center justify-center">
       <div className="max-w-5xl mx-auto text-center">
         {/* Logo placeholder */}
         <div className="mb-8 flex justify-center">
@@ -13,20 +13,20 @@ export const SlideTitle = () => {
         </div>
         
         {/* Company Name */}
-        <h1 className="text-7xl font-bold mb-4 tracking-tight">
+        <h1 className="text-7xl font-bold mb-4 tracking-tight text-white">
           Lerbee
         </h1>
         
         {/* Tagline */}
-        <p className="text-2xl mb-12 text-yellow-100">
+        <p className="text-2xl mb-12 text-white opacity-90">
           Innovating Tomorrow, Today
         </p>
         
         {/* CTA */}
         <div className="flex justify-center">
           <div className="flex items-center gap-2 bg-white bg-opacity-20 backdrop-blur-lg px-6 py-3 rounded-full">
-            <span className="text-lg font-medium">Company Overview 2024</span>
-            <ArrowRight size={20} />
+            <span className="text-lg font-medium text-white">Company Overview 2024</span>
+            <ArrowRight size={20} className="text-white" />
           </div>
         </div>
       </div>
