@@ -24,8 +24,11 @@ export const SlideAI = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-primary mb-4">
-            AI Scales Our Platform — Humans Keep It Personal
+            AI Scales the Machine. Humans Scale the Trust.
           </h1>
+          <p className="text-lg text-secondary max-w-2xl mx-auto mt-4">
+            Technology handles the complexity. People handle the connection.
+          </p>
         </div>
 
         {/* Split Layout */}

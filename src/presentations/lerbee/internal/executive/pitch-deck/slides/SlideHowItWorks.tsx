@@ -86,9 +86,12 @@ export const SlideHowItWorks = () => {
         </div>
 
         {/* Bottom Tagline */}
-        <div className="text-center bg-surface rounded-xl p-8 border border-default">
-          <p className="text-2xl text-primary font-semibold">
-            Anyone with a phone and taste can now become a trusted global seller.
+        <div className="text-center bg-surface rounded-xl p-8 border border-lerbee-yellow">
+          <p className="text-2xl text-primary font-semibold mb-4">
+            Your phone + your taste = your income
+          </p>
+          <p className="text-lg text-secondary italic">
+            "Your city becomes someone's dream store."
           </p>
         </div>
       </div>

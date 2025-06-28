@@ -24,6 +24,12 @@ export const SlideProblem = () => {
           <h1 className="text-5xl font-bold text-primary mb-4">
             Online Shopping Is Convenient — But Broken
           </h1>
+          <div className="mt-6 bg-surface rounded-xl p-6 border border-red-500 max-w-3xl mx-auto">
+            <p className="text-lg text-primary italic">
+              "I don't trust what I see online. I want to ask someone who knows." 
+              <span className="text-secondary text-sm block mt-2">— Ana, mother of 3, Barcelona</span>
+            </p>
+          </div>
         </div>
 
         {/* Two columns for Buyers and Shoppers */}

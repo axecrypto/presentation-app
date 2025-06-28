@@ -34,6 +34,11 @@ export const SlideWhyNow = () => {
           <h1 className="text-5xl font-bold text-primary mb-4">
             The World Is Ready for Peer-to-Peer Shopping
           </h1>
+          <div className="mt-6 bg-surface rounded-xl p-6 border border-lerbee-yellow max-w-3xl mx-auto">
+            <p className="text-lg text-primary">
+              "Millions lost jobs. Stores lost foot traffic. <span className="font-bold">We connect them both.</span>"
+            </p>
+          </div>
         </div>
 
         {/* Drivers Grid */}

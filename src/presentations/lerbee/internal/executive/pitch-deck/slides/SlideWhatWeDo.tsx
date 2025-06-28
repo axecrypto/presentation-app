@@ -16,12 +16,17 @@ export const SlideWhatWeDo = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-primary mb-4">
-            We Turn Everyday Shoppers into Global Style Ambassadors
+            LerBee Turns Everyday Routines into Global Opportunity
           </h1>
           <p className="text-xl text-secondary max-w-3xl mx-auto">
             A peer-to-peer marketplace where people earn by shopping —
             and others get trusted access to products worldwide.
           </p>
+          <div className="mt-8 bg-surface rounded-xl p-6 border border-lerbee-yellow max-w-2xl mx-auto">
+            <p className="text-lg text-primary italic">
+              "Every morning, Maria walks through Mexico City markets. Now, her daily routine feeds families in Miami."
+            </p>
+          </div>
         </div>
 
         {/* Split screen visualization */}

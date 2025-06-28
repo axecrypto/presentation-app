@@ -53,6 +53,11 @@ export const SlideTraction = () => {
             <Calendar size={20} />
             <p className="text-lg">Nov 2024 → Present</p>
           </div>
+          <div className="mt-6 bg-surface rounded-xl p-6 border border-lerbee-yellow max-w-3xl mx-auto">
+            <p className="text-lg text-primary italic">
+              "Thousands of buyers came back — not because we paid them, but because they believed it."
+            </p>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
