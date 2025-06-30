@@ -1,5 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from '../../../../../../contexts/ThemeContext';
+import { SlideTikTokStats } from '../slides/SlideTikTokStats';
 import { SlideTitle } from '../slides/SlideTitle';
 import { SlideTraction } from '../slides/SlideTraction';
 import { SlideProblem } from '../slides/SlideProblem';
@@ -19,6 +20,7 @@ import { SlideSeedRound } from '../slides/SlideSeedRound';
 import { SlideWhyWeExist } from '../slides/SlideWhyWeExist';
 
 const slides = [
+  SlideTikTokStats,
   SlideTitle,
   SlideTraction,
   SlideProblem,

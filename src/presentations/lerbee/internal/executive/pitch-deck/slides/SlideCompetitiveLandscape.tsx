@@ -56,10 +56,10 @@ export const SlideCompetitiveLandscape = () => {
 
         {/* Comparison Table */}
         <div className="mb-6">
-          <div className="overflow-hidden rounded-xl border border-default">
+          <div className="overflow-hidden rounded-xl border-2 border-lerbee-yellow/30">
             <table className="w-full text-sm">
-              <thead className="bg-surface">
-                <tr className="border-b border-default">
+              <thead className="bg-lerbee-yellow/5 dark:bg-lerbee-yellow/10">
+                <tr className="border-b border-lerbee-yellow/30">
                   <th className="text-left p-3 text-primary font-semibold">Platform</th>
                   <th className="text-left p-3 text-primary font-semibold">Model</th>
                   <th className="text-center p-3 text-primary font-semibold">Trust</th>
@@ -71,8 +71,8 @@ export const SlideCompetitiveLandscape = () => {
                 {competitors.map((comp, index) => (
                   <tr 
                     key={index} 
-                    className={`border-b border-default ${
-                      comp.isUs ? 'bg-gradient-to-r from-lerbee-yellow/10 to-lerbee-orange/10' : ''
+                    className={`border-b border-lerbee-yellow/20 ${
+                      comp.isUs ? 'bg-gradient-to-r from-lerbee-yellow/10 to-lerbee-orange/10 dark:from-lerbee-yellow/20 dark:to-lerbee-orange/20' : ''
                     }`}
                   >
                     <td className={`p-3 font-medium ${comp.isUs ? 'text-primary' : 'text-secondary'}`}>

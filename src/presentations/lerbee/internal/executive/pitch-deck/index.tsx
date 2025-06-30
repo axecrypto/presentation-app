@@ -1,5 +1,6 @@
 import React from 'react';
 import { Presentation } from '../../../../../types/presentation';
+import { SlideTikTokStats } from './slides/SlideTikTokStats';
 import { SlideTitle } from './slides/SlideTitle';
 import { SlideWhatWeDo } from './slides/SlideWhatWeDo';
 import { SlideProblem } from './slides/SlideProblem';
@@ -45,6 +46,13 @@ export const lerbeePitchDeckPresentation: Presentation = {
   },
   slides: [
     // Act 1: Immediate Proof & Problem
+    {
+      id: 'tiktok-stats',
+      title: 'TikTok Stats',
+      layout: 'full',
+      content: <SlideTikTokStats />,
+      notes: 'TikTok for shopping with incredible CAC and conversion rates',
+    },
     {
       id: 'title',
       title: 'Welcome',
