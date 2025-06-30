@@ -26,6 +26,7 @@ import { AppendixCompetitiveLandscape } from './appendix/AppendixCompetitiveLand
 import { AppendixAI } from './appendix/AppendixAI';
 import { AppendixTeam } from './appendix/AppendixTeam';
 import { AppendixProductMarketFit } from './appendix/AppendixProductMarketFit';
+import './styles/print.css';
 
 export const lerbeePitchDeckPresentation: Presentation = {
   id: 'lerbee-pitch-deck',
@@ -43,54 +44,13 @@ export const lerbeePitchDeckPresentation: Presentation = {
     defaultTheme: 'light',
   },
   slides: [
+    // Act 1: Immediate Proof & Problem
     {
       id: 'title',
       title: 'Welcome',
       layout: 'centered',
       content: <SlideTitle />,
       notes: 'Live peer-to-peer shopping at global scale',
-    },
-    {
-      id: 'what-we-do',
-      title: 'What We Do',
-      layout: 'full',
-      content: <SlideWhatWeDo />,
-      notes: 'We turn everyday shoppers into global style ambassadors',
-    },
-    {
-      id: 'quote',
-      title: 'Customer Voice',
-      layout: 'full',
-      content: <SlideQuote />,
-      notes: 'Real customer pain point that drives our solution',
-    },
-    {
-      id: 'problem',
-      title: 'The Problem',
-      layout: 'full',
-      content: <SlideProblem />,
-      notes: 'Online shopping is convenient but broken for both buyers and shoppers',
-    },
-    {
-      id: 'how-it-works',
-      title: 'How It Works',
-      layout: 'full',
-      content: <SlideHowItWorks />,
-      notes: 'LerBee connects global buyers to local shoppers — live and direct',
-    },
-    {
-      id: 'why-now',
-      title: 'Why Now',
-      layout: 'full',
-      content: <SlideWhyNow />,
-      notes: 'The world is ready for peer-to-peer shopping',
-    },
-    {
-      id: 'market-opportunity',
-      title: 'Market Opportunity',
-      layout: 'full',
-      content: <SlideMarketOpportunity />,
-      notes: 'A massive, growing market — untapped from the bottom up',
     },
     {
       id: 'traction',
@@ -100,11 +60,47 @@ export const lerbeePitchDeckPresentation: Presentation = {
       notes: 'From zero to global product — with no paid marketing',
     },
     {
+      id: 'problem',
+      title: 'The Problem',
+      layout: 'full',
+      content: <SlideProblem />,
+      notes: 'Online shopping is convenient but broken for both buyers and shoppers',
+    },
+    {
+      id: 'market-opportunity',
+      title: 'Market Opportunity',
+      layout: 'full',
+      content: <SlideMarketOpportunity />,
+      notes: 'A massive, growing market — untapped from the bottom up',
+    },
+    {
+      id: 'what-we-do',
+      title: 'What We Do',
+      layout: 'full',
+      content: <SlideWhatWeDo />,
+      notes: 'We turn everyday shoppers into global style ambassadors',
+    },
+    // Act 2: How We Win
+    {
+      id: 'how-it-works',
+      title: 'How It Works',
+      layout: 'full',
+      content: <SlideHowItWorks />,
+      notes: 'LerBee connects global buyers to local shoppers — live and direct',
+    },
+    {
       id: 'shopper-story',
       title: 'Shopper Success Story',
       layout: 'full',
       content: <SlideShopperStory />,
       notes: 'Real people building real income — Vicky\'s transformation story',
+    },
+    {
+      id: 'team',
+      title: 'Team',
+      layout: 'full',
+      content: <SlideTeam />,
+      notes: 'We\'ve done this before — now we\'re doing it for the world',
     },
     {
       id: 'product-market-fit',
@@ -121,12 +117,13 @@ export const lerbeePitchDeckPresentation: Presentation = {
       notes: 'Asset-light model with fast payback and high retention',
     },
     {
-      id: 'competitive-landscape',
-      title: 'Competitive Landscape',
+      id: 'why-now',
+      title: 'Why Now',
       layout: 'full',
-      content: <SlideCompetitiveLandscape />,
-      notes: 'We\'re not competing on price — we\'re competing on trust',
+      content: <SlideWhyNow />,
+      notes: 'The world is ready for peer-to-peer shopping',
     },
+    // Act 3: The Scale Story
     {
       id: 'ai-force-multiplier',
       title: 'AI as a Force Multiplier',
@@ -135,11 +132,11 @@ export const lerbeePitchDeckPresentation: Presentation = {
       notes: 'AI scales our platform — humans keep it personal',
     },
     {
-      id: 'team',
-      title: 'Team',
+      id: 'competitive-landscape',
+      title: 'Competitive Landscape',
       layout: 'full',
-      content: <SlideTeam />,
-      notes: 'We\'ve done this before — now we\'re doing it for the world',
+      content: <SlideCompetitiveLandscape />,
+      notes: 'We\'re not competing on price — we\'re competing on trust',
     },
     {
       id: 'forecast',

@@ -14,7 +14,7 @@ export const SlideWhatWeDo = () => {
         {/* Split screen visualization */}
         <div className="grid grid-cols-2 gap-8 mb-8">
           {/* Shopper Side */}
-          <div className="bg-surface rounded-xl p-6 border border-default h-full">
+          <div className="rounded-xl p-6 border-2 border-lerbee-yellow/30 bg-lerbee-yellow/5 dark:bg-lerbee-yellow/10 h-full">
             <div className="flex items-center gap-3 mb-6 h-12">
               <div className="w-10 h-10 bg-lerbee-yellow/20 rounded-lg flex items-center justify-center flex-shrink-0">
                 <Users size={20} className="text-lerbee-yellow" />
@@ -47,7 +47,7 @@ export const SlideWhatWeDo = () => {
           </div>
 
           {/* Buyer Side */}
-          <div className="bg-surface rounded-xl p-6 border border-default h-full">
+          <div className="rounded-xl p-6 border-2 border-lerbee-yellow/30 bg-lerbee-yellow/5 dark:bg-lerbee-yellow/10 h-full">
             <div className="flex items-center gap-3 mb-6 h-12">
               <div className="w-10 h-10 bg-lerbee-yellow/20 rounded-lg flex items-center justify-center flex-shrink-0">
                 <Package size={20} className="text-lerbee-yellow" />
@@ -81,26 +81,26 @@ export const SlideWhatWeDo = () => {
         </div>
 
         {/* Key Value Props */}
-        <div className="bg-gradient-to-r from-lerbee-yellow/10 to-lerbee-orange/10 rounded-xl p-6">
+        <div className="bg-gradient-to-r from-lerbee-yellow/10 to-lerbee-orange/10 dark:from-lerbee-yellow/20 dark:to-lerbee-orange/20 rounded-xl p-6 border border-lerbee-yellow/30">
           <h3 className={`${typography.heading} font-semibold text-primary mb-6 text-center`}>
             How It Works
           </h3>
           <div className="grid grid-cols-3 gap-6">
             <div className="text-center">
               <div className="w-12 h-12 bg-lerbee-yellow rounded-full flex items-center justify-center mx-auto mb-3">
-                <span className="text-xl font-bold text-primary">1</span>
+                <span className="text-xl font-bold text-black">1</span>
               </div>
               <p className={`${typography.small} text-primary`}>Shoppers go live from stores & markets</p>
             </div>
             <div className="text-center">
               <div className="w-12 h-12 bg-lerbee-orange rounded-full flex items-center justify-center mx-auto mb-3">
-                <span className="text-xl font-bold text-primary">2</span>
+                <span className="text-xl font-bold text-black">2</span>
               </div>
               <p className={`${typography.small} text-primary`}>Buyers chat, request, and purchase</p>
             </div>
             <div className="text-center">
               <div className="w-12 h-12 bg-lerbee-green rounded-full flex items-center justify-center mx-auto mb-3">
-                <span className="text-xl font-bold text-primary">3</span>
+                <span className="text-xl font-bold text-white">3</span>
               </div>
               <p className={`${typography.small} text-primary`}>Direct fulfillment with trust</p>
             </div>

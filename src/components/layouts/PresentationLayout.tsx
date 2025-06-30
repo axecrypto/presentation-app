@@ -4,6 +4,7 @@ import { usePresentation } from '../../contexts/PresentationContext';
 import { SlideContainer } from '../slides/SlideContainer';
 import { Button } from '../common';
 import { ThemeWrapper } from '../ThemeWrapper';
+import { Download } from 'lucide-react';
 
 const LayoutContainer = styled.div`
   position: relative;
@@ -130,6 +131,18 @@ export const PresentationLayout: React.FC = () => {
   const progress = ((currentSlideIndex + 1) / presentation.slides.length) * 100;
   const currentSlide = presentation.slides[currentSlideIndex];
 
+  // PDF Export functionality
+  const exportToPDF = () => {
+    // Check if this is the LerBee pitch deck
+    if (presentation.id === 'lerbee-pitch-deck') {
+      // Open PDF view in new window
+      window.open('/lerbee-pdf', '_blank');
+    } else {
+      // Generic print for other presentations
+      window.print();
+    }
+  };
+
   return (
     <ThemeWrapper>
       <LayoutContainer>
@@ -171,6 +184,9 @@ export const PresentationLayout: React.FC = () => {
               {currentTheme === 'dark' ? '☀️' : '🌙'}
             </Button>
           )}
+          <Button size="sm" variant="ghost" onClick={exportToPDF} title="Export to PDF">
+            <Download size={16} />
+          </Button>
         </Controls>
       </LayoutContainer>
     </ThemeWrapper>

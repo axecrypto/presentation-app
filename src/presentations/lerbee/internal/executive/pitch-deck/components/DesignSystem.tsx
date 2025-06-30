@@ -1,4 +1,5 @@
 import React from 'react';
+import { HoneycombPattern, HoneycombAccent } from './HoneycombPattern';
 // Import bee brand mark
 import beeMark from '../assets/brand/bee-mark.png';
 
@@ -191,27 +192,38 @@ export const BrandPattern: React.FC<{
   );
 };
 
-// Slide wrapper that includes the brand pattern
+// Slide wrapper with honeycomb pattern
 export const SlideWrapper: React.FC<{
   children: React.ReactNode;
-  showBrandPattern?: boolean;
-  patternPosition?: 'full' | 'corner' | 'side';
-  patternOpacity?: number;
+  showHoneycomb?: boolean;
+  honeycombOpacity?: number;
+  showAccent?: boolean;
+  accentPosition?: 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right';
+  accentSize?: 'small' | 'medium' | 'large';
 }> = ({ 
   children, 
-  showBrandPattern = true,
-  patternPosition = 'corner',
-  patternOpacity = 0.3
+  showHoneycomb = true,
+  honeycombOpacity = 0.03,
+  showAccent = true,
+  accentPosition = 'bottom-left',
+  accentSize = 'small'
 }) => {
   return (
-    <div className="min-h-screen bg-primary p-8 flex items-center relative overflow-hidden">
-      {showBrandPattern && (
-        <BrandPattern 
-          position={patternPosition} 
-          opacity={patternOpacity} 
+    <div className="min-h-screen bg-primary relative overflow-hidden">
+      {/* Subtle honeycomb pattern background */}
+      {showHoneycomb && (
+        <HoneycombPattern opacity={honeycombOpacity} />
+      )}
+      
+      {/* Honeycomb accent in corner */}
+      {showAccent && (
+        <HoneycombAccent 
+          position={accentPosition} 
+          size={accentSize}
         />
       )}
-      <div className="max-w-6xl mx-auto w-full relative z-10">
+      
+      <div className="relative z-10 p-8">
         {children}
       </div>
     </div>

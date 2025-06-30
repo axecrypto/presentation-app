@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Export LerBee Pitch Deck to PDF</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    h1 {
+      color: #333;
+      margin-bottom: 30px;
+    }
+    
+    .steps {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 6px;
+      margin-bottom: 30px;
+    }
+    
+    .steps ol {
+      margin: 0;
+      padding-left: 20px;
+    }
+    
+    .steps li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+    
+    button {
+      background: #FBBf24;
+      color: black;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    button:hover {
+      background: #F59E0B;
+    }
+    
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .status {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 6px;
+      display: none;
+    }
+    
+    .status.info {
+      background: #e3f2fd;
+      color: #1976d2;
+      display: block;
+    }
+    
+    .status.success {
+      background: #e8f5e9;
+      color: #388e3c;
+      display: block;
+    }
+    
+    .status.error {
+      background: #ffebee;
+      color: #c62828;
+      display: block;
+    }
+    
+    code {
+      background: #f5f5f5;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: 'Monaco', 'Menlo', monospace;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🐝 Export LerBee Pitch Deck to PDF</h1>
+    
+    <div class="steps">
+      <h3>Quick Export Instructions:</h3>
+      <ol>
+        <li>Make sure the presentation app is running at <code>http://localhost:3000</code></li>
+        <li>Navigate to the LerBee pitch deck</li>
+        <li>Click the "Generate PDF" button below</li>
+        <li>A new window will open with all slides</li>
+        <li>Use <strong>Cmd+P</strong> (Mac) or <strong>Ctrl+P</strong> (Windows) to print</li>
+        <li>Choose "Save as PDF" as the destination</li>
+        <li>Settings: Landscape, A4, No margins, Background graphics ON</li>
+      </ol>
+    </div>
+    
+    <button id="generateBtn" onclick="generatePDF()">Generate PDF</button>
+    
+    <div id="status" class="status"></div>
+  </div>
+
+  <script>
+    function updateStatus(message, type = 'info') {
+      const status = document.getElementById('status');
+      status.className = `status ${type}`;
+      status.textContent = message;
+    }
+    
+    function generatePDF() {
+      const btn = document.getElementById('generateBtn');
+      btn.disabled = true;
+      
+      updateStatus('Opening presentation in new window...');
+      
+      // Open the presentation in a new window
+      const printWindow = window.open('http://localhost:3000/#/presentations/lerbee-pitch-deck', '_blank');
+      
+      if (!printWindow) {
+        updateStatus('Please allow popups for this site and try again.', 'error');
+        btn.disabled = false;
+        return;
+      }
+      
+      // Wait for the presentation to load
+      setTimeout(() => {
+        updateStatus('Presentation loaded. Preparing for PDF export...');
+        
+        // Inject styles to show all slides
+        try {
+          const printStyles = `
+            <style id="pdf-export-styles">
+              /* Force all slides to be visible */
+              .slick-slider, .slick-list, .slick-track { 
+                height: auto !important; 
+                position: static !important;
+                transform: none !important;
+              }
+              
+              .slick-slide { 
+                display: block !important;
+                float: none !important;
+                height: 100vh !important;
+                page-break-after: always;
+                page-break-inside: avoid;
+              }
+              
+              .slick-slide:last-child { 
+                page-break-after: auto;
+              }
+              
+              /* Hide navigation */
+              .slick-dots, .slick-arrow, button, .fixed { 
+                display: none !important;
+              }
+              
+              /* Page setup for print */
+              @media print {
+                @page {
+                  size: A4 landscape;
+                  margin: 0;
+                }
+                
+                * {
+                  -webkit-print-color-adjust: exact !important;
+                  print-color-adjust: exact !important;
+                }
+              }
+            </style>
+          `;
+          
+          printWindow.document.head.insertAdjacentHTML('beforeend', printStyles);
+          
+          updateStatus('Ready! Use Cmd+P (Mac) or Ctrl+P (Windows) in the new window to save as PDF.', 'success');
+          
+          // Auto-trigger print dialog
+          setTimeout(() => {
+            printWindow.print();
+          }, 1000);
+          
+        } catch (error) {
+          updateStatus('Error: Could not modify the presentation. Make sure it\'s running on localhost:3000', 'error');
+        }
+        
+        btn.disabled = false;
+      }, 3000);
+    }
+    
+    // Check if localhost:3000 is accessible
+    fetch('http://localhost:3000')
+      .then(() => {
+        updateStatus('✓ Presentation app is running. Ready to export!', 'success');
+      })
+      .catch(() => {
+        updateStatus('⚠️ Cannot connect to localhost:3000. Please start the app with "npm start"', 'error');
+        document.getElementById('generateBtn').disabled = true;
+      });
+  </script>
+</body>
+</html>

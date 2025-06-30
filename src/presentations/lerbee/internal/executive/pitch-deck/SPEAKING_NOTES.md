@@ -4,67 +4,69 @@
 - **Total Time**: 15-20 minutes (leave 10 mins for Q&A)
 - **Tone**: Confident, passionate, data-driven
 - **Key Theme**: "We're building the trust layer for global commerce"
+- **Structure**: 17 slides in 3 acts (Proof → Solution → Scale)
 
 ---
 
 ## Slide 1: Title (30 seconds)
 **Say:**
-"Hi, I'm Valeria, CEO of LerBee. We're building the trust layer for global peer-to-peer commerce. Today I'll show you how we're turning online shopping from a transaction into a relationship."
+"Hi, I'm Valeria, CEO of LerBee. We're building the trust layer for global peer-to-peer commerce. Before I tell you what we do, let me show you what we've already built."
 
 **Key Points:**
 - Brief intro
-- Set the stage
+- Set expectation of proof
 - Create intrigue
 
 ---
 
-## Slide 2: Customer Quote (45 seconds)
+## Slide 2: Traction (60 seconds)
 **Say:**
-"This is Sarah from Texas. Like millions of shoppers, she's frustrated. She told us: 'I want quality products from real people, but online shopping feels like gambling.' This isn't just Sarah's problem - it's everyone's problem."
+"In just 18 months, with almost no marketing spend: 7,800 users across 4 continents. 11 million video views. 95% repeat buyer rate. $390K in GMV. But here's the kicker - our CAC is $15-20 and our LTV is already over $500. We've built something people love."
 
 **Key Points:**
-- Make it personal
-- Create empathy
-- This is universal pain
+- Lead with proof
+- Global traction
+- Unit economics work
+- People love it
 
-**Transition:** "Let me show you just how broken online shopping has become..."
+**Transition:** "So what problem are we solving that drives this kind of engagement?"
 
 ---
 
 ## Slide 3: The Problem (60 seconds)
 **Say:**
-"Online shopping is broken on both sides. Buyers face fake reviews, no human connection, and cross-border friction. Sellers can't differentiate, struggle to build trust, and pay 30-50% to platforms. The result? A $7.8 trillion market built on mistrust."
+"Online shopping is broken. Sarah from Texas told us: 'I want quality products from real people, but online shopping feels like gambling.' She's not alone. Buyers face fake reviews and no human connection. Sellers pay 30-50% fees and can't build trust. It's a $7.8 trillion market built on mistrust."
 
 **Key Points:**
-- Both sides lose
-- Emphasize trust crisis
-- Set up for solution
+- Real customer quote
+- Both sides suffer
+- Massive market problem
 
-**Transition:** "But what if we could fix this? What if shopping online felt like shopping from a trusted friend?"
+**Transition:** "This broken trust creates a massive opportunity..."
 
 ---
 
 ## Slide 4: Market Opportunity (45 seconds)
 **Say:**
-"This broken trust represents a massive opportunity. The global e-commerce market is $7.8 trillion. Our addressable market in cross-border social commerce is $140 billion. We need just 0.5% of that to build a unicorn."
+"The global e-commerce market is $7.8 trillion. Cross-border social commerce - our sweet spot - is $140 billion and growing 30% annually. We need just 0.5% market share to build a unicorn. The market is massive and the timing is perfect."
 
 **Key Points:**
 - TAM → SAM → SOM
-- Realistic targets
-- Unicorn math is simple
+- High growth segment
+- Achievable targets
 
-**Transition:** "So how do we capture this opportunity?"
+**Transition:** "Here's how we're capturing this opportunity..."
 
 ---
 
-## Slide 5: What We Do (60 seconds)
+## Slide 5: What We Do (45 seconds)
 **Say:**
-"LerBee is a peer-to-peer marketplace where shoppers become your personal buyers worldwide. Think of it as Uber for shopping - but instead of rides, it's products. Shoppers live-stream their shopping trips, buyers request items, and trust is built through real human connections."
+"LerBee is peer-to-peer live shopping. Shoppers worldwide stream their shopping trips. Buyers request products in real-time. We handle payments and logistics. Think Uber for shopping - connecting people who need products with people already shopping. Simple, human, trustworthy."
 
 **Key Points:**
-- Simple analogy
-- Trust through transparency
-- Global reach, local expertise
+- Clear explanation
+- Uber analogy
+- Human-centered
 
 **Transition:** "Let me show you exactly how it works..."
 
@@ -72,170 +74,157 @@
 
 ## Slide 6: How It Works (45 seconds)
 **Say:**
-"Four simple steps: First, shoppers go live from stores. Buyers request items in real-time. Shoppers purchase with their own money. Platform handles payment and shipping. It's that simple - and it's working."
+"Four simple steps: Shoppers go live from stores anywhere. Buyers request items in real-time. Shoppers purchase and ship. We handle payments and trust. It's Uber for shopping - and it's already working globally."
 
 **Key Points:**
-- Emphasize simplicity
+- Dead simple process
 - Real-time interaction
-- Platform handles complexity
+- We handle complexity
 
-**Transition:** "And the results speak for themselves..."
-
----
-
-## Slide 7: Traction (60 seconds)
-**Say:**
-"In just 18 months, with minimal marketing spend: 7,800 users across 4 continents. 11 million video views. 95% repeat buyer rate. $390K in GMV. Most importantly - our LTV is already 25x our CAC."
-
-**Key Points:**
-- Built lean, scaled globally
-- Retention is exceptional
-- Unit economics work
-
-**Transition:** "But numbers only tell half the story. Let me show you what this means for real people..."
+**Transition:** "This simplicity drives incredible results. Let me show you a real success story..."
 
 ---
 
-## Slide 8: Shopper Success Story (45 seconds)
+## Slide 7: Shopper Success Story (45 seconds)
 **Say:**
-"Meet Vicky from Miami. She was a struggling student. Started live shopping on LerBee. Now makes $3,000 per month, built a community of 500 loyal buyers, and turned shopping into a business. We have hundreds of Vickys."
+"Meet Vicky from Miami. Struggling student six months ago. Today she makes $3,000 monthly, has 500 loyal buyers, and turned shopping into a career. She's not unique - we have hundreds of Vickys building real businesses on LerBee."
 
 **Key Points:**
 - Real transformation
-- Economic empowerment
-- Replicable success
+- Economic impact
+- Scalable model
 
-**Transition:** "Vicky's not unique. Our engagement metrics prove product-market fit..."
+**Transition:** "The team that built this has done it before..."
+
+---
+
+## Slide 8: Team (45 seconds)
+**Say:**
+"I previously built and sold a $50M commerce business. My co-founders come from Apple, Instagram, with two successful exits between them. We're not figuring this out - we're executing a proven playbook at global scale."
+
+**Key Points:**
+- Done this before
+- Big tech DNA
+- Execution machines
+
+**Transition:** "This team has created incredible product-market fit..."
 
 ---
 
 ## Slide 9: Product-Market Fit (60 seconds)
 **Say:**
-"4.7 App Store rating. 60% daily active users. Each user invites 3-5 friends. 87 NPS score. But here's the kicker - shoppers message buyers on WhatsApp to coordinate. They're building relationships outside our platform. That's true product-market fit."
+"The numbers speak for themselves: 4.7 App Store rating. 60% daily active users. Each user brings 3-5 friends. 87 NPS. But here's the real proof - shoppers and buyers exchange WhatsApp numbers to coordinate. They're building relationships beyond our platform."
 
 **Key Points:**
-- Exceptional metrics
-- Organic virality
-- Users hack around us
+- Best-in-class metrics
+- Viral by design
+- Relationships > transactions
 
-**Transition:** "And this translates into attractive economics..."
+**Transition:** "These relationships drive attractive economics..."
 
 ---
 
-## Slide 10: Business Model (60 seconds)
+## Slide 10: Business Model (45 seconds)
 **Say:**
-"We make money simply - 12-15% take rate. CAC is $15-20, already dropping. Average transaction $180. But here's what's exciting - shoppers become buyers, buyers become shoppers. It's a virtuous cycle that drives LTV over $500."
+"Simple model: 12-15% take rate. CAC just $15-20 and dropping. Average order $180. LTV over $500. The magic? Shoppers become buyers, buyers become shoppers. It's a virtuous cycle that compounds."
 
 **Key Points:**
-- Simple monetization
-- Improving unit economics
+- Clear monetization
+- 25x LTV/CAC
 - Network effects
 
-**Transition:** "We're hitting this inflection point at the perfect time..."
+**Transition:** "We're catching multiple tailwinds..."
 
 ---
 
 ## Slide 11: Why Now (45 seconds)
 **Say:**
-"Four megatrends are converging: First, 64% of consumers lost trust in e-commerce. Second, AI costs dropped 90%, enabling us to scale. Third, Gen Z demands authentic shopping. Fourth, cross-border commerce is exploding. The market is ready for LerBee."
+"Four forces converging: Trust in e-commerce collapsed - 64% of shoppers worried about fakes. AI costs dropped 90% - we can now scale efficiently. Gen Z demands authentic shopping. Cross-border commerce exploding. The stars are aligned."
 
 **Key Points:**
-- Multiple tailwinds
-- Technology enablers
+- Trust crisis = opportunity
+- Tech enables scale
 - Cultural shift
 
-**Transition:** "And here's how we use AI to scale trust..."
+**Transition:** "Here's how AI amplifies our human network..."
 
 ---
 
 ## Slide 12: AI Advantage (45 seconds)
 **Say:**
-"AI handles operations - translations, logistics, discovery. Humans handle relationships - taste, style, trust. This partnership means we can scale globally without losing the human touch. AI makes us efficient. Humans make us special."
+"AI handles the boring stuff - translations, routing, fraud detection. Humans do what they do best - build trust, share taste, create connections. This isn't AI replacing humans. It's AI empowering thousands of micro-entrepreneurs."
 
 **Key Points:**
-- AI as enabler, not replacement
-- Scale without losing soul
-- Competitive moat
+- AI enables, not replaces
+- Scalable operations
+- Human differentiation
 
-**Transition:** "This approach gives us a unique position in the market..."
+**Transition:** "This creates a moat competitors can't cross..."
 
 ---
 
-## Slide 13: Competitive Landscape (60 seconds)
+## Slide 13: Competitive Landscape (45 seconds)
 **Say:**
-"Amazon has scale but no soul. Temu has prices but no trust. TikTok Shop has entertainment but shallow commerce. We're not competing on their terms. We're building deep, trust-based micro-communities. We don't warehouse products - we warehouse trust."
+"Amazon: scale without soul. Temu: price without trust. TikTok Shop: entertainment without depth. We play a different game - deep relationships in micro-communities. We don't compete on price. We compete on trust."
 
 **Key Points:**
-- Different game
-- Trust as moat
-- Community over transaction
+- Different playbook
+- Trust is our moat
+- Community wins
 
-**Transition:** "And we have the team to execute..."
+**Transition:** "Now let me show you how we scale..."
 
 ---
 
-## Slide 14: Team (45 seconds)
+## Slide 14: 2025 Forecast (60 seconds)
 **Say:**
-"I previously built a $50M commerce business. My co-founders bring experience from Apple, Instagram, and two successful exits. We've done this before. We're not learning on your dime - we're executing a proven playbook."
+"Conservative targets based on current metrics: 100K users by end of 2025. $10M GMV run rate. CAC under $5 through pure virality. We'll activate viral loops, expand to LATAM and India, and let network effects compound."
 
 **Key Points:**
-- Been there, done that
-- Big tech experience
-- Execution focused
+- Realistic growth
+- Clear path to $10M
+- Viral, not paid growth
 
-**Transition:** "Here's where we're headed..."
+**Transition:** "Here's the roadmap..."
 
 ---
 
-## Slide 15: 2025 Forecast (60 seconds)
+## Slide 15: Roadmap (45 seconds)
 **Say:**
-"With your investment, by end of 2025: 100,000 users, $10 million GMV run rate, CAC under $5 through viral growth. We'll expand to LATAM and India, launch referral programs, and activate network effects. Conservative projections based on current metrics."
+"Three phases: Q3 2025 - nail the product with V2. H1 2026 - scale with emotional AI and new markets. H2 2026 - monetize with subscriptions and partnerships. Key metrics: viral coefficient over 1.5, $10M GMV, CAC under $5."
 
 **Key Points:**
-- Specific targets
-- Clear growth levers
-- Achievable goals
-
-**Transition:** "And here's our roadmap to get there..."
-
----
-
-## Slide 16: Roadmap (45 seconds)
-**Say:**
-"Three phases: Q3 2025 - Foundation with V2 launch. H1 2026 - Scale with emotional AI and geographic expansion. H2 2026 - Monetize with subscriptions and brand partnerships. By end of 2026: viral coefficient over 1.5, $10M GMV run rate, CAC under $5."
-
-**Key Points:**
-- Clear milestones
-- Focus on growth metrics
+- Clear phases
+- Growth metrics focus
 - Path to profitability
 
-**Transition:** "To execute this plan, we're raising..."
+**Transition:** "To execute this, we need fuel..."
 
 ---
 
-## Slide 17: Ask (60 seconds)
+## Slide 16: Ask (45 seconds)
 **Say:**
-"We're raising $1-1.5 million seed round. 40% goes to product and AI to build our viral engine. 30% to growth, focusing on zero-CAC channels. 20% to team. This gets us to profitability without additional funding. We're not experimenting - we're scaling what already works."
+"$1-1.5M seed round. 40% to product - building viral mechanics. 30% to growth - but organic, not ads. 20% to team. 10% operations. This gets us to cash flow positive. We're not experimenting. We're pouring gas on a fire."
 
 **Key Points:**
-- Specific ask
-- Clear use of funds
-- Path to sustainability
+- Specific use of funds
+- Path to profitability
+- Scaling what works
 
-**Transition:** "Let me leave you with why this matters..."
+**Transition:** "But this is about more than money..."
 
 ---
 
-## Slide 18: Mission (45 seconds)
+## Slide 17: Mission (45 seconds)
 **Say:**
-"We exist to make the world feel like a neighborhood again. Where you know your shopkeeper, where trust is earned through relationships, where commerce is human. We're not just building a marketplace - we're rebuilding how the world shops. Join us."
+"We're making the world feel like a neighborhood again. Where your shopkeeper knows your name. Where trust is built through relationships. Where commerce is human. Join us in rebuilding how the world shops."
 
 **Key Points:**
-- Bigger than money
-- Emotional close
-- Call to action
+- Mission-driven
+- Emotional resonance
+- Clear call to action
 
-**End:** "Thank you. I'd love to hear your questions and thoughts."
+**End:** "Thank you. Let's discuss how you can be part of this journey."
 
 ---
 

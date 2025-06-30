@@ -5,6 +5,7 @@ import { GlobalStyles } from './styles/GlobalStyles';
 import { Home } from './pages/Home';
 import { PresentationView } from './pages/PresentationView';
 import { InformaticaThemeTest } from './components/InformaticaThemeTest';
+import { PDFView } from './presentations/lerbee/internal/executive/pitch-deck/components/PDFView';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/presentation/:id" element={<PresentationView />} />
             <Route path="/theme-test" element={<InformaticaThemeTest />} />
+            <Route path="/lerbee-pdf" element={<PDFView />} />
           </Routes>
         </PresentationProvider>
       </ThemeProvider>

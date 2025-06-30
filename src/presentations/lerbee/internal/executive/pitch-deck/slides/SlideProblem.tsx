@@ -26,7 +26,7 @@ export const SlideProblem = () => {
         {/* Two columns for Buyers and Shoppers */}
         <div className="grid grid-cols-2 gap-8 mb-8">
           {/* Buyers Column */}
-          <div className="bg-surface rounded-xl p-6 border border-default">
+          <div className="rounded-xl p-6 border-2 border-red-500/30 bg-red-500/5 dark:bg-red-500/10">
             <div className="flex items-center gap-3 mb-6 h-12">
               <div className="w-10 h-10 bg-red-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
                 <Search size={20} className="text-red-500" />
@@ -49,7 +49,7 @@ export const SlideProblem = () => {
           </div>
 
           {/* Shoppers Column */}
-          <div className="bg-surface rounded-xl p-6 border border-default">
+          <div className="rounded-xl p-6 border-2 border-red-500/30 bg-red-500/5 dark:bg-red-500/10">
             <div className="flex items-center gap-3 mb-6 h-12">
               <div className="w-10 h-10 bg-red-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
                 <ShoppingBag size={20} className="text-red-500" />
@@ -73,7 +73,7 @@ export const SlideProblem = () => {
         </div>
 
         {/* Bottom Line */}
-        <div className="bg-gradient-to-r from-lerbee-yellow/10 to-lerbee-orange/10 rounded-xl p-6 text-center">
+        <div className="bg-gradient-to-r from-lerbee-yellow/10 to-lerbee-orange/10 dark:from-lerbee-yellow/20 dark:to-lerbee-orange/20 rounded-xl p-6 text-center border border-lerbee-yellow/30">
           <p className={`${typography.subtitle} text-primary font-bold`}>
             We fix all three: Trust, Access, and Monetization
           </p>

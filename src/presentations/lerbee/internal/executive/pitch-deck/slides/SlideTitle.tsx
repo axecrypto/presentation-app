@@ -92,7 +92,7 @@ export const SlideTitle = () => {
 
   // Current option (centered above)
   const current = (
-    <SlideWrapper>
+    <SlideWrapper showAccent={false} honeycombOpacity={0.02}>
       <div className="text-center relative">
         <div className="mb-8">
           <img 

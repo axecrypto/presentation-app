@@ -1,0 +1,73 @@
+/* Print styles for PDF export */
+@media print {
+  /* Reset page margins */
+  @page {
+    size: 297mm 210mm; /* A4 Landscape */
+    margin: 0;
+  }
+
+  /* Ensure each slide takes full page */
+  .slide-wrapper {
+    width: 297mm !important;
+    height: 210mm !important;
+    page-break-after: always;
+    page-break-inside: avoid;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Last slide shouldn't have page break */
+  .slide-wrapper:last-child {
+    page-break-after: auto;
+  }
+
+  /* Ensure backgrounds print */
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    color-adjust: exact;
+  }
+
+  /* Hide navigation elements */
+  .no-print,
+  button,
+  .navigation,
+  .slide-counter {
+    display: none !important;
+  }
+
+  /* Ensure honeycomb patterns are visible */
+  svg {
+    opacity: 1 !important;
+  }
+
+  /* Fix text rendering */
+  body {
+    font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Ensure images print at full quality */
+  img {
+    max-width: 100%;
+    page-break-inside: avoid;
+  }
+
+  /* Dark mode adjustments for print */
+  .dark {
+    background-color: white !important;
+    color: black !important;
+  }
+
+  .dark .bg-primary {
+    background-color: white !important;
+  }
+
+  .dark .text-primary {
+    color: black !important;
+  }
+
+  .dark .text-secondary {
+    color: #666 !important;
+  }
+}

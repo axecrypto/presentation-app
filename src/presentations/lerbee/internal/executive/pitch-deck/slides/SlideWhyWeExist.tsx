@@ -1,16 +1,11 @@
 import React from 'react';
 import { Globe, Mail, Phone } from 'lucide-react';
-import { SlideHeader, iconSizes, typography, spacing } from '../components/DesignSystem';
+import { SlideHeader, iconSizes, typography, spacing, SlideWrapper } from '../components/DesignSystem';
 
 export const SlideWhyWeExist = () => {
   return (
-    <div className="min-h-screen bg-primary flex items-center justify-center p-8 relative">
-      {/* Background Globe Icon */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-5">
-        <Globe size={600} className="text-lerbee-yellow" />
-      </div>
-      
-      <div className="max-w-4xl mx-auto text-center relative z-10">
+    <SlideWrapper accentPosition="bottom-right" accentSize="large" honeycombOpacity={0.05}>
+      <div className="max-w-4xl mx-auto text-center">
         <SlideHeader 
           title="LerBee Isn't Just a Marketplace: It's a Movement"
         />
@@ -65,6 +60,6 @@ export const SlideWhyWeExist = () => {
           </div>
         </div>
       </div>
-    </div>
+    </SlideWrapper>
   );
 };

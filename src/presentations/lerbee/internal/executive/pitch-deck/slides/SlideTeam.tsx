@@ -1,6 +1,7 @@
 import React from 'react';
 import { Users } from 'lucide-react';
 import { SlideHeader, BottomTagline, typography, SlideWrapper } from '../components/DesignSystem';
+import { HexagonFrame } from '../components/HoneycombPattern';
 import { CompanyLogo } from '../components/CompanyLogos';
 
 // Import founder images
@@ -71,23 +72,29 @@ export const SlideTeam = () => {
         {/* Team Section */}
         <div className="mb-6">
           {/* Team Grid - All 5 members */}
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+          <div className="grid grid-cols-5 gap-3 items-start">
             {founders.map((founder, index) => (
               <div key={index} className="flex flex-col items-center">
-                {/* Founder Image */}
-                <div className="relative w-28 h-28 mb-3 overflow-hidden rounded-full">
-                  {founder.image ? (
-                    <img 
-                      src={founder.image} 
-                      alt={founder.name}
-                      className="w-full h-full object-cover border-2 border-gray-200 dark:border-gray-700 rounded-full"
-                      style={{ objectFit: 'cover', objectPosition: '50% 20%' }}
-                    />
-                  ) : (
-                    <div className={`w-full h-full rounded-full ${founder.placeholder} flex items-center justify-center`}>
-                      <Users size={32} className="text-white opacity-80" />
-                    </div>
-                  )}
+                {/* Founder Image in Hexagon */}
+                <div className="mb-2 flex justify-center">
+                  <HexagonFrame size={90} className="mx-auto">
+                    {founder.image ? (
+                      <img 
+                        src={founder.image} 
+                        alt={founder.name}
+                        className="w-full h-full object-cover"
+                        style={{ 
+                          objectFit: 'cover', 
+                          objectPosition: 'center 20%',
+                          transform: 'scale(1.2)'
+                        }}
+                      />
+                    ) : (
+                      <div className={`w-full h-full ${founder.placeholder} flex items-center justify-center`}>
+                        <Users size={32} className="text-white opacity-80" />
+                      </div>
+                    )}
+                  </HexagonFrame>
                 </div>
                 <h3 className={`${typography.body} font-semibold text-primary`}>
                   {founder.name}
@@ -103,20 +110,26 @@ export const SlideTeam = () => {
             
             {/* Advisor in the same row */}
             <div className="flex flex-col items-center">
-              {/* Advisor Image */}
-              <div className="relative w-28 h-28 mb-3 overflow-hidden rounded-full">
-                {advisor.image ? (
-                  <img 
-                    src={advisor.image} 
-                    alt={advisor.name}
-                    className="w-full h-full object-cover border-2 border-gray-200 dark:border-gray-700 rounded-full"
-                    style={{ objectFit: 'cover', objectPosition: '50% 20%' }}
-                  />
-                ) : (
-                  <div className={`w-full h-full rounded-full ${advisor.placeholder} flex items-center justify-center`}>
-                    <Users size={32} className="text-white opacity-80" />
-                  </div>
-                )}
+              {/* Advisor Image in Hexagon */}
+              <div className="mb-2 flex justify-center">
+                <HexagonFrame size={90} className="mx-auto">
+                  {advisor.image ? (
+                    <img 
+                      src={advisor.image} 
+                      alt={advisor.name}
+                      className="w-full h-full object-cover"
+                      style={{ 
+                        objectFit: 'cover', 
+                        objectPosition: 'center 20%',
+                        transform: 'scale(1.2)'
+                      }}
+                    />
+                  ) : (
+                    <div className={`w-full h-full ${advisor.placeholder} flex items-center justify-center`}>
+                      <Users size={32} className="text-white opacity-80" />
+                    </div>
+                  )}
+                </HexagonFrame>
               </div>
               <h3 className={`${typography.body} font-semibold text-primary`}>
                 {advisor.name}

@@ -5,7 +5,7 @@ import { SlideHeader, SlideWrapper, typography } from '../components/DesignSyste
 export const SlideTraction = () => {
 
   return (
-    <SlideWrapper>
+    <SlideWrapper accentPosition="bottom-right" accentSize="medium">
       <div className="max-w-6xl mx-auto">
         <SlideHeader 
           title="From Zero to Global Product With No Paid Marketing"
