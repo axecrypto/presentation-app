@@ -65,7 +65,7 @@ export const lerbeePitchDeckPresentation: Presentation = {
       title: 'Traction to Date',
       layout: 'full',
       content: <SlideTraction />,
-      notes: 'From zero to global product — with no paid marketing',
+      notes: 'From zero to global product — with no venture investments',
     },
     {
       id: 'problem',
