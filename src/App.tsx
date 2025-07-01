@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { PresentationProvider } from './contexts/PresentationContext';
+import { InformaticaThemeProvider } from './contexts/InformaticaThemeProvider';
+import { InformaticaThemeBridge } from './components/InformaticaThemeBridge';
 import { GlobalStyles } from './styles/GlobalStyles';
 import { Home } from './pages/Home';
 import { PresentationView } from './pages/PresentationView';
@@ -11,15 +13,18 @@ function App() {
   return (
     <Router>
       <ThemeProvider>
-        <GlobalStyles />
-        <PresentationProvider>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/presentation/:id" element={<PresentationView />} />
-            <Route path="/theme-test" element={<InformaticaThemeTest />} />
-            <Route path="/lerbee-pdf" element={<PDFView />} />
-          </Routes>
-        </PresentationProvider>
+        <InformaticaThemeProvider>
+          <GlobalStyles />
+          <PresentationProvider>
+            <InformaticaThemeBridge />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/presentation/:id" element={<PresentationView />} />
+              <Route path="/theme-test" element={<InformaticaThemeTest />} />
+              <Route path="/lerbee-pdf" element={<PDFView />} />
+            </Routes>
+          </PresentationProvider>
+        </InformaticaThemeProvider>
       </ThemeProvider>
     </Router>
   );

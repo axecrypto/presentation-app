@@ -8,6 +8,7 @@ import { SlideWeek5 } from './slides/SlideWeek5';
 import { SlideExecutiveSummary } from './slides/SlideExecutiveSummary';
 import { SlideTimeline } from './slides/SlideTimeline';
 import { SlideClosing } from './slides/SlideClosing';
+import { SlideColorPalette } from './slides/SlideColorPalette';
 
 export const processFrameworkPresentation: Presentation = {
   id: 'process-framework',
@@ -82,6 +83,13 @@ export const processFrameworkPresentation: Presentation = {
       transition: { type: 'zoom' },
       background: 'gradient-dark',
       content: <SlideClosing />,
+    },
+    {
+      id: 'slide-color-palette',
+      title: 'Informatica Brand Colors',
+      layout: 'full',
+      transition: { type: 'slide' },
+      content: <SlideColorPalette />,
     },
   ],
 };

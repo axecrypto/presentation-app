@@ -3,8 +3,17 @@ import {
   Rocket, FileText, Users, BarChart, Target, 
   CheckCircle, Clock, TrendingUp, AlertCircle
 } from 'lucide-react';
+import { useInformaticaTheme } from '../../../../../../contexts/InformaticaThemeProvider';
+import { 
+  InformaticaSlideWrapper, 
+  InformaticaHeader, 
+  InformaticaCard,
+  InformaticaBadge,
+  InformaticaIconBox
+} from '../../../../components/InformaticaComponents';
 
 export const SlideWeek5 = () => {
+  const { theme } = useInformaticaTheme();
   const [selectedPilot, setSelectedPilot] = useState(0);
 
   const executiveSummary = {
@@ -113,73 +122,96 @@ export const SlideWeek5 = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-dark text-white p-8">
+    <InformaticaSlideWrapper>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-full text-sm font-bold mb-4">
-            <Rocket size={16} />
-            Week 5
+          <div className="inline-flex items-center">
+            <InformaticaBadge color="primary">
+              <Rocket size={16} />
+              Week 5
+            </InformaticaBadge>
           </div>
-          <h1 className="text-5xl font-bold mb-4">
-            Commitment & <span className="text-red-400">Launch</span>
-          </h1>
-          <p className="text-xl text-gray-300">
-            From insights to action with executive buy-in
-          </p>
+          <div className="mt-4">
+            <InformaticaHeader 
+              title="Commitment & Launch"
+              subtitle="From insights to action with executive buy-in"
+              accentColor="primary"
+            />
+          </div>
         </div>
 
         {/* Executive Presentation Summary */}
         <div className="mb-8">
-          <h2 className="text-2xl font-bold mb-6 flex items-center">
-            <FileText className="mr-2 text-red-400" />
+          <h2 className="text-2xl font-bold mb-6 flex items-center" style={{ color: theme.colors.textPrimary }}>
+            <FileText className="mr-2" style={{ color: theme.colors.error }} />
             Executive Presentation
           </h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <div className="bg-gray-800/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700">
-              <h3 className="text-lg font-bold mb-4 flex items-center">
-                <AlertCircle className="mr-2 text-accent-orange" />
+            <InformaticaCard>
+              <h3 className="text-lg font-bold mb-4 flex items-center" style={{ color: theme.colors.textPrimary }}>
+                <AlertCircle className="mr-2" style={{ color: theme.colors.primary }} />
                 Key Findings
               </h3>
               <div className="space-y-4">
                 {executiveSummary.findings.map((finding, index) => (
-                  <div key={index} className="bg-gray-700/50 rounded-lg p-4 border border-gray-600">
-                    <p className="text-red-400 font-bold mb-2">{finding.pain}</p>
-                    <p className="text-sm text-gray-300">
-                      <span className="text-gray-500">Root cause:</span> {finding.root}
+                  <div 
+                    key={index} 
+                    className="rounded-lg p-4"
+                    style={{
+                      backgroundColor: theme.colors.bgTertiary,
+                      border: `1px solid ${theme.colors.borderLight}`
+                    }}
+                  >
+                    <p className="font-bold mb-2" style={{ color: theme.colors.error }}>{finding.pain}</p>
+                    <p className="text-sm" style={{ color: theme.colors.textSecondary }}>
+                      <span style={{ color: theme.colors.textMuted }}>Root cause:</span> {finding.root}
                     </p>
                   </div>
                 ))}
               </div>
-            </div>
+            </InformaticaCard>
             
-            <div className="bg-gray-800/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700">
-              <h3 className="text-lg font-bold mb-4 flex items-center">
-                <Target className="mr-2 text-accent-blue" />
+            <InformaticaCard>
+              <h3 className="text-lg font-bold mb-4 flex items-center" style={{ color: theme.colors.textPrimary }}>
+                <Target className="mr-2" style={{ color: theme.colors.secondary }} />
                 Recommendations
               </h3>
               <div className="space-y-3">
                 {executiveSummary.recommendations.map((rec, index) => (
-                  <div key={index} className="flex items-start gap-3 p-4 bg-accent-blue bg-opacity-20 rounded-lg border border-accent-blue border-opacity-30">
-                    <CheckCircle size={20} className="text-accent-blue flex-shrink-0 mt-0.5" />
-                    <p className="text-white">{rec}</p>
+                  <div 
+                    key={index} 
+                    className="flex items-start gap-3 p-4 rounded-lg"
+                    style={{
+                      backgroundColor: `${theme.colors.secondary}20`,
+                      border: `1px solid ${theme.colors.secondary}50`
+                    }}
+                  >
+                    <CheckCircle size={20} style={{ color: theme.colors.secondary }} className="flex-shrink-0 mt-0.5" />
+                    <p style={{ color: theme.colors.textPrimary }}>{rec}</p>
                   </div>
                 ))}
               </div>
-              <div className="mt-4 p-4 bg-accent-blue bg-opacity-20 rounded-lg border border-accent-blue border-opacity-30">
-                <p className="text-sm text-accent-blue">
+              <div 
+                className="mt-4 p-4 rounded-lg"
+                style={{
+                  backgroundColor: `${theme.colors.secondary}20`,
+                  border: `1px solid ${theme.colors.secondary}50`
+                }}
+              >
+                <p className="text-sm" style={{ color: theme.colors.secondary }}>
                   <strong>Impact:</strong> 40-60% improvement in delivery velocity within 90 days
                 </p>
               </div>
-            </div>
+            </InformaticaCard>
           </div>
         </div>
 
         {/* Pilot Plans */}
         <div className="mb-8">
-          <h2 className="text-2xl font-bold mb-6 flex items-center">
-            <Rocket className="mr-2 text-accent-blue" />
+          <h2 className="text-2xl font-bold mb-6 flex items-center" style={{ color: theme.colors.textPrimary }}>
+            <Rocket className="mr-2" style={{ color: theme.colors.secondary }} />
             Pilot Implementation Plans
           </h2>
           
@@ -189,13 +221,13 @@ export const SlideWeek5 = () => {
               <button
                 key={index}
                 onClick={() => setSelectedPilot(index)}
-                className={`
-                  px-6 py-3 rounded-lg font-bold whitespace-nowrap transition-all duration-300
-                  ${selectedPilot === index ? 
-                    'bg-accent-blue text-white shadow-lg scale-105' : 
-                    'bg-gray-800 text-gray-300 hover:bg-gray-700'
-                  }
-                `}
+                className="px-6 py-3 rounded-lg font-bold whitespace-nowrap transition-all duration-300"
+                style={{
+                  backgroundColor: selectedPilot === index ? theme.colors.secondary : theme.colors.bgSurface,
+                  color: selectedPilot === index ? '#FFFFFF' : theme.colors.textSecondary,
+                  boxShadow: selectedPilot === index ? '0 10px 20px rgba(0,0,0,0.1)' : 'none',
+                  transform: selectedPilot === index ? 'scale(1.05)' : 'scale(1)'
+                }}
               >
                 {pilot.name}
               </button>
@@ -206,133 +238,145 @@ export const SlideWeek5 = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div className="lg:col-span-2 space-y-6">
               {/* Overview */}
-              <div className="bg-gray-800/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700">
-                <h3 className="text-lg font-bold mb-4 text-white">Pilot Overview</h3>
+              <InformaticaCard>
+                <h3 className="text-lg font-bold mb-4" style={{ color: theme.colors.textPrimary }}>Pilot Overview</h3>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <p className="text-sm text-gray-400">Team</p>
-                    <p className="font-bold text-white">{pilots[selectedPilot].team}</p>
+                    <p className="text-sm" style={{ color: theme.colors.textMuted }}>Team</p>
+                    <p className="font-bold" style={{ color: theme.colors.textPrimary }}>{pilots[selectedPilot].team}</p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-400">Duration</p>
-                    <p className="font-bold text-white">{pilots[selectedPilot].duration}</p>
+                    <p className="text-sm" style={{ color: theme.colors.textMuted }}>Duration</p>
+                    <p className="font-bold" style={{ color: theme.colors.textPrimary }}>{pilots[selectedPilot].duration}</p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-400">Scope</p>
-                    <p className="font-bold text-white">{pilots[selectedPilot].scope}</p>
+                    <p className="text-sm" style={{ color: theme.colors.textMuted }}>Scope</p>
+                    <p className="font-bold" style={{ color: theme.colors.textPrimary }}>{pilots[selectedPilot].scope}</p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-400">Primary Metric</p>
-                    <p className="font-bold text-accent-blue">{pilots[selectedPilot].metrics.primary}</p>
+                    <p className="text-sm" style={{ color: theme.colors.textMuted }}>Primary Metric</p>
+                    <p className="font-bold" style={{ color: theme.colors.secondary }}>{pilots[selectedPilot].metrics.primary}</p>
                   </div>
                 </div>
-              </div>
+              </InformaticaCard>
               
               {/* Milestones */}
-              <div className="bg-gray-800/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700">
-                <h3 className="text-lg font-bold mb-4 text-white">Milestones</h3>
+              <InformaticaCard>
+                <h3 className="text-lg font-bold mb-4" style={{ color: theme.colors.textPrimary }}>Milestones</h3>
                 <div className="space-y-3">
                   {pilots[selectedPilot].milestones.map((milestone, index) => (
                     <div key={index} className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-full bg-accent-blue flex items-center justify-center font-bold">
+                      <div 
+                        className="w-12 h-12 rounded-full flex items-center justify-center font-bold"
+                        style={{
+                          backgroundColor: theme.colors.secondary,
+                          color: '#FFFFFF'
+                        }}
+                      >
                         W{milestone.week}
                       </div>
-                      <div className="flex-1 p-3 bg-gray-700/50 rounded-lg">
-                        <p className="text-white">{milestone.task}</p>
+                      <div 
+                        className="flex-1 p-3 rounded-lg"
+                        style={{
+                          backgroundColor: theme.colors.bgTertiary,
+                          color: theme.colors.textPrimary
+                        }}
+                      >
+                        <p>{milestone.task}</p>
                       </div>
                     </div>
                   ))}
                 </div>
-              </div>
+              </InformaticaCard>
             </div>
             
             {/* Ownership */}
             <div className="space-y-6">
-              <div className="bg-gray-800/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700">
-                <h3 className="text-lg font-bold mb-4 text-white">Ownership</h3>
+              <InformaticaCard>
+                <h3 className="text-lg font-bold mb-4" style={{ color: theme.colors.textPrimary }}>Ownership</h3>
                 <div className="space-y-4">
                   <div>
-                    <p className="text-sm text-gray-400">Executive Sponsor</p>
-                    <p className="font-bold text-white">{pilots[selectedPilot].owners.sponsor}</p>
+                    <p className="text-sm" style={{ color: theme.colors.textMuted }}>Executive Sponsor</p>
+                    <p className="font-bold" style={{ color: theme.colors.textPrimary }}>{pilots[selectedPilot].owners.sponsor}</p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-400">Pilot Lead</p>
-                    <p className="font-bold text-white">{pilots[selectedPilot].owners.lead}</p>
+                    <p className="text-sm" style={{ color: theme.colors.textMuted }}>Pilot Lead</p>
+                    <p className="font-bold" style={{ color: theme.colors.textPrimary }}>{pilots[selectedPilot].owners.lead}</p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-400">Core Team</p>
+                    <p className="text-sm" style={{ color: theme.colors.textMuted }}>Core Team</p>
                     <ul className="mt-2 space-y-1">
                       {pilots[selectedPilot].owners.team.map((member, idx) => (
-                        <li key={idx} className="text-sm text-gray-300">• {member}</li>
+                        <li key={idx} className="text-sm" style={{ color: theme.colors.textSecondary }}>• {member}</li>
                       ))}
                     </ul>
                   </div>
                 </div>
-              </div>
+              </InformaticaCard>
               
-              <div className="bg-accent-blue bg-opacity-20 backdrop-blur-lg rounded-xl p-6 border border-accent-blue border-opacity-30">
-                <h3 className="text-lg font-bold mb-3 text-white">Success Metrics</h3>
+              <InformaticaCard variant="secondary">
+                <h3 className="text-lg font-bold mb-3" style={{ color: theme.colors.textPrimary }}>Success Metrics</h3>
                 <div className="space-y-2">
                   {pilots[selectedPilot].metrics.secondary.map((metric, idx) => (
                     <div key={idx} className="flex items-center gap-2">
-                      <BarChart size={16} className="text-accent-blue" />
-                      <span className="text-sm text-gray-300">{metric}</span>
+                      <BarChart size={16} style={{ color: theme.colors.secondary }} />
+                      <span className="text-sm" style={{ color: theme.colors.textSecondary }}>{metric}</span>
                     </div>
                   ))}
                 </div>
-              </div>
+              </InformaticaCard>
             </div>
           </div>
         </div>
 
         {/* Commitment Plan */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-accent-blue bg-opacity-20 backdrop-blur-lg rounded-xl p-6 border border-accent-blue border-opacity-30">
-            <h3 className="text-lg font-bold mb-3 flex items-center">
-              <Users className="mr-2 text-accent-blue" />
+          <InformaticaCard variant="secondary">
+            <h3 className="text-lg font-bold mb-3 flex items-center" style={{ color: theme.colors.textPrimary }}>
+              <Users className="mr-2" style={{ color: theme.colors.secondary }} />
               Leadership Support
             </h3>
             <ul className="space-y-2">
               {commitmentPlan.leadership.map((item, idx) => (
-                <li key={idx} className="text-sm text-gray-300 flex items-start gap-2">
-                  <CheckCircle size={14} className="text-accent-blue mt-0.5 flex-shrink-0" />
+                <li key={idx} className="text-sm flex items-start gap-2" style={{ color: theme.colors.textSecondary }}>
+                  <CheckCircle size={14} style={{ color: theme.colors.secondary }} className="mt-0.5 flex-shrink-0" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
-          </div>
+          </InformaticaCard>
           
-          <div className="bg-accent-blue bg-opacity-20 backdrop-blur-lg rounded-xl p-6 border border-accent-blue border-opacity-30">
-            <h3 className="text-lg font-bold mb-3 flex items-center">
-              <TrendingUp className="mr-2 text-accent-blue" />
+          <InformaticaCard variant="secondary">
+            <h3 className="text-lg font-bold mb-3 flex items-center" style={{ color: theme.colors.textPrimary }}>
+              <TrendingUp className="mr-2" style={{ color: theme.colors.secondary }} />
               Resources
             </h3>
             <ul className="space-y-2">
               {commitmentPlan.resources.map((item, idx) => (
-                <li key={idx} className="text-sm text-gray-300 flex items-start gap-2">
-                  <CheckCircle size={14} className="text-accent-blue mt-0.5 flex-shrink-0" />
+                <li key={idx} className="text-sm flex items-start gap-2" style={{ color: theme.colors.textSecondary }}>
+                  <CheckCircle size={14} style={{ color: theme.colors.secondary }} className="mt-0.5 flex-shrink-0" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
-          </div>
+          </InformaticaCard>
           
-          <div className="bg-accent-orange bg-opacity-20 backdrop-blur-lg rounded-xl p-6 border border-accent-orange border-opacity-30">
-            <h3 className="text-lg font-bold mb-3 flex items-center">
-              <Clock className="mr-2 text-accent-orange" />
+          <InformaticaCard variant="primary">
+            <h3 className="text-lg font-bold mb-3 flex items-center" style={{ color: theme.colors.textPrimary }}>
+              <Clock className="mr-2" style={{ color: theme.colors.primary }} />
               Communication
             </h3>
             <ul className="space-y-2">
               {commitmentPlan.communication.map((item, idx) => (
-                <li key={idx} className="text-sm text-gray-300 flex items-start gap-2">
-                  <CheckCircle size={14} className="text-accent-orange mt-0.5 flex-shrink-0" />
+                <li key={idx} className="text-sm flex items-start gap-2" style={{ color: theme.colors.textSecondary }}>
+                  <CheckCircle size={14} style={{ color: theme.colors.primary }} className="mt-0.5 flex-shrink-0" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
-          </div>
+          </InformaticaCard>
         </div>
       </div>
-    </div>
+    </InformaticaSlideWrapper>
   );
 };

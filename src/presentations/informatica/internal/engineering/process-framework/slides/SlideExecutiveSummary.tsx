@@ -1,153 +1,189 @@
 import React from 'react';
 import { 
-  AlertTriangle, Target, Lightbulb, Rocket, TrendingUp,
-  Users, Clock, CheckCircle
+  TrendingDown, GitBranch, UserX, Zap,
+  CheckCircle,
+  AlertCircle, Target
 } from 'lucide-react';
+import { 
+  InformaticaSlideWrapper, 
+  InformaticaCard,
+  InformaticaBadge,
+  InformaticaIconBox 
+} from '../../../../components/InformaticaComponents';
+import { useInformaticaTheme } from '../../../../../../contexts/InformaticaThemeProvider';
 
 export const SlideExecutiveSummary = () => {
-  const problems = [
+  const { theme } = useInformaticaTheme();
+  
+  const researchAreas = [
     {
-      icon: AlertTriangle,
-      title: "Misalignment",
-      description: "Teams working in silos with conflicting priorities"
+      icon: TrendingDown,
+      title: "Delivery & Execution Health",
+      question: "Where is process friction killing our velocity?",
+      insight: "Quantify delays, rework, and blocked work"
     },
     {
-      icon: Clock,
-      title: "Inefficiency",
-      description: "Dependency friction causing delivery delays"
+      icon: GitBranch,
+      title: "Organizational Alignment",
+      question: "Are teams aligned or working at cross-purposes?",
+      insight: "Map dependency bottlenecks and coordination gaps"
     },
     {
-      icon: Users,
-      title: "Confusion",
-      description: "Unclear ownership and accountability"
+      icon: UserX,
+      title: "Talent Retention & Growth",
+      question: "Are we enabling or burning out our best people?",
+      insight: "Measure engagement, growth paths, and flight risk"
+    },
+    {
+      icon: Zap,
+      title: "Innovation Capacity",
+      question: "Strategic work or just firefighting?",
+      insight: "Assess time on innovation vs. maintenance"
     }
   ];
-
-  const approach = [
-    {
-      week: "Week 1",
-      title: "Discovery & Survey",
-      focus: "Quantify pain points across teams"
-    },
-    {
-      week: "Week 2",
-      title: "Deep Dive Interviews",
-      focus: "Understand the 'why' behind issues"
-    },
-    {
-      week: "Week 3",
-      title: "Root Cause Analysis",
-      focus: "Validate core problems collaboratively"
-    },
-    {
-      week: "Week 4",
-      title: "Design Workshop",
-      focus: "Co-create the solution"
-    },
-    {
-      week: "Week 5",
-      title: "Commitment & Pilot",
-      focus: "Launch with metrics"
-    }
-  ];
-
+  
   return (
-    <div className="min-h-screen bg-primary">
-      {/* Header */}
-      <div className="bg-accent-blue py-4 px-8">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <h2 className="text-2xl font-bold text-white">Executive Summary</h2>
-          <div className="text-sm text-white opacity-90">Validated Process Framework</div>
-        </div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-8 py-12">
-        {/* Core Message */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-primary mb-4">
-            We're Not Boiling the Ocean
+    <InformaticaSlideWrapper>
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="mb-6 text-center">
+          <h1 className="text-5xl font-bold mb-3" style={{ color: theme.colors.textPrimary }}>
+            We're Not <span style={{ color: theme.colors.primary }}>Boiling the Ocean</span>
           </h1>
-          <p className="text-xl text-secondary max-w-4xl mx-auto">
-            We're triangulating what's broken, aligning teams on why, co-designing a fix, 
-            and piloting change with metrics – all in 5 weeks.
+          <p className="text-xl" style={{ color: theme.colors.textSecondary }}>
+            Focused 5-week sprint to diagnose root causes, align stakeholders, and deliver actionable recommendations.
           </p>
         </div>
 
-        {/* The Problem */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-bold text-primary mb-6 flex items-center">
-            <AlertTriangle className="mr-2 text-red-500" size={28} />
-            The Problem
+        {/* What We're Hearing */}
+        <div 
+          className="mb-6 p-4 rounded-lg"
+          style={{ 
+            backgroundColor: theme.colors.bgSurface,
+            border: `1px solid ${theme.colors.borderDefault}`
+          }}
+        >
+          <h3 className="font-bold mb-2 flex items-center" style={{ color: theme.colors.textPrimary }}>
+            <AlertCircle size={18} className="mr-2" style={{ color: theme.colors.primary }} />
+            What we're hearing on the ground:
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            <p className="text-sm italic" style={{ color: theme.colors.textSecondary }}>
+              "We're still waiting on them to unblock us."
+            </p>
+            <p className="text-sm italic" style={{ color: theme.colors.textSecondary }}>
+              "Let's move it to next sprint — again."
+            </p>
+            <p className="text-sm italic" style={{ color: theme.colors.textSecondary }}>
+              "They don't listen anyway."
+            </p>
+            <p className="text-sm italic" style={{ color: theme.colors.textMuted }}>
+              (Silence during planning)
+            </p>
+          </div>
+        </div>
+
+        {/* Four Research Areas */}
+        <div className="mb-6">
+          <h2 className="text-2xl font-bold mb-4 text-center" style={{ color: theme.colors.textPrimary }}>
+            Four Areas We'll Diagnose
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {problems.map((problem, index) => {
-              const ProblemIcon = problem.icon;
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {researchAreas.map((area, index) => {
+              const AreaIcon = area.icon;
               return (
-                <div
-                  key={index}
-                  className="bg-surface rounded-xl p-6 border border-default shadow-default hover:shadow-md transition-shadow"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 bg-red-500 bg-opacity-10 rounded-lg">
-                      <ProblemIcon size={24} className="text-red-500" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-primary mb-2">{problem.title}</h3>
-                      <p className="text-secondary">{problem.description}</p>
+                <InformaticaCard key={index} variant="default">
+                  <div className="flex items-start gap-3">
+                    <InformaticaIconBox color="secondary" size="sm">
+                      <AreaIcon size={20} />
+                    </InformaticaIconBox>
+                    <div className="flex-1">
+                      <h3 className="font-bold text-lg mb-1" style={{ color: theme.colors.textPrimary }}>
+                        {area.title}
+                      </h3>
+                      <p className="text-sm mb-2 font-medium" style={{ color: theme.colors.textSecondary }}>
+                        {area.question}
+                      </p>
+                      <p className="text-sm" style={{ color: theme.colors.textMuted }}>
+                        → {area.insight}
+                      </p>
                     </div>
                   </div>
-                </div>
+                </InformaticaCard>
               );
             })}
           </div>
         </div>
 
-        {/* The Approach */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-bold text-primary mb-6 flex items-center">
-            <Target className="mr-2 text-accent-blue" size={28} />
-            The Approach: 5-Week Sprint
-          </h2>
-          <div className="bg-surface rounded-xl p-8 border border-default">
-            <div className="space-y-4">
-              {approach.map((item, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-6 p-4 rounded-lg hover:bg-hover transition-colors"
-                >
-                  <div className="w-20 text-center">
-                    <div className="text-sm font-bold text-accent-blue">{item.week}</div>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="font-bold text-primary">{item.title}</h3>
-                    <p className="text-sm text-secondary">{item.focus}</p>
-                  </div>
-                  <CheckCircle size={20} className="text-accent-blue" />
-                </div>
-              ))}
+        {/* 5-Week Approach */}
+        <InformaticaCard>
+          <h3 className="text-lg font-bold mb-4" style={{ color: theme.colors.textPrimary }}>
+            Our Data-Driven Approach
+          </h3>
+          <div className="grid grid-cols-5 gap-3">
+            <div 
+              className="text-center p-3 rounded-lg"
+              style={{ 
+                backgroundColor: theme.colors.bgPrimary,
+                border: `1px solid ${theme.colors.borderLight}`
+              }}
+            >
+              <InformaticaBadge color="secondary" size="md">Week 1</InformaticaBadge>
+              <p className="text-sm mt-2 font-medium" style={{ color: theme.colors.textPrimary }}>Survey</p>
+              <p className="text-xs mt-1" style={{ color: theme.colors.textMuted }}>Quantify pain</p>
+            </div>
+            <div 
+              className="text-center p-3 rounded-lg"
+              style={{ 
+                backgroundColor: theme.colors.bgPrimary,
+                border: `1px solid ${theme.colors.borderLight}`
+              }}
+            >
+              <InformaticaBadge color="secondary" size="md">Week 2</InformaticaBadge>
+              <p className="text-sm mt-2 font-medium" style={{ color: theme.colors.textPrimary }}>Interviews</p>
+              <p className="text-xs mt-1" style={{ color: theme.colors.textMuted }}>Deep dive</p>
+            </div>
+            <div 
+              className="text-center p-3 rounded-lg"
+              style={{ 
+                backgroundColor: theme.colors.bgPrimary,
+                border: `1px solid ${theme.colors.borderLight}`
+              }}
+            >
+              <InformaticaBadge color="secondary" size="md">Week 3</InformaticaBadge>
+              <p className="text-sm mt-2 font-medium" style={{ color: theme.colors.textPrimary }}>Root Cause</p>
+              <p className="text-xs mt-1" style={{ color: theme.colors.textMuted }}>Analysis</p>
+            </div>
+            <div 
+              className="text-center p-3 rounded-lg"
+              style={{ 
+                backgroundColor: theme.colors.bgPrimary,
+                border: `1px solid ${theme.colors.borderLight}`
+              }}
+            >
+              <InformaticaBadge color="secondary" size="md">Week 4</InformaticaBadge>
+              <p className="text-sm mt-2 font-medium" style={{ color: theme.colors.textPrimary }}>Co-Design</p>
+              <p className="text-xs mt-1" style={{ color: theme.colors.textMuted }}>Workshop</p>
+            </div>
+            <div 
+              className="text-center p-3 rounded-lg"
+              style={{ 
+                backgroundColor: `${theme.colors.primary}10`,
+                border: `1px solid ${theme.colors.primary}30`
+              }}
+            >
+              <InformaticaBadge color="primary" size="md">Week 5</InformaticaBadge>
+              <p className="text-sm mt-2 font-medium" style={{ color: theme.colors.textPrimary }}>Executive</p>
+              <p className="text-xs mt-1" style={{ color: theme.colors.textMuted }}>Readout</p>
             </div>
           </div>
-        </div>
-
-        {/* Expected Outcomes */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-accent-blue bg-opacity-10 rounded-xl p-6 border border-accent-blue border-opacity-30">
-            <Lightbulb className="text-accent-blue mb-3" size={32} />
-            <h3 className="text-lg font-bold text-primary mb-2">Clear Insights</h3>
-            <p className="text-secondary">Validated root causes backed by data</p>
+          <div className="mt-4 text-center">
+            <p className="text-sm" style={{ color: theme.colors.textSecondary }}>
+              <strong style={{ color: theme.colors.textPrimary }}>Deliverable:</strong> Actionable recommendations based on data
+            </p>
           </div>
-          <div className="bg-accent-blue bg-opacity-10 rounded-xl p-6 border border-accent-blue border-opacity-30">
-            <Rocket className="text-accent-blue mb-3" size={32} />
-            <h3 className="text-lg font-bold text-primary mb-2">Actionable Plan</h3>
-            <p className="text-secondary">Co-designed solution with team buy-in</p>
-          </div>
-          <div className="bg-accent-orange bg-opacity-10 rounded-xl p-6 border border-accent-orange border-opacity-30">
-            <TrendingUp className="text-accent-orange mb-3" size={32} />
-            <h3 className="text-lg font-bold text-primary mb-2">Measurable Impact</h3>
-            <p className="text-secondary">Pilot with clear KPIs and ownership</p>
-          </div>
-        </div>
+        </InformaticaCard>
       </div>
-    </div>
+    </InformaticaSlideWrapper>
   );
 };

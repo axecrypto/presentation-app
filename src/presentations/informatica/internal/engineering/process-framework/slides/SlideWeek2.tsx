@@ -3,8 +3,17 @@ import {
   MessageSquare, Users, Brain, Target, Layers, 
   UserCheck, Briefcase, Code, PenTool, ChevronRight
 } from 'lucide-react';
+import { useInformaticaTheme } from '../../../../../../contexts/InformaticaThemeProvider';
+import { 
+  InformaticaSlideWrapper, 
+  InformaticaHeader, 
+  InformaticaCard,
+  InformaticaBadge,
+  InformaticaIconBox
+} from '../../../../components/InformaticaComponents';
 
 export const SlideWeek2 = () => {
+  const { theme } = useInformaticaTheme();
   const [selectedRole, setSelectedRole] = useState(0);
 
   const interviewTargets = [
@@ -109,26 +118,29 @@ export const SlideWeek2 = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white p-8">
+    <InformaticaSlideWrapper>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold mb-4">
-            <MessageSquare size={16} />
-            Week 2
+          <div className="inline-flex items-center">
+            <InformaticaBadge color="primary">
+              <MessageSquare size={16} />
+              Week 2
+            </InformaticaBadge>
           </div>
-          <h1 className="text-5xl font-bold mb-4">
-            Deep Dive <span className="text-blue-400">Interviews</span>
-          </h1>
-          <p className="text-xl text-slate-300">
-            Understanding the "why" behind survey pain points
-          </p>
+          <div className="mt-4">
+            <InformaticaHeader 
+              title="Deep Dive Interviews"
+              subtitle="Understanding the 'why' behind survey pain points"
+              accentColor="primary"
+            />
+          </div>
         </div>
 
         {/* Interview Targets */}
         <div className="mb-8">
-          <h2 className="text-2xl font-bold mb-6 flex items-center">
-            <Users className="mr-2 text-blue-400" />
+          <h2 className="text-2xl font-bold mb-6 flex items-center" style={{ color: theme.colors.textPrimary }}>
+            <Users className="mr-2" style={{ color: theme.colors.primary }} />
             Interview Mix: 10-12 Total
           </h2>
           
@@ -141,23 +153,20 @@ export const SlideWeek2 = () => {
                 <div
                   key={index}
                   onClick={() => setSelectedRole(index)}
-                  className={`
-                    p-4 rounded-xl border-2 cursor-pointer transition-all duration-300
-                    ${isSelected ? 
-                      'bg-blue-600 border-blue-400 scale-105 shadow-xl' : 
-                      'bg-slate-800/50 border-slate-600 hover:border-blue-500'
-                    }
-                  `}
+                  className="p-4 rounded-xl border-2 cursor-pointer transition-all duration-300"
+                  style={{
+                    backgroundColor: isSelected ? `${theme.colors.secondary}30` : theme.colors.bgSurface,
+                    borderColor: isSelected ? theme.colors.secondary : theme.colors.borderDefault,
+                    transform: isSelected ? 'scale(1.05)' : 'scale(1)',
+                    boxShadow: isSelected ? '0 10px 20px rgba(0,0,0,0.1)' : 'none'
+                  }}
                 >
                   <div className="text-center">
-                    <div className={`
-                      mx-auto w-12 h-12 rounded-lg flex items-center justify-center mb-3
-                      ${isSelected ? 'bg-blue-700' : 'bg-slate-700'}
-                    `}>
-                      <TargetIcon size={24} className="text-white" />
-                    </div>
-                    <h3 className="font-bold text-white mb-1">{target.role}</h3>
-                    <p className={`text-2xl font-bold ${isSelected ? 'text-blue-200' : 'text-blue-400'}`}>
+                    <InformaticaIconBox color={isSelected ? 'secondary' : 'primary'} size="md">
+                      <TargetIcon size={24} />
+                    </InformaticaIconBox>
+                    <h3 className="font-bold mb-1 mt-3" style={{ color: theme.colors.textPrimary }}>{target.role}</h3>
+                    <p className="text-2xl font-bold" style={{ color: isSelected ? theme.colors.secondary : theme.colors.primary }}>
                       {target.count}
                     </p>
                   </div>
@@ -168,103 +177,129 @@ export const SlideWeek2 = () => {
 
           {/* Selected Role Details */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <div className="bg-slate-800/50 backdrop-blur-lg rounded-xl p-6 border border-slate-700">
-              <h3 className="text-lg font-bold mb-4 flex items-center">
-                <Target className="mr-2 text-orange-400" />
+            <InformaticaCard>
+              <h3 className="text-lg font-bold mb-4 flex items-center" style={{ color: theme.colors.textPrimary }}>
+                <Target className="mr-2" style={{ color: theme.colors.primary }} />
                 Focus Areas for {interviewTargets[selectedRole].role}
               </h3>
               <div className="space-y-3">
                 {interviewTargets[selectedRole].focus.map((item, index) => (
-                  <div key={index} className="flex items-center gap-3 p-3 bg-slate-700/50 rounded-lg">
-                    <ChevronRight size={16} className="text-blue-400" />
-                    <span className="text-white">{item}</span>
+                  <div 
+                    key={index} 
+                    className="flex items-center gap-3 p-3 rounded-lg"
+                    style={{
+                      backgroundColor: `${theme.colors.secondary}20`,
+                      border: `1px solid ${theme.colors.secondary}30`
+                    }}
+                  >
+                    <ChevronRight size={16} style={{ color: theme.colors.secondary }} />
+                    <span style={{ color: theme.colors.textPrimary }}>{item}</span>
                   </div>
                 ))}
               </div>
-            </div>
+            </InformaticaCard>
 
-            <div className="bg-slate-800/50 backdrop-blur-lg rounded-xl p-6 border border-slate-700">
-              <h3 className="text-lg font-bold mb-4 flex items-center">
-                <Brain className="mr-2 text-blue-400" />
+            <InformaticaCard>
+              <h3 className="text-lg font-bold mb-4 flex items-center" style={{ color: theme.colors.textPrimary }}>
+                <Brain className="mr-2" style={{ color: theme.colors.secondary }} />
                 Sample Questions
               </h3>
               <div className="space-y-3">
                 {interviewTargets[selectedRole].questions.map((question, index) => (
-                  <div key={index} className="p-3 bg-slate-700/50 rounded-lg border border-slate-600">
-                    <p className="text-sm text-slate-300">{question}</p>
+                  <div 
+                    key={index} 
+                    className="p-3 rounded-lg"
+                    style={{
+                      backgroundColor: theme.colors.bgTertiary,
+                      border: `1px solid ${theme.colors.borderLight}`
+                    }}
+                  >
+                    <p className="text-sm" style={{ color: theme.colors.textSecondary }}>{question}</p>
                   </div>
                 ))}
               </div>
-            </div>
+            </InformaticaCard>
           </div>
         </div>
 
         {/* Interview Techniques */}
         <div className="mb-8">
-          <h2 className="text-2xl font-bold mb-6 flex items-center">
-            <Brain className="mr-2 text-blue-400" />
+          <h2 className="text-2xl font-bold mb-6 flex items-center" style={{ color: theme.colors.textPrimary }}>
+            <Brain className="mr-2" style={{ color: theme.colors.secondary }} />
             Interview Techniques
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {interviewTechniques.map((technique, index) => (
-              <div key={index} className="bg-slate-800/50 backdrop-blur-lg rounded-xl p-6 border border-slate-700">
-                <h3 className="text-lg font-bold text-white mb-2">{technique.name}</h3>
-                <p className="text-sm text-slate-300 mb-3">{technique.description}</p>
-                <div className="bg-slate-700/50 rounded-lg p-3 border border-slate-600">
-                  <p className="text-xs text-blue-300 font-mono">"{technique.example}"</p>
+              <InformaticaCard key={index}>
+                <h3 className="text-lg font-bold mb-2" style={{ color: theme.colors.textPrimary }}>{technique.name}</h3>
+                <p className="text-sm mb-3" style={{ color: theme.colors.textSecondary }}>{technique.description}</p>
+                <div 
+                  className="rounded-lg p-3"
+                  style={{
+                    backgroundColor: `${theme.colors.secondary}20`,
+                    border: `1px solid ${theme.colors.secondary}30`
+                  }}
+                >
+                  <p className="text-xs font-mono" style={{ color: theme.colors.secondary }}>"{technique.example}"</p>
                 </div>
-              </div>
+              </InformaticaCard>
             ))}
           </div>
         </div>
 
         {/* Behavioral Bottlenecks to Explore */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-          <div className="bg-red-900/20 backdrop-blur-lg rounded-xl p-6 border border-red-500/30">
-            <h3 className="text-lg font-bold text-white mb-3">Conflicting Priorities</h3>
-            <ul className="space-y-2 text-sm text-slate-300">
+          <InformaticaCard variant="error">
+            <h3 className="text-lg font-bold mb-3" style={{ color: theme.colors.textPrimary }}>Conflicting Priorities</h3>
+            <ul className="space-y-2 text-sm" style={{ color: theme.colors.textSecondary }}>
               <li>• How are trade-offs decided?</li>
               <li>• Who has final say?</li>
               <li>• What gets deprioritized?</li>
             </ul>
-          </div>
-          <div className="bg-orange-900/20 backdrop-blur-lg rounded-xl p-6 border border-orange-500/30">
-            <h3 className="text-lg font-bold text-white mb-3">Unclear Ownership</h3>
-            <ul className="space-y-2 text-sm text-slate-300">
+          </InformaticaCard>
+          <InformaticaCard variant="primary">
+            <h3 className="text-lg font-bold mb-3" style={{ color: theme.colors.textPrimary }}>Unclear Ownership</h3>
+            <ul className="space-y-2 text-sm" style={{ color: theme.colors.textSecondary }}>
               <li>• Where do things fall through cracks?</li>
               <li>• Who owns cross-team work?</li>
               <li>• How are disputes resolved?</li>
             </ul>
-          </div>
-          <div className="bg-blue-900/20 backdrop-blur-lg rounded-xl p-6 border border-blue-500/30">
-            <h3 className="text-lg font-bold text-white mb-3">Communication Gaps</h3>
-            <ul className="space-y-2 text-sm text-slate-300">
+          </InformaticaCard>
+          <InformaticaCard variant="secondary">
+            <h3 className="text-lg font-bold mb-3" style={{ color: theme.colors.textPrimary }}>Communication Gaps</h3>
+            <ul className="space-y-2 text-sm" style={{ color: theme.colors.textSecondary }}>
               <li>• What context is missing?</li>
               <li>• Where do handoffs fail?</li>
               <li>• How is progress tracked?</li>
             </ul>
-          </div>
+          </InformaticaCard>
         </div>
 
         {/* Week 2 Output */}
-        <div className="bg-gradient-to-r from-blue-600/20 to-orange-600/20 rounded-xl p-6 border border-blue-500/30">
-          <h3 className="text-xl font-bold text-white mb-3">Week 2 Output</h3>
+        <div 
+          className="rounded-xl p-6"
+          style={{
+            backgroundColor: theme.colors.bgSurface,
+            border: `2px solid ${theme.colors.primary}50`
+          }}
+        >
+          <h3 className="text-xl font-bold mb-3" style={{ color: theme.colors.textPrimary }}>Week 2 Output</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-400 mb-1">10-12</div>
-              <p className="text-sm text-slate-300">Interviews Completed</p>
+              <div className="text-3xl font-bold mb-1" style={{ color: theme.colors.secondary }}>10-12</div>
+              <p className="text-sm" style={{ color: theme.colors.textSecondary }}>Interviews Completed</p>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-400 mb-1">5-7</div>
-              <p className="text-sm text-slate-300">Core Issues Identified</p>
+              <div className="text-3xl font-bold mb-1" style={{ color: theme.colors.secondary }}>5-7</div>
+              <p className="text-sm" style={{ color: theme.colors.textSecondary }}>Core Issues Identified</p>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-400 mb-1">3-4</div>
-              <p className="text-sm text-slate-300">Root Cause Candidates</p>
+              <div className="text-3xl font-bold mb-1" style={{ color: theme.colors.secondary }}>3-4</div>
+              <p className="text-sm" style={{ color: theme.colors.textSecondary }}>Root Cause Candidates</p>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </InformaticaSlideWrapper>
   );
 };

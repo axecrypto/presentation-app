@@ -3,8 +3,18 @@ import {
   Calendar, Search, MessageSquare, Microscope, Palette, Rocket,
   ArrowRight, Clock, Users, Target, Lightbulb
 } from 'lucide-react';
+import { useInformaticaTheme } from '../../../../../../contexts/InformaticaThemeProvider';
+import { 
+  InformaticaSlideWrapper, 
+  InformaticaHeader, 
+  InformaticaCard,
+  InformaticaBadge,
+  InformaticaIconBox,
+  InformaticaProgress
+} from '../../../../components/InformaticaComponents';
 
 export const SlideTimeline = () => {
+  const { theme } = useInformaticaTheme();
   const [activeWeek, setActiveWeek] = useState(0);
 
   const weeks = [
@@ -12,7 +22,7 @@ export const SlideTimeline = () => {
       week: 1,
       title: "Discovery & Survey",
       icon: Search,
-      color: "blue",
+      color: "secondary" as const,
       duration: "5 days",
       activities: [
         "Define problem scope",
@@ -31,7 +41,7 @@ export const SlideTimeline = () => {
       week: 2,
       title: "Deep Dive Interviews",
       icon: MessageSquare,
-      color: "orange",
+      color: "primary" as const,
       duration: "5 days",
       activities: [
         "Conduct 10-12 targeted interviews",
@@ -50,7 +60,7 @@ export const SlideTimeline = () => {
       week: 3,
       title: "Root Cause Analysis",
       icon: Microscope,
-      color: "blue",
+      color: "secondary" as const,
       duration: "5 days",
       activities: [
         "Apply 5 Whys technique",
@@ -69,7 +79,7 @@ export const SlideTimeline = () => {
       week: 4,
       title: "Design Workshop",
       icon: Palette,
-      color: "orange",
+      color: "primary" as const,
       duration: "5 days",
       activities: [
         "Map current vs ideal flow",
@@ -88,7 +98,7 @@ export const SlideTimeline = () => {
       week: 5,
       title: "Commitment & Pilot",
       icon: Rocket,
-      color: "red",
+      color: "error" as const,
       duration: "5 days",
       activities: [
         "Create executive presentation",
@@ -105,45 +115,28 @@ export const SlideTimeline = () => {
     }
   ];
 
-  const getColorClasses = (color: string, isActive: boolean) => {
-    const colors: any = {
-      blue: {
-        bg: isActive ? 'bg-accent-blue' : 'bg-accent-blue bg-opacity-20',
-        text: isActive ? 'text-white' : 'text-accent-blue',
-        border: 'border-accent-blue border-opacity-30',
-        iconBg: 'bg-accent-blue bg-opacity-10',
-        iconText: 'text-accent-blue'
-      },
-      orange: {
-        bg: isActive ? 'bg-accent-orange' : 'bg-accent-orange bg-opacity-20',
-        text: isActive ? 'text-white' : 'text-accent-orange',
-        border: 'border-accent-orange border-opacity-30',
-        iconBg: 'bg-accent-orange bg-opacity-10',
-        iconText: 'text-accent-orange'
-      },
-      red: {
-        bg: isActive ? 'bg-red-600' : 'bg-red-500 bg-opacity-20',
-        text: isActive ? 'text-white' : 'text-red-600',
-        border: 'border-red-500 border-opacity-30',
-        iconBg: 'bg-red-500 bg-opacity-10',
-        iconText: 'text-red-600'
-      }
-    };
-    return colors[color];
+  const getColors = (color: string) => {
+    switch(color) {
+      case 'primary':
+        return theme.colors.primary;
+      case 'secondary':
+        return theme.colors.secondary;
+      case 'error':
+        return theme.colors.error;
+      default:
+        return theme.colors.primary;
+    }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-dark text-white p-8">
+    <InformaticaSlideWrapper>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-10">
-          <h1 className="text-5xl font-bold mb-4">
-            5-Week <span className="text-accent-blue">Sprint Timeline</span>
-          </h1>
-          <p className="text-xl text-gray-300">
-            From discovery to pilot implementation in focused sprints
-          </p>
-        </div>
+        <InformaticaHeader 
+          title="5-Week Sprint Timeline"
+          subtitle="From discovery to pilot implementation in focused sprints"
+          accentColor="primary"
+        />
 
         {/* Timeline */}
         <div className="mb-8">
@@ -151,35 +144,47 @@ export const SlideTimeline = () => {
             {weeks.map((week, index) => {
               const WeekIcon = week.icon;
               const isActive = activeWeek === index;
-              const colors = getColorClasses(week.color, isActive);
+              const color = getColors(week.color);
               
               return (
                 <React.Fragment key={week.week}>
                   <div
-                    className="relative flex flex-col items-center cursor-pointer group"
+                    className="relative flex flex-col items-center cursor-pointer group z-10"
                     onClick={() => setActiveWeek(index)}
                   >
-                    <div className={`
-                      w-20 h-20 rounded-full flex items-center justify-center transition-all duration-300
-                      ${colors.bg} ${isActive ? 'scale-110 shadow-lg' : 'hover:scale-105'}
-                    `}>
-                      <WeekIcon size={32} className={colors.text} />
+                    <div 
+                      className={`
+                        w-20 h-20 rounded-full flex items-center justify-center transition-all duration-300
+                        ${isActive ? 'scale-110 shadow-lg' : 'hover:scale-105'}
+                      `}
+                      style={{
+                        backgroundColor: isActive ? color : `${color}30`,
+                        border: `2px solid ${color}`
+                      }}
+                    >
+                      <WeekIcon size={32} style={{ color: isActive ? '#FFFFFF' : color }} />
                     </div>
                     <div className="mt-3 text-center">
-                      <div className={`text-sm font-bold ${isActive ? 'text-white' : 'text-gray-300'}`}>
+                      <div style={{ color: isActive ? theme.colors.textPrimary : theme.colors.textSecondary }} className="text-sm font-bold">
                         Week {week.week}
                       </div>
-                      <div className={`text-xs ${isActive ? 'text-gray-200' : 'text-gray-400'}`}>
+                      <div style={{ color: isActive ? theme.colors.textSecondary : theme.colors.textMuted }} className="text-xs">
                         {week.title}
                       </div>
                     </div>
                   </div>
                   {index < weeks.length - 1 && (
-                    <div className="flex-1 h-1 bg-gray-700 relative top-[-30px]">
-                      <div className={`
-                        h-full transition-all duration-500
-                        ${index < activeWeek ? 'bg-blue-500' : ''}
-                      `} style={{ width: index < activeWeek ? '100%' : '0%' }}></div>
+                    <div 
+                      className="flex-1 h-1 relative top-[-30px]"
+                      style={{ backgroundColor: theme.colors.borderLight }}
+                    >
+                      <div 
+                        className="h-full transition-all duration-500"
+                        style={{ 
+                          width: index < activeWeek ? '100%' : '0%',
+                          backgroundColor: theme.colors.primary
+                        }}
+                      />
                     </div>
                   )}
                 </React.Fragment>
@@ -191,69 +196,98 @@ export const SlideTimeline = () => {
         {/* Week Details */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Activities */}
-          <div className="bg-gray-800/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700">
-            <h3 className="text-lg font-bold mb-4 flex items-center">
-              <Target className="mr-2 text-accent-blue" size={20} />
+          <InformaticaCard>
+            <h3 className="text-lg font-bold mb-4 flex items-center" style={{ color: theme.colors.textPrimary }}>
+              <Target className="mr-2" size={20} style={{ color: theme.colors.secondary }} />
               Activities
             </h3>
             <div className="space-y-2">
               {weeks[activeWeek].activities.map((activity, index) => (
                 <div key={index} className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2 flex-shrink-0"></div>
-                  <p className="text-sm text-gray-300">{activity}</p>
+                  <div 
+                    className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0"
+                    style={{ backgroundColor: theme.colors.secondary }}
+                  />
+                  <p className="text-sm" style={{ color: theme.colors.textSecondary }}>{activity}</p>
                 </div>
               ))}
             </div>
-          </div>
+          </InformaticaCard>
 
           {/* Deliverables */}
-          <div className="bg-gray-800/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700">
-            <h3 className="text-lg font-bold mb-4 flex items-center">
-              <Lightbulb className="mr-2 text-accent-blue" size={20} />
+          <InformaticaCard>
+            <h3 className="text-lg font-bold mb-4 flex items-center" style={{ color: theme.colors.textPrimary }}>
+              <Lightbulb className="mr-2" size={20} style={{ color: theme.colors.primary }} />
               Deliverables
             </h3>
             <div className="space-y-3">
               {weeks[activeWeek].deliverables.map((deliverable, index) => (
-                <div key={index} className="bg-gray-700/50 rounded-lg p-3 border border-slate-600">
-                  <p className="text-sm text-white">{deliverable}</p>
+                <div 
+                  key={index} 
+                  className="rounded-lg p-3"
+                  style={{
+                    backgroundColor: `${theme.colors.secondary}20`,
+                    border: `1px solid ${theme.colors.secondary}50`
+                  }}
+                >
+                  <p className="text-sm" style={{ color: theme.colors.textPrimary }}>{deliverable}</p>
                 </div>
               ))}
             </div>
-          </div>
+          </InformaticaCard>
 
           {/* Participants & Duration */}
-          <div className="bg-gray-800/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700">
+          <InformaticaCard>
             <div className="mb-6">
-              <h3 className="text-lg font-bold mb-2 flex items-center">
-                <Clock className="mr-2 text-orange-400" size={20} />
+              <h3 className="text-lg font-bold mb-2 flex items-center" style={{ color: theme.colors.textPrimary }}>
+                <Clock className="mr-2" size={20} style={{ color: theme.colors.primary }} />
                 Duration
               </h3>
-              <p className="text-2xl font-bold text-orange-400">{weeks[activeWeek].duration}</p>
+              <p className="text-2xl font-bold" style={{ color: theme.colors.primary }}>
+                {weeks[activeWeek].duration}
+              </p>
             </div>
             <div>
-              <h3 className="text-lg font-bold mb-2 flex items-center">
-                <Users className="mr-2 text-orange-400" size={20} />
+              <h3 className="text-lg font-bold mb-2 flex items-center" style={{ color: theme.colors.textPrimary }}>
+                <Users className="mr-2" size={20} style={{ color: theme.colors.primary }} />
                 Participants
               </h3>
-              <p className="text-sm text-gray-300">{weeks[activeWeek].participants}</p>
+              <p className="text-sm" style={{ color: theme.colors.textSecondary }}>
+                {weeks[activeWeek].participants}
+              </p>
             </div>
-          </div>
+          </InformaticaCard>
         </div>
 
         {/* Progress Indicator */}
-        <div className="mt-8 bg-gray-800/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700">
+        <div 
+          className="mt-8 rounded-xl p-6"
+          style={{
+            backgroundColor: theme.colors.bgSurface,
+            border: `1px solid ${theme.colors.borderDefault}`
+          }}
+        >
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-lg font-bold text-white mb-1">Total Duration</h3>
-              <p className="text-gray-300">5 weeks • 25 business days</p>
+              <h3 className="text-lg font-bold mb-1" style={{ color: theme.colors.textPrimary }}>
+                Total Duration
+              </h3>
+              <p style={{ color: theme.colors.textSecondary }}>5 weeks • 25 business days</p>
             </div>
             <div className="text-right">
-              <h3 className="text-lg font-bold text-white mb-1">Expected Outcome</h3>
-              <p className="text-gray-300">Validated process with pilot ready to launch</p>
+              <h3 className="text-lg font-bold mb-1" style={{ color: theme.colors.textPrimary }}>
+                Expected Outcome
+              </h3>
+              <p style={{ color: theme.colors.textSecondary }}>
+                Validated process with pilot ready to launch
+              </p>
             </div>
+          </div>
+          <div className="mt-4">
+            <InformaticaProgress current={activeWeek + 1} total={5} />
           </div>
         </div>
       </div>
-    </div>
+    </InformaticaSlideWrapper>
   );
 };
